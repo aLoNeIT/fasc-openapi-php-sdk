@@ -1,0 +1,24 @@
+{
+    "name": "fasc/fasc-openapi-php-sdk",
+    "version": "1.0.0",
+    "description": "FASC API PHP SDK",
+    "type": "library",
+    "keywords": ["FASC","fadada","php","sdk"],
+    "homepage": "https://dev.fadada.com/api-sdk/YDRPIGLMHK/KPR2Z8LX64IET9Y9",
+    "authors": [
+        {
+            "name": "Jiahao Li",
+            "email": "lijiahao@fadada.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.0.10",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {"FddCloud\\": "src/FddCloud"}
+    },
+    "minimum-stability": "stable"
+}
