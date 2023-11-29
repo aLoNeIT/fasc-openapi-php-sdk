@@ -3,8 +3,9 @@
 
 namespace FddCloud\client;
 
+use Exception;
 use FddCloud\client\IClient;
-use FddCloud\constants\OpenApiConfigConstants;
+use FddCloud\constants\OpenApiConfig;
 
 
 date_default_timezone_set('PRC');//其中PRC为“中华人民共和国”
@@ -25,6 +26,9 @@ class Client implements IClient
         $this->timeout = $timeout;
     }
 
+    /**
+     * @throws Exception
+     */
     public function request_file($url, $filePath)
     {
         $filePath = iconv('utf-8', 'gbk', $filePath);
@@ -127,7 +131,7 @@ class Client implements IClient
         if (!is_null($bizContent)) {
             $body = array();
             $body['bizContent'] = $bizContent;
-            if (OpenApiConfigConstants::DEBUG) {
+            if (OpenApiConfig::isDebug()) {
                 print_r("body: ");
                 print_r($body);
             }
@@ -207,7 +211,6 @@ class Client implements IClient
     private function msectime()
     {
         list($msec, $sec) = explode(' ', microtime());
-        $msectime = (float)sprintf('%.0f', (floatval($msec) + floatval($sec)) * 1000);
-        return $msectime;
+        return (float)sprintf('%.0f', (floatval($msec) + floatval($sec)) * 1000);
     }
 }

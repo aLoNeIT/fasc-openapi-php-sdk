@@ -5,7 +5,7 @@ namespace FddCloud\client;
 use FddCloud\bean\req\eui\AppPageResourceUrlReq;
 use FddCloud\bean\req\eui\GetBillUrlReq;
 use FddCloud\bean\req\eui\UserPageResourceUrlReq;
-use FddCloud\constants\OpenApiConfigConstants;
+use FddCloud\constants\OpenApiConfig;
 use FddCloud\constants\OpenApiUrlConstants;
 
 
@@ -54,9 +54,9 @@ class EUIClient
     private function getEuiDomain($self): string
     {
         $domain = array(
-            "https://sit-api.fadada.com/api/v5/" => "https://" . OpenApiConfigConstants::APP_ID . ".sit-e.fadada.com/authorize/list?",
-            "https://uat-api.fadada.com/api/v5/" => "https://" . OpenApiConfigConstants::APP_ID . ".uat-e.fadada.com/authorize/list?",
-            "https://api.fadada.com/api/v5/" => "https://" . OpenApiConfigConstants::APP_ID . ".e.fadada.com/authorize/list?"
+            "https://sit-api.fadada.com/api/v5/" => "https://" . OpenApiConfig::APP_ID . ".sit-e.fadada.com/authorize/list?",
+            "https://uat-api.fadada.com/api/v5/" => "https://" . OpenApiConfig::APP_ID . ".uat-e.fadada.com/authorize/list?",
+            "https://api.fadada.com/api/v5/" => "https://" . OpenApiConfig::APP_ID . ".e.fadada.com/authorize/list?"
         );
         return $domain[$self];
     }
