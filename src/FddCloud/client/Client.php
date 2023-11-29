@@ -112,13 +112,14 @@ class Client implements IClient
     {
         //随机数
         $nonce = md5(time() . mt_rand(0, 1000));
-        print_r("url: " . $path . "\n");
         $headers = $this->getHeader($nonce, $bizContent, $accessToken);
         $headers['Content-type'] = "application/x-www-form-urlencoded";
         $postHeader = $this->toPost($headers);
-        //	var_dump($postHeader);
-        print_r("header: ");
-        print_r($headers);
+        if (OpenApiConfig::isDebug()) {
+            print_r("请求地址url: " . $path . "\n");
+            print_r("请求头header: " . "\n");
+            print_r($headers);
+        }
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->url . $path);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -132,7 +133,7 @@ class Client implements IClient
             $body = array();
             $body['bizContent'] = $bizContent;
             if (OpenApiConfig::isDebug()) {
-                print_r("body: ");
+                print_r("请求体body: ");
                 print_r($body);
             }
             curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($body));

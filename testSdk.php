@@ -2,7 +2,7 @@
 /**
  * 测试文件
  */
-//引入composer包
+
 require_once __DIR__ . '/autoload.php';
 
 use FddCloud\bean\req\user\FreeSignInfo;
@@ -15,13 +15,13 @@ use FddCloud\constants\OpenApiConfig;
 
 var_dump("--------------------------初始化 start----------------------------");
 $serviceUrl= 'https://uat-api.fadada.com/api/v5/';
-$appId = '00000199';
-$appSecret = 'JTYPDTNO2J9N0KLY6ZWBQ7SJUKGBHYSK';
+$appId = '';
+$appSecret = '';
 OpenApiConfig::init($serviceUrl,$appId,$appSecret);
-OpenApiConfig::setDebug(false);//是否开启工作台日志打印
+OpenApiConfig::setDebug(true);//是否开启工作台日志打印
 
 $client = new Client(OpenApiConfig::getAppId(), OpenApiConfig::getAppSecret(), OpenApiConfig::getServiceUrl());
-//-----------------基础信息初始化 end--------------------------
+
 var_dump("--------------------------初始化 end----------------------------");
 
 /*****获取token******/
