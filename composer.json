@@ -1,5 +1,5 @@
 {
-    "name": "fdd/fasc-openapi-php-sdk",
+    "name": "fadada/fasc-openapi-php-sdk",
     "version": "1.0.0",
     "description": "Fadada Agreement & Signature Cloud API PHP-SDK",
     "type": "library",
