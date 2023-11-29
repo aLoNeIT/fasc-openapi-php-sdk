@@ -2,6 +2,7 @@
 /logs
 !.mvn/wrapper/maven-wrapper.jar
 node_modules
+/vendor/
 
 ##前端打包生成文件需要忽略##
 web/portal-h5/app
