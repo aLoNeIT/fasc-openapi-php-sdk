@@ -2,6 +2,7 @@
 
 namespace FddCloud\client;
 
+use FddCloud\bean\req\org\CorpChangeIdentityInfoReq;
 use FddCloud\bean\req\org\CorpOrganizationManageReq;
 use FddCloud\bean\req\org\counterpart\CounterpartListReq;
 use FddCloud\bean\req\org\department\DeptCreateReq;
@@ -9,6 +10,7 @@ use FddCloud\bean\req\org\department\DeptDeleteReq;
 use FddCloud\bean\req\org\department\DeptGetDetailReq;
 use FddCloud\bean\req\org\department\DeptGetListReq;
 use FddCloud\bean\req\org\department\DeptModifyReq;
+use FddCloud\bean\req\org\GetCorpEntityListReq;
 use FddCloud\bean\req\org\member\MemberCreateReq;
 use FddCloud\bean\req\org\member\MemberDeleteReq;
 use FddCloud\bean\req\org\member\MemberGetActiveUrlReq;
@@ -33,6 +35,18 @@ class OrgClient
     function getCorpOrganizationManageUrl($accessToken, CorpOrganizationManageReq $req)
     {
         return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::CORP_ORGANIZATION_MANAGE_GET_URL);
+    }
+
+    # 查询企业主体列表
+    function getCorpEntityList($accessToken, GetCorpEntityListReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::CORP_ENTITY_GET_LIST);
+    }
+
+    # 获取企业工商信息变更链接
+    function corpChangeIdentityInfo($accessToken, CorpChangeIdentityInfoReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::CORP_CHANGE_IDENTITY_INFO);
     }
 
     # 创建部门

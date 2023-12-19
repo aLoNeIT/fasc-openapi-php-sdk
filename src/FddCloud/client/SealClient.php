@@ -4,6 +4,12 @@ namespace FddCloud\client;
 
 use FddCloud\bean\req\seal\CancelPersonalSealFreeSignReq;
 use FddCloud\bean\req\seal\CancelSealFreeSignReq;
+use FddCloud\bean\req\seal\CreateLegalRepresentativeSealByImageReq;
+use FddCloud\bean\req\seal\CreateLegalRepresentativeSealByTemplateReq;
+use FddCloud\bean\req\seal\CreatePersonalSealByImageReq;
+use FddCloud\bean\req\seal\CreatePersonalSealByTemplateReq;
+use FddCloud\bean\req\seal\CreateSealByImageReq;
+use FddCloud\bean\req\seal\CreateSealByTemplateReq;
 use FddCloud\bean\req\seal\GetAppointedSealUrlReq;
 use FddCloud\bean\req\seal\GetAppointedUserSealListReq;
 use FddCloud\bean\req\seal\GetPersonalSealCreateUrlReq;
@@ -16,6 +22,7 @@ use FddCloud\bean\req\seal\GetSealFreeSignUrlReq;
 use FddCloud\bean\req\seal\GetSealGrantUrlReq;
 use FddCloud\bean\req\seal\GetSealListReq;
 use FddCloud\bean\req\seal\GetSealManageUrlReq;
+use FddCloud\bean\req\seal\GetSealTagListReq;
 use FddCloud\bean\req\seal\GetSealUserListReq;
 use FddCloud\bean\req\seal\GetVerifySealListReq;
 use FddCloud\bean\req\seal\PersonalSealDeleteReq;
@@ -24,13 +31,6 @@ use FddCloud\bean\req\seal\SealGrantCancelReq;
 use FddCloud\bean\req\seal\SealModifyReq;
 use FddCloud\bean\req\seal\SealSetStatusReq;
 use FddCloud\constants\OpenApiUrlConstants;
-use CreateLegalRepresentativeSealByImageReq;
-use CreateLegalRepresentativeSealByTemplateReq;
-use CreatePersonalSealByImageReq;
-use CreatePersonalSealByTemplateReq;
-use CreateSealByImageReq;
-use CreateSealByTemplateReq;
-use GetSealTagListReq;
 
 
 class SealClient

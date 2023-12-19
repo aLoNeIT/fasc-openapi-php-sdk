@@ -32,7 +32,7 @@ class ApprovalChangeMessage extends MessageBase
     /**
      * @param mixed $openCorpId
      */
-    public function setOpenCorpId($openCorpId): void
+    public function setOpenCorpId($openCorpId) 
     {
         $this->openCorpId = $openCorpId;
     }
@@ -48,7 +48,7 @@ class ApprovalChangeMessage extends MessageBase
     /**
      * @param mixed $approvalType
      */
-    public function setApprovalType($approvalType): void
+    public function setApprovalType($approvalType) 
     {
         $this->approvalType = $approvalType;
     }
@@ -64,7 +64,7 @@ class ApprovalChangeMessage extends MessageBase
     /**
      * @param mixed $templateId
      */
-    public function setTemplateId($templateId): void
+    public function setTemplateId($templateId) 
     {
         $this->templateId = $templateId;
     }
@@ -80,7 +80,7 @@ class ApprovalChangeMessage extends MessageBase
     /**
      * @param mixed $signTaskId
      */
-    public function setSignTaskId($signTaskId): void
+    public function setSignTaskId($signTaskId) 
     {
         $this->signTaskId = $signTaskId;
     }
@@ -96,7 +96,7 @@ class ApprovalChangeMessage extends MessageBase
     /**
      * @param mixed $approvalId
      */
-    public function setApprovalId($approvalId): void
+    public function setApprovalId($approvalId) 
     {
         $this->approvalId = $approvalId;
     }
@@ -112,7 +112,7 @@ class ApprovalChangeMessage extends MessageBase
     /**
      * @param mixed $approvalStatus
      */
-    public function setApprovalStatus($approvalStatus): void
+    public function setApprovalStatus($approvalStatus) 
     {
         $this->approvalStatus = $approvalStatus;
     }
@@ -128,7 +128,7 @@ class ApprovalChangeMessage extends MessageBase
     /**
      * @param mixed $oprMemberId
      */
-    public function setOprMemberId($oprMemberId): void
+    public function setOprMemberId($oprMemberId) 
     {
         $this->oprMemberId = $oprMemberId;
     }
@@ -144,7 +144,7 @@ class ApprovalChangeMessage extends MessageBase
     /**
      * @param mixed $oprMemberName
      */
-    public function setOprMemberName($oprMemberName): void
+    public function setOprMemberName($oprMemberName) 
     {
         $this->oprMemberName = $oprMemberName;
     }
@@ -160,7 +160,7 @@ class ApprovalChangeMessage extends MessageBase
     /**
      * @param mixed $approverStatus
      */
-    public function setApproverStatus($approverStatus): void
+    public function setApproverStatus($approverStatus) 
     {
         $this->approverStatus = $approverStatus;
     }
@@ -176,7 +176,7 @@ class ApprovalChangeMessage extends MessageBase
     /**
      * @param mixed $note
      */
-    public function setNote($note): void
+    public function setNote($note) 
     {
         $this->note = $note;
     }
@@ -192,7 +192,7 @@ class ApprovalChangeMessage extends MessageBase
     /**
      * @param mixed $nextNodeMemberIds
      */
-    public function setNextNodeMemberIds($nextNodeMemberIds): void
+    public function setNextNodeMemberIds($nextNodeMemberIds) 
     {
         $this->nextNodeMemberIds = $nextNodeMemberIds;
     }
@@ -208,7 +208,7 @@ class ApprovalChangeMessage extends MessageBase
     /**
      * @param mixed $clientUserId
      */
-    public function setClientUserId($clientUserId): void
+    public function setClientUserId($clientUserId) 
     {
         $this->clientUserId = $clientUserId;
     }

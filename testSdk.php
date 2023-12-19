@@ -14,11 +14,10 @@ use FddCloud\client\UserClient;
 use FddCloud\constants\OpenApiConfig;
 
 var_dump("--------------------------初始化 start----------------------------");
-$serviceUrl= 'https://uat-api.fadada.com/api/v5/';
-$appId = '';
-$appSecret = '';
-OpenApiConfig::init($serviceUrl,$appId,$appSecret);
-OpenApiConfig::setDebug(true);//是否开启工作台日志打印
+OpenApiConfig::setServiceUrl("");
+OpenApiConfig::setAppId("");
+OpenApiConfig::setAppSecret("");
+OpenApiConfig::setDebug(false);//是否开启工作台日志打印
 
 $client = new Client(OpenApiConfig::getAppId(), OpenApiConfig::getAppSecret(), OpenApiConfig::getServiceUrl());
 

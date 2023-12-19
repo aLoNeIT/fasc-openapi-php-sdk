@@ -23,7 +23,7 @@ class OpenApiConfig
      */
     private static $app_secret = "";
 
-    private static $debug = false;
+    private static $debug = true;
 
     /**
      * @param $service_url
@@ -44,42 +44,42 @@ class OpenApiConfig
         self::$app_secret = $app_secret;
     }
 
-    public static function getServiceUrl(): string
+    public static function getServiceUrl()
     {
         return self::$service_url;
     }
 
-    public static function setServiceUrl(string $service_url)
+    public static function setServiceUrl($service_url)
     {
         self::$service_url = $service_url;
     }
 
-    public static function getAppId(): string
+    public static function getAppId()
     {
         return self::$app_id;
     }
 
-    public static function setAppId(string $app_id)
+    public static function setAppId($app_id)
     {
         self::$app_id = $app_id;
     }
 
-    public static function getAppSecret(): string
+    public static function getAppSecret()
     {
         return self::$app_secret;
     }
 
-    public static function setAppSecret(string $app_secret)
+    public static function setAppSecret($app_secret)
     {
         self::$app_secret = $app_secret;
     }
 
-    public static function isDebug(): bool
+    public static function isDebug()
     {
         return self::$debug;
     }
 
-    public static function setDebug(bool $debug)
+    public static function setDebug($debug)
     {
         self::$debug = $debug;
     }

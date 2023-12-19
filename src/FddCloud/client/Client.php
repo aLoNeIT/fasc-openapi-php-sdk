@@ -110,25 +110,21 @@ class Client implements IClient
 
     public function request($accessToken, $bizContent, $path)
     {
+        //判断curl版本是否大于7.40.0
+        $isContentLength =$this->checkCurlVersion();
         //随机数
         $nonce = md5(time() . mt_rand(0, 1000));
         $headers = $this->getHeader($nonce, $bizContent, $accessToken);
         $headers['Content-type'] = "application/x-www-form-urlencoded";
-        $postHeader = $this->toPost($headers);
+
         if (OpenApiConfig::isDebug()) {
             print_r("请求地址url: " . $path . "\n");
             print_r("请求头header: " . "\n");
             print_r($headers);
         }
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $this->url . $path);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $this->timeout);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $postHeader);
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+
+        //判断是否是获取accessToken
         if (!is_null($bizContent)) {
             $body = array();
             $body['bizContent'] = $bizContent;
@@ -136,9 +132,27 @@ class Client implements IClient
                 print_r("请求体body: ");
                 print_r($body);
             }
-            curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($body));
+            $content = http_build_query($body);
+            //是否自动计算Content-Length
+            $isContentLength ? $headers['Content-Length'] = strlen($content) : print_r("");
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $content);
+        }else{
+            //是否自动计算Content-Length
+            $isContentLength ? $headers['Content-Length'] = 0 : print_r("");
         }
+        curl_setopt($ch, CURLOPT_URL, $this->url . $path);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $this->timeout);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $this->toPost($headers));
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+
         $response = curl_exec($ch);
+        // 检查是否有错误发生
+        if(curl_errno($ch)){
+            echo 'cURL error: ' . curl_error($ch);
+        }
         curl_close($ch);
         return $response;
     }
@@ -213,5 +227,17 @@ class Client implements IClient
     {
         list($msec, $sec) = explode(' ', microtime());
         return (float)sprintf('%.0f', (floatval($msec) + floatval($sec)) * 1000);
+    }
+
+    private function checkCurlVersion()
+    {
+        $curlVersion = curl_version();
+        // 判断版本信息
+        if(version_compare($curlVersion['version'],'7.40','>')){
+            return false;
+        }else{
+            echo "当前CURL版本号是".$curlVersion['version']."小于 7.40,建议尽快进行升级\n";
+            return true;
+        }
     }
 }

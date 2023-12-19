@@ -69,6 +69,8 @@ class OpenApiUrlConstants
      */
     # 组织管理-部门
     const CORP_ORGANIZATION_MANAGE_GET_URL = '/corp/organization/manage/get-url';
+    const CORP_ENTITY_GET_LIST = '/corp/entity/get-list';
+    const CORP_CHANGE_IDENTITY_INFO = '/corp/change-identity-info';
     const CORP_DEPT_CREATE = '/corp/dept/create';
     const CORP_DEPT_GET_LIST = '/corp/dept/get-list';
     const CORP_DEPT_GET_DETAIL = '/corp/dept/get-detail';
@@ -90,6 +92,10 @@ class OpenApiUrlConstants
      * SealClient
      */
     # 印章管理
+    const SEAL_CREATE_BY_TEMPLATE = '/seal/create-by-template';
+    const SEAL_CREATE_BY_IMAGE = '/seal/create-by-image';
+    const SEAL_CREATE_LEGAL_REPRESENTATIVE_BY_TEMPLATE = '/seal/create-legal-representative-by-template';
+    const SEAL_CREATE_LEGAL_REPRESENTATIVE_BY_IMAGE = '/seal/create-legal-representative-by-image';
     const SEAL_MANAGE_GET_URL = '/seal/manage/get-url';
     const SEAL_FREE_SIGN_GET_URL = '/seal/free-sign/get-url';
     const SEAL_CREATE_GET_URL = '/seal/create/get-url';
@@ -104,6 +110,9 @@ class OpenApiUrlConstants
     const SEAL_GRANT_CANCEL = '/seal/grant/cancel';
     const SEAL_SET_STATUS = '/seal/set-status';
     const SEAL_DELETE = '/seal/delete';
+    const SEAL_TAG_GET_LIST = '/seal/tag/get-list';
+    const PERSONAL_SEAL_CREATE_BY_TEMPLATE = '/personal-seal/create-by-template';
+    const PERSONAL_SEAL_CREATE_BY_IMAGE = '/personal-seal/create-by-image';
     const PERSONAL_SEAL_GET_LIST = '/personal-seal/get-list';
     const PERSONAL_SEAL_FREE_SIGN_GET_URL = '/personal-seal/free-sign/get-url';
     const CANCEL_SEAL_FREE_SIGN = '/seal/free-sign/cancel';
@@ -119,8 +128,48 @@ class OpenApiUrlConstants
     const FILE_UPLOAD_BY_URL = '/file/upload-by-url';
     const FILE_GET_UPLOAD_URL = '/file/get-upload-url';
     const FILE_PROCESS = '/file/process';
+    const FILE_OFD_FILE_MERGE = '/file/ofd-file-merge';
     const FILE_GET_KEYWORD_POSITIONS = '/file/get-keyword-positions';
     const FILE_VERIFY_SIGN = '/file/verify-sign';
+
+    /**
+     * ArchivesPerformanceClient
+     */
+    # 获取合同归档链接
+    const ARCHIVES_GET_ARCHIVES_URL= '/archives/get-archives-url';
+    # 合同归档
+    const ARCHIVES_CONTACT_ARCHIVED= '/archives/contact-archived';
+    # 查询已归档合同列表
+    const ARCHIVES_GET_ARCHIVED_LIST= '/archives/get-archived-list';
+    # 查询已归档合同详情
+    const ARCHIVES_GET_ARCHIVED_DETAIL= '/archives/get-archived-detail';
+    # 查询归档文件夹列表
+    const ARCHIVES_CATALOG_LIST= '/archives/catalog-list';
+    # 创建合同履约提醒
+    const ARCHIVES_PERFORMANCE_MODIFY= '/archives/performance/modify';
+    # 删除合同履约提醒
+    const ARCHIVES_PERFORMANCE_DELETE= '/archives/performance/delete';
+    # 查询合同履约提醒列表
+    const ARCHIVES_PERFORMANCE_LIST= '/archives/performance/list';
+
+
+
+    /**
+     * DraftClient
+     */
+    # 发起合同协商
+    const DRAFT_CREATE= '/draft/create';
+    # 获取合同协商邀请链接
+    const DRAFT_GET_INVITE_URL = '/draft/get-invite-url';
+    # 获取合同协商编辑链接
+    const DRAFT_GET_EDIT_URL = '/draft/get-edit-url';
+    # 获取合同起草管理链接
+    const DRAFT_GET_MANAGE_URL = '/draft/get-manage-url';
+    # 合同协商文件定稿
+    const DRAFT_DOC_FINALIZE = '/draft/doc-finalize';
+    # 查询已定稿的合同文件
+    const DRAFT_GET_FINISHED_FILE = '/draft/get-finished-file';
+
 
     /**
      * OCRClient

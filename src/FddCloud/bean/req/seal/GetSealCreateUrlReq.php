@@ -1,8 +1,6 @@
 <?php
-
-
 namespace FddCloud\bean\req\seal;
-class GetSealCreateUrlReq
+class GetSealCreateUrlReq extends SealBaseReq
 {
     public $openCorpId;
 
@@ -13,8 +11,6 @@ class GetSealCreateUrlReq
     public $categoryType;
 
     public $sealTag;
-
-    public $createSerialNo;
 
     public $redirectUrl;
 
@@ -96,22 +92,6 @@ class GetSealCreateUrlReq
     public function setSealTag($sealTag)
     {
         $this->sealTag = $sealTag;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCreateSerialNo()
-    {
-        return $this->createSerialNo;
-    }
-
-    /**
-     * @param mixed $createSerialNo
-     */
-    public function setCreateSerialNo($createSerialNo)
-    {
-        $this->createSerialNo = $createSerialNo;
     }
 
     /**

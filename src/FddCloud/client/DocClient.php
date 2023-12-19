@@ -7,6 +7,7 @@ use FddCloud\bean\req\doc\FileGetUploadUrlReq;
 use FddCloud\bean\req\doc\FileProcessReq;
 use FddCloud\bean\req\doc\FileUploadByUrlReq;
 use FddCloud\bean\req\doc\FileVerifySignReq;
+use FddCloud\bean\req\doc\OfdFileMergeReq;
 use FddCloud\constants\OpenApiUrlConstants;
 
 
@@ -42,6 +43,12 @@ class DocClient
     function fileProcess($accessToken, FileProcessReq $req)
     {
         return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::FILE_PROCESS);
+    }
+
+    # 文件处理
+    function ofdFileMerge($accessToken, OfdFileMergeReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::FILE_OFD_FILE_MERGE);
     }
 
     # 查询文档关键字坐标

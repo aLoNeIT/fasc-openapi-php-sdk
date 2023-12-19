@@ -1,6 +1,4 @@
 <?php
-
-
 namespace FddCloud\bean\req\seal;
 class GetAppointedSealUrlReq
 {
@@ -75,6 +73,7 @@ class GetAppointedSealUrlReq
     {
         $this->redirectUrl = $redirectUrl;
     }
+
 
 
 }
