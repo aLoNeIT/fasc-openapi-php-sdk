@@ -11,6 +11,7 @@ use FddCloud\bean\req\org\department\DeptGetDetailReq;
 use FddCloud\bean\req\org\department\DeptGetListReq;
 use FddCloud\bean\req\org\department\DeptModifyReq;
 use FddCloud\bean\req\org\GetCorpEntityListReq;
+use FddCloud\bean\req\org\GetCorpEntityManageUrlReq;
 use FddCloud\bean\req\org\member\MemberCreateReq;
 use FddCloud\bean\req\org\member\MemberDeleteReq;
 use FddCloud\bean\req\org\member\MemberGetActiveUrlReq;
@@ -35,6 +36,12 @@ class OrgClient
     function getCorpOrganizationManageUrl($accessToken, CorpOrganizationManageReq $req)
     {
         return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::CORP_ORGANIZATION_MANAGE_GET_URL);
+    }
+
+    # 获取成员企业管理链接
+    function getCorpEntityManageUrl($accessToken, GetCorpEntityManageUrlReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::CORP_ENTITY_GET_MANAGE_URL);
     }
 
     # 查询企业主体列表

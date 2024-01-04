@@ -4,6 +4,7 @@ namespace FddCloud\client;
 
 use FddCloud\bean\req\eui\AppPageResourceUrlReq;
 use FddCloud\bean\req\eui\GetBillUrlReq;
+use FddCloud\bean\req\eui\GetUsageAvailablenumReq;
 use FddCloud\bean\req\eui\UserPageResourceUrlReq;
 use FddCloud\constants\OpenApiConfig;
 use FddCloud\constants\OpenApiUrlConstants;
@@ -45,26 +46,16 @@ class EUIClient
         return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::USER_PAGE_RESOURCE_GET_URL);
     }
 
-
-    /**
-     * @param $self
-     * @return string
-     * @deprecated 5.3.0.0824 弃用方法
-     */
-    private function getEuiDomain($self): string
-    {
-        $domain = array(
-            "https://sit-api.fadada.com/api/v5/" => "https://" . OpenApiConfig::APP_ID . ".sit-e.fadada.com/authorize/list?",
-            "https://uat-api.fadada.com/api/v5/" => "https://" . OpenApiConfig::APP_ID . ".uat-e.fadada.com/authorize/list?",
-            "https://api.fadada.com/api/v5/" => "https://" . OpenApiConfig::APP_ID . ".e.fadada.com/authorize/list?"
-        );
-        return $domain[$self];
-    }
-
     # 获取计费链接
     function get_bill_url($accessToken, GetBillUrlReq $req)
     {
         return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::BILLING_GET_BILL_URL);
+    }
+
+    # 查询账户可用余量
+    function getUsageAvailablenum($accessToken, GetUsageAvailablenumReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::BILLING_ACCOUNT_GET_USAGE_AVAILABLENUM);
     }
 
 

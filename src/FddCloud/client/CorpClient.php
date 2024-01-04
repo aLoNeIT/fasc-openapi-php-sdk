@@ -2,6 +2,7 @@
 
 namespace FddCloud\client;
 
+use FddCloud\bean\req\corp\AppGetOpenIdListReq;
 use FddCloud\bean\req\corp\DisableCorpReq;
 use FddCloud\bean\req\corp\EnableCorpReq;
 use FddCloud\bean\req\corp\GetCorpAuthUrlReq;
@@ -20,6 +21,12 @@ class CorpClient
     public function __construct(IClient $client)
     {
         $this->client = $client;
+    }
+
+    # 查询授权用户列表
+    function appGetOpenIdList($accessToken, AppGetOpenIdListReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::APP_GET_OPENID_LIST);
     }
 
     # 获取企业用户授权链接

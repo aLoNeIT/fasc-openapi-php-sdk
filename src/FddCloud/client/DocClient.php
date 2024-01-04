@@ -45,7 +45,7 @@ class DocClient
         return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::FILE_PROCESS);
     }
 
-    # 文件处理
+    # OFD文件追加
     function ofdFileMerge($accessToken, OfdFileMergeReq $req)
     {
         return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::FILE_OFD_FILE_MERGE);

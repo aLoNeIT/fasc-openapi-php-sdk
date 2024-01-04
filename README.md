@@ -67,6 +67,10 @@ $ composer require fadada/fasc-openapi-php-sdk
 PHP 7.0.10 版本及以上
 
 ## 使用方法
+```php
+    /** 引入自动加载 */
+    require_once __DIR__ . '/../vendor/fadada/fasc-openapi-php-sdk/autoload.php';
+```
 
 ## 调用示例
 - 读取应用APP_ID的全局配置文件
@@ -95,7 +99,7 @@ PHP 7.0.10 版本及以上
 - 获取个人用户授权接口示例
 
 ```php
-	use FddCloud\bean\req\user\GetUserAuthUrlReq;
+    use FddCloud\bean\req\user\GetUserAuthUrlReq;
 	
 	/**获取userClient**/
     $userClient = new UserClient($client);

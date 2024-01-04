@@ -17,13 +17,15 @@ class Client implements IClient
     private $appSecret;
     private $url;
     private $timeout;
+    private $debug = false;
 
-    public function __construct($appId, $appSecret, $url, $timeout = 60)
+    public function __construct($appId, $appSecret, $url, $timeout ,$debug)
     {
         $this->appId = $appId;
         $this->appSecret = $appSecret;
         $this->url = $url;
         $this->timeout = $timeout;
+        $this->debug = $debug;
     }
 
     /**
@@ -117,7 +119,7 @@ class Client implements IClient
         $headers = $this->getHeader($nonce, $bizContent, $accessToken);
         $headers['Content-type'] = "application/x-www-form-urlencoded";
 
-        if (OpenApiConfig::isDebug()) {
+        if ($this->debug) {
             print_r("请求地址url: " . $path . "\n");
             print_r("请求头header: " . "\n");
             print_r($headers);
@@ -128,7 +130,7 @@ class Client implements IClient
         if (!is_null($bizContent)) {
             $body = array();
             $body['bizContent'] = $bizContent;
-            if (OpenApiConfig::isDebug()) {
+            if ($this->debug) {
                 print_r("请求体body: ");
                 print_r($body);
             }
