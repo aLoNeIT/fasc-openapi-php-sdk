@@ -2,6 +2,8 @@
 
 namespace FddCloud\bean\message\signTask;
 
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 签署任务过期事件
  * 签署任务提交之后，在有效期内未完成签署任务，通过该事件回调给应用，事件ID: sign-task-expire

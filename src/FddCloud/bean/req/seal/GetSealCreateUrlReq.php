@@ -3,6 +3,7 @@ namespace FddCloud\bean\req\seal;
 class GetSealCreateUrlReq extends SealBaseReq
 {
     public $openCorpId;
+    public $entityId;
 
     public $clientUserId;
 
@@ -29,6 +30,23 @@ class GetSealCreateUrlReq extends SealBaseReq
     {
         $this->openCorpId = $openCorpId;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getEntityId()
+    {
+        return $this->entityId;
+    }
+
+    /**
+     * @param mixed $entityId
+     */
+    public function setEntityId($entityId)
+    {
+        $this->entityId = $entityId;
+    }
+
 
     /**
      * @return mixed

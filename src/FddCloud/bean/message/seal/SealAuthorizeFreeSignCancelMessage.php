@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\seal;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 印章免验证签解除事件
  * 企业将印章解除免验证签授权，通过该事件回调给应用（授权到期不会触发此回调），事件ID：seal-authorize-free-sign-cancel

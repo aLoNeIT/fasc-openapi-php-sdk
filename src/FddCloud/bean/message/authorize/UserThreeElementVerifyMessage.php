@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\authorize;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 个人三要素校验事件
  * 用户进行三要素校验后，通过该事件回调给应用系统，事件ID user-three-element-verify

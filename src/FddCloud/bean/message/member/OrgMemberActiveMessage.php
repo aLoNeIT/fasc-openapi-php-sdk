@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\member;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 成员激活事件
  * 企业用户组织管理中的成员激活，通过该事件回调给应用，事件ID: organization-member-active

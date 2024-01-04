@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\template;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 模板停用事件
  * 停用模板后，通过该事件回调给应用，事件ID: template-disable

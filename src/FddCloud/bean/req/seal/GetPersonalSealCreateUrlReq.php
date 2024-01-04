@@ -7,6 +7,8 @@ class GetPersonalSealCreateUrlReq
 
     public $createSerialNo;
 
+    public $createMethod;
+
     public $redirectUrl;
 
     /**
@@ -39,6 +41,22 @@ class GetPersonalSealCreateUrlReq
     public function setCreateSerialNo($createSerialNo) 
     {
         $this->createSerialNo = $createSerialNo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCreateMethod()
+    {
+        return $this->createMethod;
+    }
+
+    /**
+     * @param mixed $createMethod
+     */
+    public function setCreateMethod($createMethod)
+    {
+        $this->createMethod = $createMethod;
     }
 
     /**

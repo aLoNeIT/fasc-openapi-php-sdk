@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\template;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 模板创建事件
  * 集成方通过EUI页面创建模板后后，通过该事件回调给应用，事件ID: template-create

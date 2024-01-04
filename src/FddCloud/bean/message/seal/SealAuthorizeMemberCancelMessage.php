@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\seal;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 印章授权解除事件
  * 企业将印章取消授权成员，通过该事件回调给应用，事件ID：seal-authorize-member-cancel

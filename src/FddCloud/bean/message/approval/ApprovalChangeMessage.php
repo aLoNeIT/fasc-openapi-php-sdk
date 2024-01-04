@@ -2,6 +2,8 @@
 
 namespace FddCloud\bean\message\approval;
 
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 审批变更事件
  * 当企业审批操作人进行审批后，通过该事件回调给业务系统，事件ID：approval-change

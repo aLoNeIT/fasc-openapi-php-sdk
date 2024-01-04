@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\personalSeal;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 个人签名解除免验证签授权事件
  * 个人用户将签名解除授权免验证签，通过该事件回调给应用（授权到期时不会触发此回调），事件ID：personal-seal-authorize-free-sign-cancel

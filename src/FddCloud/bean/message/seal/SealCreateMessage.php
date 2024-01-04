@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\seal;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 印章创建事件
  * 企业用户创建印章后，通过该事件回调给应用，事件ID: seal-create

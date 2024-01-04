@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\signTask;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 签署任务驳回填写事件
  * 需要手动定稿的签署任务，在被驳回填写之后，通过该事件回调给应用，事件ID: sign-task-ignore

@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\member;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 成员基本信息修改事件
  * 企业用户在组织管理修改成员基本信息，通过该事件回调给应用，事件ID: organization-member-modify-info

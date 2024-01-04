@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\seal;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 印章授权免验证签事件
  * 企业将印章授权免验证签，通过该事件回调给应用，事件ID：seal-authorize-free-sign

@@ -2,6 +2,8 @@
 
 namespace FddCloud\bean\message\approval;
 
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 审批发起事件
  * 当企业触发审批流程时，通过该事件回调给业务系统，事件ID：approval-create

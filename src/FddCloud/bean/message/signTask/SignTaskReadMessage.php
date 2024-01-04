@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\signTask;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 签署任务参与方/抄送方阅读事件
  * 签署任务参与方或抄送方打开链接阅读了签署任务，通过该事件回调给应用，事件ID: sign-task-read

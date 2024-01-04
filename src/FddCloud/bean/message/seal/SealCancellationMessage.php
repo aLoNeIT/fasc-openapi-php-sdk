@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\seal;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 印章注销事件
  * 企业注销印章，通过该事件回调给应用，事件ID：seal-cancellation

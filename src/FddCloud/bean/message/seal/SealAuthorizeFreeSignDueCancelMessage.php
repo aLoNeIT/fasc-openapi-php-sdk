@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\seal;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 印章设置免验证签即将到期事件
  * 印章的免验证签授权即将到期时，会提前15/7/1天通过该事件回调给应用，事件ID：seal-authorize-free-sign-due-cancel

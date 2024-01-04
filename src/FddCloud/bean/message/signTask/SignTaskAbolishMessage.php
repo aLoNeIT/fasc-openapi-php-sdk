@@ -2,6 +2,8 @@
 
 namespace FddCloud\bean\message\signTask;
 
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 签署任务作废事件
  * 作废任务已完成时，原任务状态变为【已作废】，签署任务通过该事件回调给应用，事件ID: sign-task-abolish

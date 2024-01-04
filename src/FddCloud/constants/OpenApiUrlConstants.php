@@ -69,6 +69,7 @@ class OpenApiUrlConstants
      */
     # 组织管理-部门
     const CORP_ORGANIZATION_MANAGE_GET_URL = '/corp/organization/manage/get-url';
+    const CORP_ENTITY_GET_MANAGE_URL = '/corp/entity/get-manage-url';
     const CORP_ENTITY_GET_LIST = '/corp/entity/get-list';
     const CORP_CHANGE_IDENTITY_INFO = '/corp/change-identity-info';
     const CORP_DEPT_CREATE = '/corp/dept/create';
@@ -248,24 +249,25 @@ class OpenApiUrlConstants
     # 1)签署任务创建
     const SIGN_TASK_CREATE = '/sign-task/create';
     const SIGN_TASK_CREATE_WITH_TEMPLATE = '/sign-task/create-with-template';
+    const SIGN_TASK_FILL_FIELDS_VALUE = '/sign-task/field/fill-values';
     const SIGN_TASK_START = '/sign-task/start';
     const SIGN_TASK_ADD_DOCS = '/sign-task/doc/add';
     const SIGN_TASK_DELETE_DOCS = '/sign-task/doc/delete';
     const SIGN_TASK_ADD_FIELD = '/sign-task/field/add';
     const SIGN_TASK_DELETE_FIELD = '/sign-task/field/delete';
-    const SIGN_TASK_ADD_ATTACHS = '/sign-task/attach/add';
-    const SIGN_TASK_DELETE_ATTACHS = '/sign-task/attach/delete';
-    const SIGN_TASK_ADD_ACTORS = '/sign-task/actor/add';
+    const SIGN_TASK_ADD_ATTACH = '/sign-task/attach/add';
+    const SIGN_TASK_DELETE_ATTACH = '/sign-task/attach/delete';
+    const SIGN_TASK_ADD_ACTOR = '/sign-task/actor/add';
     const SIGN_TASK_DELETE_ACTOR = '/sign-task/actor/delete';
-    const SIGN_TASK_FILL_FIELDS_VALUE = '/sign-task/field/fill-values';
+    const SIGN_TASK_ACTOR_MODIFY = '/sign-task/actor/modify';
     const SIGN_TASK_GET_EDIT_URL = '/sign-task/get-edit-url';
     const SIGN_TASK_GET_PREVIEW_URL = '/sign-task/get-preview-url';
-
+    const SIGN_TASK_GET_PREFILL_URL = '/sign-task/get-prefill-url';
 
     # 2)参与方签署
     const SIGN_TASK_ACTOR_GET_URL = '/sign-task/actor/get-url';
     const SIGN_TASK_GET_BATCH_SIGN_URL = '/sign-task/get-batch-sign-url';
-
+    const SIGN_TASK_ACTOR_V3_GET_URL = '/sign-task/actor/v3/get-url';
 
     # 3)签署任务查询
     const SIGN_TASK_OWNER_GET_LIST = '/sign-task/owner/get-list';
@@ -275,30 +277,37 @@ class OpenApiUrlConstants
     const SIGN_TASK_APPROVAL_GET_INFO = '/sign-task/get-approval-info';
     const SIGN_TASK_CATALOG_LIST = '/sign-task-catalog/list';
     const SIGN_TASK_BUSINESS_TYPE_GET_LIST = '/sign-task/business-type/get-list';
-    const SIGN_TASK_EVIDENCE_REPORT_GET_DOWNLOAD_URL = '/sign-task/evidence-report/get-download-url';
+    const SIGN_TASK_OWNER_GET_FILE= '/sign-task/owner/get-file';
+    const SIGN_TASK_ACTOR_GET_CER_INFO= '/sign-task/actor/get-cer-info';
     const SIGN_TASK_OWNER_GET_DOWNLOAD_URL = '/sign-task/owner/get-download-url';
-    const SIGN_TASK_ACTOR_GET_FACE_PICTURE = '/sign-task/actor/get-face-picture';
     const GET_SIGN_TASK_OWNER_SLICING_TICKET_ID = '/sign-task/owner/get-slicing-ticket-id';
     const GET_SIGN_TASK_OWNER_PIC_DOWNLOAD_URL = '/sign-task/owner/get-pic-download-url';
-    const GET_AUDIO_VIDEO_DOWNLOAD_URL = '/sign-task/actor/get-audio-video-download-url';
-    const SIGN_TASK_ACTOR_V3_GET_URL = '/sign-task/actor/v3/get-url';
+    const SIGN_TASK_ACTOR_GET_FACE_PICTURE = '/sign-task/actor/get-face-picture';
+    const SIGN_TASK_ACTOR_GET_AUDIO_VIDEO_DOWNLOAD_URL = '/sign-task/actor/get-audio-video-download-url';
+    const SIGN_TASK_APPLY_REPORT = '/sign-task/apply-report';
+    const SIGN_TASK_DOWNLOAD_REPORT = '/sign-task/download-report';
+    const SIGN_TASK_EVIDENCE_REPORT_GET_DOWNLOAD_URL = '/sign-task/evidence-report/get-download-url';
 
 
     # 4)签署任务控制
+    const SIGN_TASK_IGNORE = '/sign-task/ignore';
     const SIGN_TASK_DOC_FINALIZE = '/sign-task/doc-finalize';
     const SIGN_TASK_URGE = '/sign-task/urge';
     const SIGN_TASK_CANCEL = '/sign-task/cancel';
     const SIGN_TASK_BLOCK = '/sign-task/block';
     const SIGN_TASK_UNBLOCK = '/sign-task/unblock';
     const SIGN_TASK_FINISH = '/sign-task/finish';
-    const SIGN_TASK_DELETE = '/sign-task/delete';
     const SIGN_TASK_ABOLISH = '/sign-task/abolish';
+    const SIGN_TASK_DELETE = '/sign-task/delete';
     const SIGN_TASK_EXTENSION = '/sign-task/extension';
 
 
     /**
      * EUIClient
      */
+    # 4)获取个人授权链接
+    const APP_GET_OPENID_LIST = '/app/get-openId-list';
+
     # 对EUI页面链接进行管理操作，如获取个人授权链接、构造新企业授权链接、获取计费链接、获取签署编辑链接等
     # 1)获取应用级资源链接
     const APP_PAGE_RESOURCE_GET_URL = '/app-page-resource/get-url';
@@ -312,4 +321,7 @@ class OpenApiUrlConstants
     # https://{appId}.e.fadada.com/authorize/list?authScopes={authScopes}&corpName={corpName}&clientCorpId={clientCorpId}&redirectUrl={URLEncode(Url)}&signature={signature}&timestamp={timestamp}
     # 6)获取计费链接
     const BILLING_GET_BILL_URL = '/billing/get-bill-url';
+
+    # 6)获取计费链接
+    const BILLING_ACCOUNT_GET_USAGE_AVAILABLENUM = '/bill-account/get-usage-availablenum';
 }

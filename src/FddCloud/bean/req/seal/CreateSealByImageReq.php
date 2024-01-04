@@ -3,6 +3,7 @@ namespace FddCloud\bean\req\seal;
 class CreateSealByImageReq
 {
     public $openCorpId;
+    public $entityId;
 
     public $sealName;
 
@@ -36,6 +37,22 @@ class CreateSealByImageReq
     public function setOpenCorpId($openCorpId) 
     {
         $this->openCorpId = $openCorpId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEntityId()
+    {
+        return $this->entityId;
+    }
+
+    /**
+     * @param mixed $entityId
+     */
+    public function setEntityId($entityId)
+    {
+        $this->entityId = $entityId;
     }
 
     /**

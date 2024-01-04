@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\authorize;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 个人用户解除授权事件
  * 用户取消授权后，通过该事件回调给应用系统，事件ID user-cancel-authorization

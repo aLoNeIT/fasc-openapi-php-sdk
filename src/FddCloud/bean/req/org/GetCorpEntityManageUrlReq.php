@@ -1,9 +1,9 @@
 <?php
+
 namespace FddCloud\bean\req\org;
-class CorpChangeIdentityInfoReq
+class GetCorpEntityManageUrlReq
 {
     public $openCorpId;
-    public $clientCorpId;
     public $clientUserId;
     public $redirectUrl;
 
@@ -21,22 +21,6 @@ class CorpChangeIdentityInfoReq
     public function setOpenCorpId($openCorpId)
     {
         $this->openCorpId = $openCorpId;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getClientCorpId()
-    {
-        return $this->clientCorpId;
-    }
-
-    /**
-     * @param mixed $clientCorpId
-     */
-    public function setClientCorpId($clientCorpId)
-    {
-        $this->clientCorpId = $clientCorpId;
     }
 
     /**

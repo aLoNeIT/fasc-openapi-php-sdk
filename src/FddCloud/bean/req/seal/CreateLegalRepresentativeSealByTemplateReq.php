@@ -3,6 +3,7 @@ namespace FddCloud\bean\req\seal;
 class CreateLegalRepresentativeSealByTemplateReq extends SealBaseReq
 {
     public $openCorpId;
+    public $entityId;
     public $openUserId;
     public $sealName;
     public $sealTag;
@@ -26,6 +27,22 @@ class CreateLegalRepresentativeSealByTemplateReq extends SealBaseReq
     public function setOpenCorpId($openCorpId) 
     {
         $this->openCorpId = $openCorpId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEntityId()
+    {
+        return $this->entityId;
+    }
+
+    /**
+     * @param mixed $entityId
+     */
+    public function setEntityId($entityId)
+    {
+        $this->entityId = $entityId;
     }
 
     /**

@@ -2,12 +2,15 @@
 
 namespace FddCloud\bean\message\authorize;
 
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 企业用户授权事件
  * 企业授权操作的反馈事件，企业用户授权允许后，通过该事件回调给应用，事件ID: corp-authorize
  */
 class CorpAuthorizeMessage extends MessageBase
 {
+    public $clientUserId;
     public $clientCorpId;
     public $openCorpId;
     public $existClientCorpId;
@@ -18,6 +21,22 @@ class CorpAuthorizeMessage extends MessageBase
     public $corpIdentProcessStatus;
     public $corpIdentFailedReason;
     public $corpIdentMethod;
+
+    /**
+     * @return mixed
+     */
+    public function getClientUserId()
+    {
+        return $this->clientUserId;
+    }
+
+    /**
+     * @param mixed $clientUserId
+     */
+    public function setClientUserId($clientUserId)
+    {
+        $this->clientUserId = $clientUserId;
+    }
 
     /**
      * @return mixed

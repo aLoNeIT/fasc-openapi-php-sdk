@@ -1,12 +1,9 @@
 <?php
-
-
-namespace FddCloud\bean\req\org\member;
-class MemberBaseReq
+namespace FddCloud\bean\req\eui;
+class GetUsageAvailablenumReq
 {
     public $openCorpId;
-    public $redirectUrl;
-
+    public $usageCode;
 
     /**
      * @return mixed
@@ -27,17 +24,17 @@ class MemberBaseReq
     /**
      * @return mixed
      */
-    public function getRedirectUrl()
+    public function getUsageCode()
     {
-        return $this->redirectUrl;
+        return $this->usageCode;
     }
 
     /**
-     * @param mixed $redirectUrl
+     * @param mixed $usageCode
      */
-    public function setRedirectUrl($redirectUrl)
+    public function setUsageCode($usageCode)
     {
-        $this->redirectUrl = $redirectUrl;
+        $this->usageCode = $usageCode;
     }
 
 }

@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\personalSeal;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 签名创建事件
  * 个人创建签名后，通过该事件回调给应用，事件ID: personal-seal-create

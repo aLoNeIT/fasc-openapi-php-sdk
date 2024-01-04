@@ -8,6 +8,7 @@ class DeptModifyReq
     public $deptId;
     public $deptName;
     public $deptOrderNum;
+    public $identifier;
 
     /**
      * @return mixed
@@ -73,5 +74,20 @@ class DeptModifyReq
         $this->deptOrderNum = $deptOrderNum;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getIdentifier()
+    {
+        return $this->identifier;
+    }
+
+    /**
+     * @param mixed $identifier
+     */
+    public function setIdentifier($identifier)
+    {
+        $this->identifier = $identifier;
+    }
 
 }

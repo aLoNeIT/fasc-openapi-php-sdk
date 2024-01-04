@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\department;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 部门信息修改事件
  * 企业用户在组织管理修改部门基本信息，通过该事件回调给应用，事件ID: organization-dept-modify

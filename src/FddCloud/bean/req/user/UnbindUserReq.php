@@ -4,7 +4,24 @@
 namespace FddCloud\bean\req\user;
 class UnbindUserReq
 {
+    public $clientUserId;
     public $openUserId;
+
+    /**
+     * @return mixed
+     */
+    public function getClientUserId()
+    {
+        return $this->clientUserId;
+    }
+
+    /**
+     * @param mixed $clientUserId
+     */
+    public function setClientUserId($clientUserId)
+    {
+        $this->clientUserId = $clientUserId;
+    }
 
     /**
      * @return mixed

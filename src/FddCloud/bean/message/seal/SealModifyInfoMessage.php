@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\seal;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 印章基本信息修改事件
  * 企业修改了印章的基本信息，通过该事件回调给应用，事件ID：seal-modify-info
