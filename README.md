@@ -70,6 +70,7 @@ PHP 7.0.10 版本及以上
 ```php
     /** 引入自动加载 */
     require_once __DIR__ . '/../vendor/fadada/fasc-openapi-php-sdk/autoload.php';
+
 ```
 
 ## 调用示例
@@ -94,6 +95,14 @@ PHP 7.0.10 版本及以上
 	$client = new Client(
             $app_id,$app_secret,$service_url,$time_out,$debug
         );
+  ```
+- 接入方获取accessToken
+ ```php
+    /** 获取accessToken */
+    $serviceClient = new ServiceClient($client);
+    $response = $serviceClient->getAccessToken();
+    print_r($response . "\n");
+    $res = json_decode($response);
   ```
 
 - 获取个人用户授权接口示例
