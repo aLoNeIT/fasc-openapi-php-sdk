@@ -25,6 +25,7 @@ class OpenApiUrlConstants
     const USER_UNBIND = '/user/unbind';
     const USER_GET_DETAIL = '/user/get';
     const USER_GET_IDENTITY_INFO = '/user/get-identity-info';
+    const USER_ACCOUNT_NAME_GET_CHANGE_URL = '/user/account-name/get-change-url';
 
     /**
      * ToolServiceClient
@@ -160,6 +161,8 @@ class OpenApiUrlConstants
      */
     # 发起合同协商
     const DRAFT_CREATE= '/draft/create';
+    # 添加协商成员
+    const DRAFT_MEMBERS_ADD = '/draft/members/add';
     # 获取合同协商邀请链接
     const DRAFT_GET_INVITE_URL = '/draft/get-invite-url';
     # 获取合同协商编辑链接
@@ -170,6 +173,10 @@ class OpenApiUrlConstants
     const DRAFT_DOC_FINALIZE = '/draft/doc-finalize';
     # 查询已定稿的合同文件
     const DRAFT_GET_FINISHED_FILE = '/draft/get-finished-file';
+    # 查询发起的合同协商列表
+    const DRAFT_OWNER_GET_INITIATED_LIST = '/draft/owner/get-initiated-list';
+    # 查询参与的合同协商列表
+    const DRAFT_OWNER_GET_JOINED_LIST = '/draft/owner/get-joined-list';
 
 
     /**

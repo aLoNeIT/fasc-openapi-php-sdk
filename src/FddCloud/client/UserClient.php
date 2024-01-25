@@ -5,6 +5,7 @@ namespace FddCloud\client;
 use FddCloud\bean\req\user\DisableUserReq;
 use FddCloud\bean\req\user\EnableUserReq;
 use FddCloud\bean\req\user\GetUserAuthUrlReq;
+use FddCloud\bean\req\user\GetUserChangeUrlReq;
 use FddCloud\bean\req\user\GetUserIdentityInfoReq;
 use FddCloud\bean\req\user\GetUserReq;
 use FddCloud\bean\req\user\UnbindUserReq;
@@ -54,6 +55,11 @@ class UserClient
     function getIdentityInfo($accessToken, GetUserIdentityInfoReq $req)
     {
         return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::USER_GET_IDENTITY_INFO);
+    }
+
+    function getAccountChangeUrl($accessToken, GetUserChangeUrlReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::USER_ACCOUNT_NAME_GET_CHANGE_URL);
     }
 
 }

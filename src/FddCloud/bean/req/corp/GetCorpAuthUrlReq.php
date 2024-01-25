@@ -23,6 +23,7 @@ class GetCorpAuthUrlReq
     public $redirectUrl;
 
     public $redirectMiniAppUrl;
+    public $appDevelopInfo;
 
     /**
      * @return mixed
@@ -182,6 +183,22 @@ class GetCorpAuthUrlReq
     public function setRedirectMiniAppUrl($redirectMiniAppUrl)
     {
         $this->redirectMiniAppUrl = $redirectMiniAppUrl;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAppDevelopInfo()
+    {
+        return $this->appDevelopInfo;
+    }
+
+    /**
+     * @param mixed $appDevelopInfo
+     */
+    public function setAppDevelopInfo($appDevelopInfo)
+    {
+        $this->appDevelopInfo = $appDevelopInfo;
     }
 
 

@@ -212,19 +212,19 @@ class SignTaskClient
     # 查询签署完成的文件
     function signTaskGetFile($accessToken, SignTaskGetFileReq $req)
     {
-        return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::SIGN_TASK_OWNER_GET_FILE);
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::SIGN_TASK_OWNER_GET_FILE);
     }
 
     # 查询参与方证书文件
     function getActorCerInfo($accessToken, GetActorCerInfoReq $req)
     {
-        return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::SIGN_TASK_ACTOR_GET_CER_INFO);
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::SIGN_TASK_ACTOR_GET_CER_INFO);
     }
 
     # 获取签署文档下载地址
     function getOwnerDownloadUrl($accessToken, DownloadFilesReq $req)
     {
-        return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::SIGN_TASK_OWNER_GET_DOWNLOAD_URL);
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::SIGN_TASK_OWNER_GET_DOWNLOAD_URL);
     }
 
     # 签署文档切图

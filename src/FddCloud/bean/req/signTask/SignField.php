@@ -12,6 +12,9 @@ class SignField
 
     public $sealId;
 
+    /**
+     * @deprecated 弃用字段
+     */
     public $moveable;
 
     /**

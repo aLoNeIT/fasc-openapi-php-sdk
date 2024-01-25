@@ -3,6 +3,9 @@
 namespace FddCloud\client;
 use FddCloud\bean\req\draft\DocFinalizeReq;
 use FddCloud\bean\req\draft\DraftCreateReq;
+use FddCloud\bean\req\draft\DraftMembersAddReq;
+use FddCloud\bean\req\draft\GetDraftInitiatedListReq;
+use FddCloud\bean\req\draft\GetDraftJoinedListReq;
 use FddCloud\bean\req\draft\GetEditUrlReq;
 use FddCloud\bean\req\draft\GetFinishedFileReq;
 use FddCloud\bean\req\draft\GetInviteUrlReq;
@@ -23,6 +26,12 @@ class DraftClient
     function draftCreate($accessToken, DraftCreateReq $req)
     {
         return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::DRAFT_CREATE);
+    }
+
+    # 添加协商成员
+    function draftMembersAdd($accessToken, DraftMembersAddReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::DRAFT_MEMBERS_ADD);
     }
 
     # 获取合同协商邀请链接
@@ -53,5 +62,17 @@ class DraftClient
     function getDraftFinishedFile($accessToken,GetFinishedFileReq $req)
     {
         return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::DRAFT_GET_FINISHED_FILE);
+    }
+
+    # 查询发起的合同协商列表
+    function getDraftInitiatedList($accessToken,GetDraftInitiatedListReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::DRAFT_OWNER_GET_INITIATED_LIST);
+    }
+
+    # 查询参与的合同协商列表
+    function getDraftJoinedList($accessToken,GetDraftJoinedListReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::DRAFT_OWNER_GET_JOINED_LIST);
     }
 }

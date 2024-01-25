@@ -6,6 +6,8 @@ namespace FddCloud\bean\req\signTask;
 class CreateSignTaskReq extends CreateSignTaskBaseReq
 {
     public $signInOrder;
+    public $fileFormat;
+    public $isAllowInsertFile;
     public $docs;
     public $attachs;
 
@@ -23,6 +25,38 @@ class CreateSignTaskReq extends CreateSignTaskBaseReq
     public function setSignInOrder($signInOrder)
     {
         $this->signInOrder = $signInOrder;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFileFormat()
+    {
+        return $this->fileFormat;
+    }
+
+    /**
+     * @param mixed $fileFormat
+     */
+    public function setFileFormat($fileFormat)
+    {
+        $this->fileFormat = $fileFormat;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIsAllowInsertFile()
+    {
+        return $this->isAllowInsertFile;
+    }
+
+    /**
+     * @param mixed $isAllowInsertFile
+     */
+    public function setIsAllowInsertFile($isAllowInsertFile)
+    {
+        $this->isAllowInsertFile = $isAllowInsertFile;
     }
 
     /**

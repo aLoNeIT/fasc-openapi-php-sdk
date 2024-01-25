@@ -330,6 +330,8 @@ class Actor
 
     public $actorFDDId;
 
+    public $actorEntityId;
+
     public $actorCorpMembers;
 
     public $identNameForMatch;
@@ -340,6 +342,19 @@ class Actor
 
     public $accountName;
 
+    public $clientUserId;
+
+    public $authScopes;
+
+    public $sendNotification;
+
+    public $notifyType;
+
+    public $notifyAddress;
+
+    /**
+     * @deprecated 过时字段
+     */
     public $notification;
 
     /**
@@ -441,6 +456,22 @@ class Actor
     /**
      * @return mixed
      */
+    public function getActorEntityId()
+    {
+        return $this->actorEntityId;
+    }
+
+    /**
+     * @param mixed $actorEntityId
+     */
+    public function setActorEntityId($actorEntityId)
+    {
+        $this->actorEntityId = $actorEntityId;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getActorCorpMembers()
     {
         return $this->actorCorpMembers;
@@ -473,6 +504,22 @@ class Actor
     /**
      * @return mixed
      */
+    public function getCertType()
+    {
+        return $this->certType;
+    }
+
+    /**
+     * @param mixed $certType
+     */
+    public function setCertType($certType)
+    {
+        $this->certType = $certType;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getCertNoForMatch()
     {
         return $this->certNoForMatch;
@@ -484,6 +531,102 @@ class Actor
     public function setCertNoForMatch($certNoForMatch)
     {
         $this->certNoForMatch = $certNoForMatch;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAccountName()
+    {
+        return $this->accountName;
+    }
+
+    /**
+     * @param mixed $accountName
+     */
+    public function setAccountName($accountName)
+    {
+        $this->accountName = $accountName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getClientUserId()
+    {
+        return $this->clientUserId;
+    }
+
+    /**
+     * @param mixed $clientUserId
+     */
+    public function setClientUserId($clientUserId)
+    {
+        $this->clientUserId = $clientUserId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAuthScopes()
+    {
+        return $this->authScopes;
+    }
+
+    /**
+     * @param mixed $authScopes
+     */
+    public function setAuthScopes($authScopes)
+    {
+        $this->authScopes = $authScopes;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSendNotification()
+    {
+        return $this->sendNotification;
+    }
+
+    /**
+     * @param mixed $sendNotification
+     */
+    public function setSendNotification($sendNotification)
+    {
+        $this->sendNotification = $sendNotification;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNotifyType()
+    {
+        return $this->notifyType;
+    }
+
+    /**
+     * @param mixed $notifyType
+     */
+    public function setNotifyType($notifyType)
+    {
+        $this->notifyType = $notifyType;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNotifyAddress()
+    {
+        return $this->notifyAddress;
+    }
+
+    /**
+     * @param mixed $notifyAddress
+     */
+    public function setNotifyAddress($notifyAddress)
+    {
+        $this->notifyAddress = $notifyAddress;
     }
 
     /**
@@ -502,37 +645,7 @@ class Actor
         $this->notification = $notification;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getCertType()
-    {
-        return $this->certType;
-    }
 
-    /**
-     * @param mixed $certType
-     */
-    public function setCertType($certType)
-    {
-        $this->certType = $certType;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getAccountName()
-    {
-        return $this->accountName;
-    }
-
-    /**
-     * @param mixed $accountName
-     */
-    public function setAccountName($accountName)
-    {
-        $this->accountName = $accountName;
-    }
 
 
 }
@@ -1032,9 +1145,15 @@ class SignConfigInfo
 {
     public $orderNo;
 
+    public $freeDragSealId;
+
+    public $signAllDoc;
+
     public $blockHere;
 
     public $requestVerifyFree;
+
+    public $authorizeFreeSign;
 
     public $verifyMethods;
 
@@ -1072,6 +1191,54 @@ class SignConfigInfo
     public function setOrderNo($orderNo)
     {
         $this->orderNo = $orderNo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFreeDragSealId()
+    {
+        return $this->freeDragSealId;
+    }
+
+    /**
+     * @param mixed $freeDragSealId
+     */
+    public function setFreeDragSealId($freeDragSealId)
+    {
+        $this->freeDragSealId = $freeDragSealId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSignAllDoc()
+    {
+        return $this->signAllDoc;
+    }
+
+    /**
+     * @param mixed $signAllDoc
+     */
+    public function setSignAllDoc($signAllDoc)
+    {
+        $this->signAllDoc = $signAllDoc;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAuthorizeFreeSign()
+    {
+        return $this->authorizeFreeSign;
+    }
+
+    /**
+     * @param mixed $authorizeFreeSign
+     */
+    public function setAuthorizeFreeSign($authorizeFreeSign)
+    {
+        $this->authorizeFreeSign = $authorizeFreeSign;
     }
 
     /**
@@ -1370,6 +1537,9 @@ class Watermark
     public $content;
     public $fontSize;
     public $fontColor;
+    public $picBase64;
+    public $picWidth;
+    public $picHeight;
     public $rotation;
     public $transparency;
     public $position;
@@ -1437,6 +1607,54 @@ class Watermark
     public function setFontColor($fontColor)
     {
         $this->fontColor = $fontColor;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPicBase64()
+    {
+        return $this->picBase64;
+    }
+
+    /**
+     * @param mixed $picBase64
+     */
+    public function setPicBase64($picBase64)
+    {
+        $this->picBase64 = $picBase64;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPicWidth()
+    {
+        return $this->picWidth;
+    }
+
+    /**
+     * @param mixed $picWidth
+     */
+    public function setPicWidth($picWidth)
+    {
+        $this->picWidth = $picWidth;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPicHeight()
+    {
+        return $this->picHeight;
+    }
+
+    /**
+     * @param mixed $picHeight
+     */
+    public function setPicHeight($picHeight)
+    {
+        $this->picHeight = $picHeight;
     }
 
     /**
