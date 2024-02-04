@@ -328,7 +328,15 @@ class OpenApiUrlConstants
     # https://{appId}.e.fadada.com/authorize/list?authScopes={authScopes}&corpName={corpName}&clientCorpId={clientCorpId}&redirectUrl={URLEncode(Url)}&signature={signature}&timestamp={timestamp}
     # 6)获取计费链接
     const BILLING_GET_BILL_URL = '/billing/get-bill-url';
-
+    # 查询订单详情
+    const BILL_ACCOUNT_GET_ORDER_DETAIL = '/bill-account/get-order-detail';
     # 6)获取计费链接
     const BILLING_ACCOUNT_GET_USAGE_AVAILABLENUM = '/bill-account/get-usage-availablenum';
+    # 查询已购消耗类产品
+    const BILL_ACCOUNT_GET_USAGE_LIST = '/bill-account/get-usage-list';
+    # 查询使用汇总数据
+    const BILL_ACCOUNT_GET_BILL_SUMMARY_LIST = '/bill-account/get-bill-summary-list';
+    # 查询计费流水记录
+    const BILL_ACCOUNT_GET_BILL_LIST = '/bill-account/get-bill-list';
+
 }

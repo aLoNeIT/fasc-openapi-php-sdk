@@ -67,12 +67,12 @@ class DraftClient
     # 查询发起的合同协商列表
     function getDraftInitiatedList($accessToken,GetDraftInitiatedListReq $req)
     {
-        return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::DRAFT_OWNER_GET_INITIATED_LIST);
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::DRAFT_OWNER_GET_INITIATED_LIST);
     }
 
     # 查询参与的合同协商列表
     function getDraftJoinedList($accessToken,GetDraftJoinedListReq $req)
     {
-        return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::DRAFT_OWNER_GET_JOINED_LIST);
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::DRAFT_OWNER_GET_JOINED_LIST);
     }
 }

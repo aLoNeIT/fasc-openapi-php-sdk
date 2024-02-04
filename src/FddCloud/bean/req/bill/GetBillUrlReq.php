@@ -1,14 +1,29 @@
 <?php
 
 
-namespace FddCloud\bean\req\eui;
+namespace FddCloud\bean\req\bill;
 class GetBillUrlReq
 {
+    public $clientUserId;
     public $openId;
-
     public $urlType;
-
     public $redirectUrl;
+
+    /**
+     * @return mixed
+     */
+    public function getClientUserId()
+    {
+        return $this->clientUserId;
+    }
+
+    /**
+     * @param mixed $clientUserId
+     */
+    public function setClientUserId($clientUserId)
+    {
+        $this->clientUserId = $clientUserId;
+    }
 
     /**
      * @return mixed

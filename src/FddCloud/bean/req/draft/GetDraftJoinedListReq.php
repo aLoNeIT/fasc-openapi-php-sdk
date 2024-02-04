@@ -4,7 +4,7 @@ namespace FddCloud\bean\req\draft;
 class GetDraftJoinedListReq
 {
     public $openCorpId;
-    public $memberId;
+    public $joinedMemberId;
     public $listFilter;
     public $listPageNo;
     public $listPageSize;
@@ -28,17 +28,17 @@ class GetDraftJoinedListReq
     /**
      * @return mixed
      */
-    public function getMemberId()
+    public function getJoinedMemberId()
     {
-        return $this->memberId;
+        return $this->joinedMemberId;
     }
 
     /**
-     * @param mixed $memberId
+     * @param mixed $joinedMemberId
      */
-    public function setMemberId($memberId)
+    public function setJoinedMemberId($joinedMemberId)
     {
-        $this->memberId = $memberId;
+        $this->joinedMemberId = $joinedMemberId;
     }
 
     /**

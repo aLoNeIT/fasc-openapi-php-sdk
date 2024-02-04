@@ -1,5 +1,5 @@
 <?php
-namespace FddCloud\bean\req\eui;
+namespace FddCloud\bean\req\bill;
 class GetUsageAvailablenumReq
 {
     public $openCorpId;

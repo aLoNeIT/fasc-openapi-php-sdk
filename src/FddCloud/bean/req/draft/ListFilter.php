@@ -5,11 +5,8 @@ class ListFilter
 {
     public $contractSubject;
     public $contractStatus;
-
-    public function __construct()
-    {
-
-    }
+    public $startTime;
+    public $endTime;
 
     /**
      * @return mixed
@@ -41,6 +38,38 @@ class ListFilter
     public function setContractStatus($contractStatus)
     {
         $this->contractStatus = $contractStatus;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStartTime()
+    {
+        return $this->startTime;
+    }
+
+    /**
+     * @param mixed $startTime
+     */
+    public function setStartTime($startTime)
+    {
+        $this->startTime = $startTime;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEndTime()
+    {
+        return $this->endTime;
+    }
+
+    /**
+     * @param mixed $endTime
+     */
+    public function setEndTime($endTime)
+    {
+        $this->endTime = $endTime;
     }
 
 }
