@@ -6,6 +6,7 @@ class AppDevelopInfo
     public $createApp;
     public $appName;
     public $autocommit;
+    public $feedbackUrl;
 
     /**
      * @return mixed
@@ -55,5 +56,20 @@ class AppDevelopInfo
         $this->autocommit = $autocommit;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getFeedbackUrl()
+    {
+        return $this->feedbackUrl;
+    }
+
+    /**
+     * @param mixed $feedbackUrl
+     */
+    public function setFeedbackUrl($feedbackUrl)
+    {
+        $this->feedbackUrl = $feedbackUrl;
+    }
 
 }

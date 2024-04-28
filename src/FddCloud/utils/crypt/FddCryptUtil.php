@@ -14,7 +14,8 @@ class FddCryptUtil
         //计算签名
         $signText = strtolower(hash("sha256", $sortParam));
         $hash = hash_hmac("sha256", $timestamp, $appSecret, true);
-        return hash_hmac("sha256", $signText, $hash);
+        $sign = hash_hmac("sha256", $signText, $hash);
+        return $sign;
     }
 
     private function arrayParamToStr($array, $keys)

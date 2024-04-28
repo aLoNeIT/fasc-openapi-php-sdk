@@ -64,6 +64,7 @@ class OpenApiUrlConstants
     const CORP_GET_DETAIL = '/corp/get';
     const CORP_GET_IDENTITY_INFO = '/corp/get-identity-info';
     const CORP_GET_IDENTIFIED_STATUS = '/corp/get-identified-status';
+    const APP_DEVELOP_GET_LIST = '/app-develop/get-list';
 
     /**
      * OrgClient
@@ -87,6 +88,7 @@ class OpenApiUrlConstants
     const CORP_MEMBER_SET_DEPT = '/corp/member/set-dept';
     const CORP_MEMBER_SET_STATUS = '/corp/member/set-status';
     const CORP_MEMBER_DELETE = '/corp/member/delete';
+    const CORP_ROLE_GET_URL = '/corp/role/get-url';
     # 组织管理-相对方
     const COUNTERPART_GET_LIST = '/counterpart/get-list';
 
@@ -265,6 +267,7 @@ class OpenApiUrlConstants
     const SIGN_TASK_ADD_ATTACH = '/sign-task/attach/add';
     const SIGN_TASK_DELETE_ATTACH = '/sign-task/attach/delete';
     const SIGN_TASK_ADD_ACTOR = '/sign-task/actor/add';
+    const SIGN_TASK_ACTOR_REMOVE='/sign-task/actor/remove';
     const SIGN_TASK_DELETE_ACTOR = '/sign-task/actor/delete';
     const SIGN_TASK_ACTOR_MODIFY = '/sign-task/actor/modify';
     const SIGN_TASK_GET_EDIT_URL = '/sign-task/get-edit-url';

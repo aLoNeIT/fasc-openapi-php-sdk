@@ -28,6 +28,7 @@ use FddCloud\bean\req\signTask\GetSignTaskPicDocTicketReq;
 use FddCloud\bean\req\signTask\GetSignTaskSlicingDocReq;
 use FddCloud\bean\req\signTask\GetV3ActorSignTaskUrlReq;
 use FddCloud\bean\req\signTask\ModifyActorReq;
+use FddCloud\bean\req\signTask\SignTaskActorRemoveReq;
 use FddCloud\bean\req\signTask\SignTaskApplyReportReq;
 use FddCloud\bean\req\signTask\SignTaskBaseReq;
 use FddCloud\bean\req\signTask\SignTaskCancelReq;
@@ -117,6 +118,11 @@ class SignTaskClient
     function addActors($accessToken, AddActorsReq $req)
     {
         return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::SIGN_TASK_ADD_ACTOR);
+    }
+
+    function signTaskActorRemove($accessToken, SignTaskActorRemoveReq  $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::SIGN_TASK_ACTOR_REMOVE);
     }
 
     # 移除签署任务参与方

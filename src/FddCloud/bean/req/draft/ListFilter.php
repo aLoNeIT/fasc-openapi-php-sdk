@@ -3,10 +3,27 @@ namespace FddCloud\bean\req\draft;
 
 class ListFilter
 {
+    public $contractConsultId;
     public $contractSubject;
     public $contractStatus;
     public $startTime;
     public $endTime;
+
+    /**
+     * @return mixed
+     */
+    public function getContractConsultId()
+    {
+        return $this->contractConsultId;
+    }
+
+    /**
+     * @param mixed $contractConsultId
+     */
+    public function setContractConsultId($contractConsultId)
+    {
+        $this->contractConsultId = $contractConsultId;
+    }
 
     /**
      * @return mixed

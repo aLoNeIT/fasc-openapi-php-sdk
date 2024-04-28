@@ -790,7 +790,17 @@ class Field
 
     public $position;
 
+    public $moveable;
+
     public $fieldType;
+
+    public $fieldPersonSign;
+
+    public $fieldCorpSeal;
+
+    public $fieldDateSeal;
+
+    public $fieldRemarkSign;
 
     public $fieldTextSingleLine;
 
@@ -806,7 +816,11 @@ class Field
 
     public $fieldMultiCheckbox;
 
-    public $fieldCheckBox;
+    public $fieldPicture;
+
+    public $fieldSelectBox;
+
+    public $fieldTable;
 
     /**
      * @return mixed
@@ -1003,17 +1017,387 @@ class Field
     /**
      * @return mixed
      */
-    public function getFieldCheckBox()
+    public function getFieldSelectBox()
     {
-        return $this->fieldCheckBox;
+        return $this->fieldSelectBox;
     }
 
     /**
-     * @param mixed $fieldCheckBox
+     * @param mixed $fieldSelectBox
      */
-    public function setFieldCheckBox($fieldCheckBox)
+    public function setFieldSelectBox($fieldSelectBox)
     {
-        $this->fieldCheckBox = $fieldCheckBox;
+        $this->fieldSelectBox = $fieldSelectBox;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMoveable()
+    {
+        return $this->moveable;
+    }
+
+    /**
+     * @param mixed $moveable
+     */
+    public function setMoveable($moveable)
+    {
+        $this->moveable = $moveable;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFieldPersonSign()
+    {
+        return $this->fieldPersonSign;
+    }
+
+    /**
+     * @param mixed $fieldPersonSign
+     */
+    public function setFieldPersonSign($fieldPersonSign)
+    {
+        $this->fieldPersonSign = $fieldPersonSign;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFieldCorpSeal()
+    {
+        return $this->fieldCorpSeal;
+    }
+
+    /**
+     * @param mixed $fieldCorpSeal
+     */
+    public function setFieldCorpSeal($fieldCorpSeal)
+    {
+        $this->fieldCorpSeal = $fieldCorpSeal;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFieldDateSeal()
+    {
+        return $this->fieldDateSeal;
+    }
+
+    /**
+     * @param mixed $fieldDateSeal
+     */
+    public function setFieldDateSeal($fieldDateSeal)
+    {
+        $this->fieldDateSeal = $fieldDateSeal;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFieldRemarkSign()
+    {
+        return $this->fieldRemarkSign;
+    }
+
+    /**
+     * @param mixed $fieldRemarkSign
+     */
+    public function setFieldRemarkSign($fieldRemarkSign)
+    {
+        $this->fieldRemarkSign = $fieldRemarkSign;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFieldPicture()
+    {
+        return $this->fieldPicture;
+    }
+
+    /**
+     * @param mixed $fieldPicture
+     */
+    public function setFieldPicture($fieldPicture)
+    {
+        $this->fieldPicture = $fieldPicture;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFieldTable()
+    {
+        return $this->fieldTable;
+    }
+
+    /**
+     * @param mixed $fieldTable
+     */
+    public function setFieldTable($fieldTable)
+    {
+        $this->fieldTable = $fieldTable;
+    }
+
+}
+
+class FieldPersonSign
+{
+    public $width;
+    public $height;
+
+    /**
+     * @return mixed
+     */
+    public function getWidth()
+    {
+        return $this->width;
+    }
+
+    /**
+     * @param mixed $width
+     */
+    public function setWidth($width)
+    {
+        $this->width = $width;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHeight()
+    {
+        return $this->height;
+    }
+
+    /**
+     * @param mixed $height
+     */
+    public function setHeight($height)
+    {
+        $this->height = $height;
+    }
+
+}
+
+class FieldCorpSeal
+{
+    public $width;
+    public $height;
+    public $categoryType;
+
+    /**
+     * @return mixed
+     */
+    public function getWidth()
+    {
+        return $this->width;
+    }
+
+    /**
+     * @param mixed $width
+     */
+    public function setWidth($width)
+    {
+        $this->width = $width;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHeight()
+    {
+        return $this->height;
+    }
+
+    /**
+     * @param mixed $height
+     */
+    public function setHeight($height)
+    {
+        $this->height = $height;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCategoryType()
+    {
+        return $this->categoryType;
+    }
+
+    /**
+     * @param mixed $categoryType
+     */
+    public function setCategoryType($categoryType)
+    {
+        $this->categoryType = $categoryType;
+    }
+
+}
+
+class FieldDateSign
+{
+    public $dateFormat;
+    public $fontSize;
+
+    /**
+     * @return mixed
+     */
+    public function getDateFormat()
+    {
+        return $this->dateFormat;
+    }
+
+    /**
+     * @param mixed $dateFormat
+     */
+    public function setDateFormat($dateFormat)
+    {
+        $this->dateFormat = $dateFormat;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFontSize()
+    {
+        return $this->fontSize;
+    }
+
+    /**
+     * @param mixed $fontSize
+     */
+    public function setFontSize($fontSize)
+    {
+        $this->fontSize = $fontSize;
+    }
+
+}
+
+class FieldRemarkSign
+{
+    public $defaultValue;
+    public $tips;
+    public $editable;
+    public $width;
+    public $height;
+    public $fontType;
+    public $fontSize;
+
+    /**
+     * @return mixed
+     */
+    public function getDefaultValue()
+    {
+        return $this->defaultValue;
+    }
+
+    /**
+     * @param mixed $defaultValue
+     */
+    public function setDefaultValue($defaultValue)
+    {
+        $this->defaultValue = $defaultValue;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTips()
+    {
+        return $this->tips;
+    }
+
+    /**
+     * @param mixed $tips
+     */
+    public function setTips($tips)
+    {
+        $this->tips = $tips;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEditable()
+    {
+        return $this->editable;
+    }
+
+    /**
+     * @param mixed $editable
+     */
+    public function setEditable($editable)
+    {
+        $this->editable = $editable;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getWidth()
+    {
+        return $this->width;
+    }
+
+    /**
+     * @param mixed $width
+     */
+    public function setWidth($width)
+    {
+        $this->width = $width;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHeight()
+    {
+        return $this->height;
+    }
+
+    /**
+     * @param mixed $height
+     */
+    public function setHeight($height)
+    {
+        $this->height = $height;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFontType()
+    {
+        return $this->fontType;
+    }
+
+    /**
+     * @param mixed $fontType
+     */
+    public function setFontType($fontType)
+    {
+        $this->fontType = $fontType;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFontSize()
+    {
+        return $this->fontSize;
+    }
+
+    /**
+     * @param mixed $fontSize
+     */
+    public function setFontSize($fontSize)
+    {
+        $this->fontSize = $fontSize;
     }
 
 }
@@ -1021,560 +1405,142 @@ class Field
 class FieldTextSingleLine
 {
     public $required;
-
     public $defaultValue;
-
-    /**
-     * @return mixed
-     */
-    public function getRequired()
-    {
-        return $this->required;
-    }
-
-    /**
-     * @param mixed $required
-     */
-    public function setRequired($required)
-    {
-        $this->required = $required;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDefaultValue()
-    {
-        return $this->defaultValue;
-    }
-
-    /**
-     * @param mixed $defaultValue
-     */
-    public function setDefaultValue($defaultValue)
-    {
-        $this->defaultValue = $defaultValue;
-    }
-
-
-}
-
-class FieldTextMultiLine
-{
-    public $required;
-
-    public $defaultValue;
-
-    /**
-     * @return mixed
-     */
-    public function getRequired()
-    {
-        return $this->required;
-    }
-
-    /**
-     * @param mixed $required
-     */
-    public function setRequired($required)
-    {
-        $this->required = $required;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDefaultValue()
-    {
-        return $this->defaultValue;
-    }
-
-    /**
-     * @param mixed $defaultValue
-     */
-    public function setDefaultValue($defaultValue)
-    {
-        $this->defaultValue = $defaultValue;
-    }
-
-
-}
-
-class FieldCheckBox
-{
-    public $required;
-
-    public $defaultValue;
-
-    /**
-     * @return mixed
-     */
-    public function getRequired()
-    {
-        return $this->required;
-    }
-
-    /**
-     * @param mixed $required
-     */
-    public function setRequired($required)
-    {
-        $this->required = $required;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDefaultValue()
-    {
-        return $this->defaultValue;
-    }
-
-    /**
-     * @param mixed $defaultValue
-     */
-    public function setDefaultValue($defaultValue)
-    {
-        $this->defaultValue = $defaultValue;
-    }
-
-
-}
-
-class SignConfigInfo
-{
-    public $orderNo;
-
-    public $freeDragSealId;
-
-    public $signAllDoc;
-
-    public $blockHere;
-
-    public $requestVerifyFree;
-
-    public $authorizeFreeSign;
-
-    public $verifyMethods;
-
-    public $audioVideoInfo;
-
-    public $requestMemberSign;
-
-    public $signerSignMethod;
-
-    public $joinByLink;
-
-    public $readingToEnd;
-
-    public $readingTime;
-
-    public $freeLogin;
-
-    public $identifiedView;
-
-    public $resizeSeal;
-
-    public $actorAttachInfos;
-
-    /**
-     * @return mixed
-     */
-    public function getOrderNo()
-    {
-        return $this->orderNo;
-    }
-
-    /**
-     * @param mixed $orderNo
-     */
-    public function setOrderNo($orderNo)
-    {
-        $this->orderNo = $orderNo;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getFreeDragSealId()
-    {
-        return $this->freeDragSealId;
-    }
-
-    /**
-     * @param mixed $freeDragSealId
-     */
-    public function setFreeDragSealId($freeDragSealId)
-    {
-        $this->freeDragSealId = $freeDragSealId;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getSignAllDoc()
-    {
-        return $this->signAllDoc;
-    }
-
-    /**
-     * @param mixed $signAllDoc
-     */
-    public function setSignAllDoc($signAllDoc)
-    {
-        $this->signAllDoc = $signAllDoc;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getAuthorizeFreeSign()
-    {
-        return $this->authorizeFreeSign;
-    }
-
-    /**
-     * @param mixed $authorizeFreeSign
-     */
-    public function setAuthorizeFreeSign($authorizeFreeSign)
-    {
-        $this->authorizeFreeSign = $authorizeFreeSign;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getBlockHere()
-    {
-        return $this->blockHere;
-    }
-
-    /**
-     * @param mixed $blockHere
-     */
-    public function setBlockHere($blockHere)
-    {
-        $this->blockHere = $blockHere;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getRequestVerifyFree()
-    {
-        return $this->requestVerifyFree;
-    }
-
-    /**
-     * @param mixed $requestVerifyFree
-     */
-    public function setRequestVerifyFree($requestVerifyFree)
-    {
-        $this->requestVerifyFree = $requestVerifyFree;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getVerifyMethods()
-    {
-        return $this->verifyMethods;
-    }
-
-    /**
-     * @param mixed $verifyMethods
-     */
-    public function setVerifyMethods($verifyMethods)
-    {
-        $this->verifyMethods = $verifyMethods;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getAudioVideoInfo()
-    {
-        return $this->audioVideoInfo;
-    }
-
-    /**
-     * @param mixed $audioVideoInfo
-     */
-    public function setAudioVideoInfo($audioVideoInfo)
-    {
-        $this->audioVideoInfo = $audioVideoInfo;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getRequestMemberSign()
-    {
-        return $this->requestMemberSign;
-    }
-
-    /**
-     * @param mixed $requestMemberSign
-     */
-    public function setRequestMemberSign($requestMemberSign)
-    {
-        $this->requestMemberSign = $requestMemberSign;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getSignerSignMethod()
-    {
-        return $this->signerSignMethod;
-    }
-
-    /**
-     * @param mixed $signerSignMethod
-     */
-    public function setSignerSignMethod($signerSignMethod)
-    {
-        $this->signerSignMethod = $signerSignMethod;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getJoinByLink()
-    {
-        return $this->joinByLink;
-    }
-
-    /**
-     * @param mixed $joinByLink
-     */
-    public function setJoinByLink($joinByLink)
-    {
-        $this->joinByLink = $joinByLink;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getReadingToEnd()
-    {
-        return $this->readingToEnd;
-    }
-
-    /**
-     * @param mixed $readingToEnd
-     */
-    public function setReadingToEnd($readingToEnd)
-    {
-        $this->readingToEnd = $readingToEnd;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getReadingTime()
-    {
-        return $this->readingTime;
-    }
-
-    /**
-     * @param mixed $readingTime
-     */
-    public function setReadingTime($readingTime)
-    {
-        $this->readingTime = $readingTime;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getFreeLogin()
-    {
-        return $this->freeLogin;
-    }
-
-    /**
-     * @param mixed $freeLogin
-     */
-    public function setFreeLogin($freeLogin)
-    {
-        $this->freeLogin = $freeLogin;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getIdentifiedView()
-    {
-        return $this->identifiedView;
-    }
-
-    /**
-     * @param mixed $identifiedView
-     */
-    public function setIdentifiedView($identifiedView)
-    {
-        $this->identifiedView = $identifiedView;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getResizeSeal()
-    {
-        return $this->resizeSeal;
-    }
-
-    /**
-     * @param mixed $resizeSeal
-     */
-    public function setResizeSeal($resizeSeal)
-    {
-        $this->resizeSeal = $resizeSeal;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getActorAttachInfos()
-    {
-        return $this->actorAttachInfos;
-    }
-
-    /**
-     * @param mixed $actorAttachInfos
-     */
-    public function setActorAttachInfos($actorAttachInfos)
-    {
-        $this->actorAttachInfos = $actorAttachInfos;
-    }
-
-
-}
-
-class ActorAttachInfo
-{
-    public $actorAttachName;
-    public $required;
-
-    /**
-     * @return mixed
-     */
-    public function getActorAttachName()
-    {
-        return $this->actorAttachName;
-    }
-
-    /**
-     * @param mixed $actorAttachName
-     */
-    public function setActorAttachName($actorAttachName)
-    {
-        $this->actorAttachName = $actorAttachName;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getRequired()
-    {
-        return $this->required;
-    }
-
-    /**
-     * @param mixed $required
-     */
-    public function setRequired($required)
-    {
-        $this->required = $required;
-    }
-
-
-}
-
-class AbolishedInitiator
-{
-    public $initiatorId;
-    public $actorId;
-
-    /**
-     * @return mixed
-     */
-    public function getInitiatorId()
-    {
-        return $this->initiatorId;
-    }
-
-    /**
-     * @param mixed $initiatorId
-     */
-    public function setInitiatorId($initiatorId)
-    {
-        $this->initiatorId = $initiatorId;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getActorId()
-    {
-        return $this->actorId;
-    }
-
-    /**
-     * @param mixed $actorId
-     */
-    public function setActorId($actorId)
-    {
-        $this->actorId = $actorId;
-    }
-
-}
-
-class Watermark
-{
-    public $type;
-    public $content;
+    public $autofill;
+    public $autofillInfo;
+    public $tips;
+    public $width;
+    public $height;
+    public $fontType;
     public $fontSize;
-    public $fontColor;
-    public $picBase64;
-    public $picWidth;
-    public $picHeight;
-    public $rotation;
-    public $transparency;
-    public $position;
-    public $density;
+    public $alignment;
 
     /**
      * @return mixed
      */
-    public function getType()
+    public function getRequired()
     {
-        return $this->type;
+        return $this->required;
     }
 
     /**
-     * @param mixed $type
+     * @param mixed $required
      */
-    public function setType($type)
+    public function setRequired($required)
     {
-        $this->type = $type;
+        $this->required = $required;
     }
 
     /**
      * @return mixed
      */
-    public function getContent()
+    public function getDefaultValue()
     {
-        return $this->content;
+        return $this->defaultValue;
     }
 
     /**
-     * @param mixed $content
+     * @param mixed $defaultValue
      */
-    public function setContent($content)
+    public function setDefaultValue($defaultValue)
     {
-        $this->content = $content;
+        $this->defaultValue = $defaultValue;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAutofill()
+    {
+        return $this->autofill;
+    }
+
+    /**
+     * @param mixed $autofill
+     */
+    public function setAutofill($autofill)
+    {
+        $this->autofill = $autofill;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAutofillInfo()
+    {
+        return $this->autofillInfo;
+    }
+
+    /**
+     * @param mixed $autofillInfo
+     */
+    public function setAutofillInfo($autofillInfo)
+    {
+        $this->autofillInfo = $autofillInfo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTips()
+    {
+        return $this->tips;
+    }
+
+    /**
+     * @param mixed $tips
+     */
+    public function setTips($tips)
+    {
+        $this->tips = $tips;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getWidth()
+    {
+        return $this->width;
+    }
+
+    /**
+     * @param mixed $width
+     */
+    public function setWidth($width)
+    {
+        $this->width = $width;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHeight()
+    {
+        return $this->height;
+    }
+
+    /**
+     * @param mixed $height
+     */
+    public function setHeight($height)
+    {
+        $this->height = $height;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFontType()
+    {
+        return $this->fontType;
+    }
+
+    /**
+     * @param mixed $fontType
+     */
+    public function setFontType($fontType)
+    {
+        $this->fontType = $fontType;
     }
 
     /**
@@ -1596,187 +1562,1186 @@ class Watermark
     /**
      * @return mixed
      */
-    public function getFontColor()
+    public function getAlignment()
     {
-        return $this->fontColor;
+        return $this->alignment;
     }
 
     /**
-     * @param mixed $fontColor
+     * @param mixed $alignment
      */
-    public function setFontColor($fontColor)
+    public function setAlignment($alignment)
     {
-        $this->fontColor = $fontColor;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPicBase64()
-    {
-        return $this->picBase64;
-    }
-
-    /**
-     * @param mixed $picBase64
-     */
-    public function setPicBase64($picBase64)
-    {
-        $this->picBase64 = $picBase64;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPicWidth()
-    {
-        return $this->picWidth;
-    }
-
-    /**
-     * @param mixed $picWidth
-     */
-    public function setPicWidth($picWidth)
-    {
-        $this->picWidth = $picWidth;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPicHeight()
-    {
-        return $this->picHeight;
-    }
-
-    /**
-     * @param mixed $picHeight
-     */
-    public function setPicHeight($picHeight)
-    {
-        $this->picHeight = $picHeight;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getRotation()
-    {
-        return $this->rotation;
-    }
-
-    /**
-     * @param mixed $rotation
-     */
-    public function setRotation($rotation)
-    {
-        $this->rotation = $rotation;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTransparency()
-    {
-        return $this->transparency;
-    }
-
-    /**
-     * @param mixed $transparency
-     */
-    public function setTransparency($transparency)
-    {
-        $this->transparency = $transparency;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPosition()
-    {
-        return $this->position;
-    }
-
-    /**
-     * @param mixed $position
-     */
-    public function setPosition($position)
-    {
-        $this->position = $position;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDensity()
-    {
-        return $this->density;
-    }
-
-    /**
-     * @param mixed $density
-     */
-    public function setDensity($density)
-    {
-        $this->density = $density;
+        $this->alignment = $alignment;
     }
 
 }
 
-class DocFieldFillValue
+class FieldTextMultiLine
 {
-    public $fieldId;
-
-    public $fieldName;
-
-    public $fieldValue;
-
-    /**
-     * @return mixed
-     */
-    public function getFieldId()
-    {
-        return $this->fieldId;
-    }
-
-    /**
-     * @param mixed $fieldId
-     */
-    public function setFieldId($fieldId)
-    {
-        $this->fieldId = $fieldId;
-    }
+    public $required;
+    public $defaultValue;
+    public $tips;
+    public $width;
+    public $height;
+    public $fontType;
+    public $fontSize;
+    public $alignment;
 
     /**
      * @return mixed
      */
-    public function getFieldName()
+    public function getRequired()
     {
-        return $this->fieldName;
+        return $this->required;
     }
 
     /**
-     * @param mixed $fieldName
+     * @param mixed $required
      */
-    public function setFieldName($fieldName)
+    public function setRequired($required)
     {
-        $this->fieldName = $fieldName;
+        $this->required = $required;
     }
 
     /**
      * @return mixed
      */
-    public function getFieldValue()
+    public function getDefaultValue()
     {
-        return $this->fieldValue;
+        return $this->defaultValue;
     }
 
     /**
-     * @param mixed $fieldValue
+     * @param mixed $defaultValue
      */
-    public function setFieldValue($fieldValue)
+    public function setDefaultValue($defaultValue)
     {
-        $this->fieldValue = $fieldValue;
+        $this->defaultValue = $defaultValue;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTips()
+    {
+        return $this->tips;
+    }
+
+    /**
+     * @param mixed $tips
+     */
+    public function setTips($tips)
+    {
+        $this->tips = $tips;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getWidth()
+    {
+        return $this->width;
+    }
+
+    /**
+     * @param mixed $width
+     */
+    public function setWidth($width)
+    {
+        $this->width = $width;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHeight()
+    {
+        return $this->height;
+    }
+
+    /**
+     * @param mixed $height
+     */
+    public function setHeight($height)
+    {
+        $this->height = $height;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFontType()
+    {
+        return $this->fontType;
+    }
+
+    /**
+     * @param mixed $fontType
+     */
+    public function setFontType($fontType)
+    {
+        $this->fontType = $fontType;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFontSize()
+    {
+        return $this->fontSize;
+    }
+
+    /**
+     * @param mixed $fontSize
+     */
+    public function setFontSize($fontSize)
+    {
+        $this->fontSize = $fontSize;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAlignment()
+    {
+        return $this->alignment;
+    }
+
+    /**
+     * @param mixed $alignment
+     */
+    public function setAlignment($alignment)
+    {
+        $this->alignment = $alignment;
+    }
+
+}
+
+class FieldNumber
+{
+    public $required;
+    public $defaultValue;
+    public $tips;
+    public $width;
+    public $height;
+    public $fontType;
+    public $fontSize;
+    public $alignment;
+
+    /**
+     * @return mixed
+     */
+    public function getRequired()
+    {
+        return $this->required;
+    }
+
+    /**
+     * @param mixed $required
+     */
+    public function setRequired($required)
+    {
+        $this->required = $required;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDefaultValue()
+    {
+        return $this->defaultValue;
+    }
+
+    /**
+     * @param mixed $defaultValue
+     */
+    public function setDefaultValue($defaultValue)
+    {
+        $this->defaultValue = $defaultValue;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTips()
+    {
+        return $this->tips;
+    }
+
+    /**
+     * @param mixed $tips
+     */
+    public function setTips($tips)
+    {
+        $this->tips = $tips;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getWidth()
+    {
+        return $this->width;
+    }
+
+    /**
+     * @param mixed $width
+     */
+    public function setWidth($width)
+    {
+        $this->width = $width;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHeight()
+    {
+        return $this->height;
+    }
+
+    /**
+     * @param mixed $height
+     */
+    public function setHeight($height)
+    {
+        $this->height = $height;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFontType()
+    {
+        return $this->fontType;
+    }
+
+    /**
+     * @param mixed $fontType
+     */
+    public function setFontType($fontType)
+    {
+        $this->fontType = $fontType;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFontSize()
+    {
+        return $this->fontSize;
+    }
+
+    /**
+     * @param mixed $fontSize
+     */
+    public function setFontSize($fontSize)
+    {
+        $this->fontSize = $fontSize;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAlignment()
+    {
+        return $this->alignment;
+    }
+
+    /**
+     * @param mixed $alignment
+     */
+    public function setAlignment($alignment)
+    {
+        $this->alignment = $alignment;
+    }
+
+}
+
+class FieldIdCard
+{
+    public $required;
+    public $defaultValue;
+    public $autofill;
+    public $tips;
+    public $width;
+    public $height;
+    public $fontType;
+    public $fontSize;
+    public $alignment;
+
+    /**
+     * @return mixed
+     */
+    public function getRequired()
+    {
+        return $this->required;
+    }
+
+    /**
+     * @param mixed $required
+     */
+    public function setRequired($required)
+    {
+        $this->required = $required;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDefaultValue()
+    {
+        return $this->defaultValue;
+    }
+
+    /**
+     * @param mixed $defaultValue
+     */
+    public function setDefaultValue($defaultValue)
+    {
+        $this->defaultValue = $defaultValue;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAutofill()
+    {
+        return $this->autofill;
+    }
+
+    /**
+     * @param mixed $autofill
+     */
+    public function setAutofill($autofill)
+    {
+        $this->autofill = $autofill;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTips()
+    {
+        return $this->tips;
+    }
+
+    /**
+     * @param mixed $tips
+     */
+    public function setTips($tips)
+    {
+        $this->tips = $tips;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getWidth()
+    {
+        return $this->width;
+    }
+
+    /**
+     * @param mixed $width
+     */
+    public function setWidth($width)
+    {
+        $this->width = $width;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHeight()
+    {
+        return $this->height;
+    }
+
+    /**
+     * @param mixed $height
+     */
+    public function setHeight($height)
+    {
+        $this->height = $height;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFontType()
+    {
+        return $this->fontType;
+    }
+
+    /**
+     * @param mixed $fontType
+     */
+    public function setFontType($fontType)
+    {
+        $this->fontType = $fontType;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFontSize()
+    {
+        return $this->fontSize;
+    }
+
+    /**
+     * @param mixed $fontSize
+     */
+    public function setFontSize($fontSize)
+    {
+        $this->fontSize = $fontSize;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAlignment()
+    {
+        return $this->alignment;
+    }
+
+    /**
+     * @param mixed $alignment
+     */
+    public function setAlignment($alignment)
+    {
+        $this->alignment = $alignment;
+    }
+
+}
+
+class FieldFillDate
+{
+    public $required;
+    public $defaultValue;
+    public $dateFormat;
+    public $width;
+    public $height;
+    public $fontType;
+    public $fontSize;
+    public $alignment;
+
+    /**
+     * @return mixed
+     */
+    public function getRequired()
+    {
+        return $this->required;
+    }
+
+    /**
+     * @param mixed $required
+     */
+    public function setRequired($required)
+    {
+        $this->required = $required;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDefaultValue()
+    {
+        return $this->defaultValue;
+    }
+
+    /**
+     * @param mixed $defaultValue
+     */
+    public function setDefaultValue($defaultValue)
+    {
+        $this->defaultValue = $defaultValue;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDateFormat()
+    {
+        return $this->dateFormat;
+    }
+
+    /**
+     * @param mixed $dateFormat
+     */
+    public function setDateFormat($dateFormat)
+    {
+        $this->dateFormat = $dateFormat;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getWidth()
+    {
+        return $this->width;
+    }
+
+    /**
+     * @param mixed $width
+     */
+    public function setWidth($width)
+    {
+        $this->width = $width;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHeight()
+    {
+        return $this->height;
+    }
+
+    /**
+     * @param mixed $height
+     */
+    public function setHeight($height)
+    {
+        $this->height = $height;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFontType()
+    {
+        return $this->fontType;
+    }
+
+    /**
+     * @param mixed $fontType
+     */
+    public function setFontType($fontType)
+    {
+        $this->fontType = $fontType;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFontSize()
+    {
+        return $this->fontSize;
+    }
+
+    /**
+     * @param mixed $fontSize
+     */
+    public function setFontSize($fontSize)
+    {
+        $this->fontSize = $fontSize;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAlignment()
+    {
+        return $this->alignment;
+    }
+
+    /**
+     * @param mixed $alignment
+     */
+    public function setAlignment($alignment)
+    {
+        $this->alignment = $alignment;
+    }
+
+}
+
+class FieldMultiRadio
+{
+    public $required;
+    public $option;
+    public $defaultValue;
+
+    /**
+     * @return mixed
+     */
+    public function getRequired()
+    {
+        return $this->required;
+    }
+
+    /**
+     * @param mixed $required
+     */
+    public function setRequired($required)
+    {
+        $this->required = $required;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOption()
+    {
+        return $this->option;
+    }
+
+    /**
+     * @param mixed $option
+     */
+    public function setOption($option)
+    {
+        $this->option = $option;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDefaultValue()
+    {
+        return $this->defaultValue;
+    }
+
+    /**
+     * @param mixed $defaultValue
+     */
+    public function setDefaultValue($defaultValue)
+    {
+        $this->defaultValue = $defaultValue;
+    }
+
+}
+
+class FieldMultiCheckbox
+{
+    public $required;
+
+    public $option;
+
+    public $defaultValue;
+
+    /**
+     * @return mixed
+     */
+    public function getRequired()
+    {
+        return $this->required;
+    }
+
+    /**
+     * @param mixed $required
+     */
+    public function setRequired($required)
+    {
+        $this->required = $required;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOption()
+    {
+        return $this->option;
+    }
+
+    /**
+     * @param mixed $option
+     */
+    public function setOption($option)
+    {
+        $this->option = $option;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDefaultValue()
+    {
+        return $this->defaultValue;
+    }
+
+    /**
+     * @param mixed $defaultValue
+     */
+    public function setDefaultValue($defaultValue)
+    {
+        $this->defaultValue = $defaultValue;
+    }
+
+}
+
+class FieldPicture
+{
+    public $required;
+    public $defaultValue;
+    public $width;
+    public $height;
+
+    /**
+     * @return mixed
+     */
+    public function getRequired()
+    {
+        return $this->required;
+    }
+
+    /**
+     * @param mixed $required
+     */
+    public function setRequired($required)
+    {
+        $this->required = $required;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDefaultValue()
+    {
+        return $this->defaultValue;
+    }
+
+    /**
+     * @param mixed $defaultValue
+     */
+    public function setDefaultValue($defaultValue)
+    {
+        $this->defaultValue = $defaultValue;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getWidth()
+    {
+        return $this->width;
+    }
+
+    /**
+     * @param mixed $width
+     */
+    public function setWidth($width)
+    {
+        $this->width = $width;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHeight()
+    {
+        return $this->height;
+    }
+
+    /**
+     * @param mixed $height
+     */
+    public function setHeight($height)
+    {
+        $this->height = $height;
+    }
+
+}
+
+class FieldSelectBox
+{
+    public $required;
+    public $option;
+    public $defaultValue;
+    public $tips;
+    public $width;
+    public $height;
+    public $fontType;
+    public $fontSize;
+    public $alignment;
+
+    /**
+     * @return mixed
+     */
+    public function getRequired()
+    {
+        return $this->required;
+    }
+
+    /**
+     * @param mixed $required
+     */
+    public function setRequired($required)
+    {
+        $this->required = $required;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOption()
+    {
+        return $this->option;
+    }
+
+    /**
+     * @param mixed $option
+     */
+    public function setOption($option)
+    {
+        $this->option = $option;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDefaultValue()
+    {
+        return $this->defaultValue;
+    }
+
+    /**
+     * @param mixed $defaultValue
+     */
+    public function setDefaultValue($defaultValue)
+    {
+        $this->defaultValue = $defaultValue;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTips()
+    {
+        return $this->tips;
+    }
+
+    /**
+     * @param mixed $tips
+     */
+    public function setTips($tips)
+    {
+        $this->tips = $tips;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getWidth()
+    {
+        return $this->width;
+    }
+
+    /**
+     * @param mixed $width
+     */
+    public function setWidth($width)
+    {
+        $this->width = $width;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHeight()
+    {
+        return $this->height;
+    }
+
+    /**
+     * @param mixed $height
+     */
+    public function setHeight($height)
+    {
+        $this->height = $height;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFontType()
+    {
+        return $this->fontType;
+    }
+
+    /**
+     * @param mixed $fontType
+     */
+    public function setFontType($fontType)
+    {
+        $this->fontType = $fontType;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFontSize()
+    {
+        return $this->fontSize;
+    }
+
+    /**
+     * @param mixed $fontSize
+     */
+    public function setFontSize($fontSize)
+    {
+        $this->fontSize = $fontSize;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAlignment()
+    {
+        return $this->alignment;
+    }
+
+    /**
+     * @param mixed $alignment
+     */
+    public function setAlignment($alignment)
+    {
+        $this->alignment = $alignment;
+    }
+
+}
+
+class FieldTable
+{
+    public $required;
+    public $header;
+    public $requiredCount;
+    public $fontType;
+    public $fontSize;
+    public $alignment;
+    public $headerPosition;
+    public $rows;
+    public $cols;
+    public $rowHeight;
+    public $widths;
+    public $dynamicFilling;
+    public $defaultValue;
+    public $hideHeader;
+
+    /**
+     * @return mixed
+     */
+    public function getRequired()
+    {
+        return $this->required;
+    }
+
+    /**
+     * @param mixed $required
+     */
+    public function setRequired($required)
+    {
+        $this->required = $required;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHeader()
+    {
+        return $this->header;
+    }
+
+    /**
+     * @param mixed $header
+     */
+    public function setHeader($header)
+    {
+        $this->header = $header;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRequiredCount()
+    {
+        return $this->requiredCount;
+    }
+
+    /**
+     * @param mixed $requiredCount
+     */
+    public function setRequiredCount($requiredCount)
+    {
+        $this->requiredCount = $requiredCount;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFontType()
+    {
+        return $this->fontType;
+    }
+
+    /**
+     * @param mixed $fontType
+     */
+    public function setFontType($fontType)
+    {
+        $this->fontType = $fontType;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFontSize()
+    {
+        return $this->fontSize;
+    }
+
+    /**
+     * @param mixed $fontSize
+     */
+    public function setFontSize($fontSize)
+    {
+        $this->fontSize = $fontSize;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAlignment()
+    {
+        return $this->alignment;
+    }
+
+    /**
+     * @param mixed $alignment
+     */
+    public function setAlignment($alignment)
+    {
+        $this->alignment = $alignment;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHeaderPosition()
+    {
+        return $this->headerPosition;
+    }
+
+    /**
+     * @param mixed $headerPosition
+     */
+    public function setHeaderPosition($headerPosition)
+    {
+        $this->headerPosition = $headerPosition;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRows()
+    {
+        return $this->rows;
+    }
+
+    /**
+     * @param mixed $rows
+     */
+    public function setRows($rows)
+    {
+        $this->rows = $rows;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCols()
+    {
+        return $this->cols;
+    }
+
+    /**
+     * @param mixed $cols
+     */
+    public function setCols($cols)
+    {
+        $this->cols = $cols;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRowHeight()
+    {
+        return $this->rowHeight;
+    }
+
+    /**
+     * @param mixed $rowHeight
+     */
+    public function setRowHeight($rowHeight)
+    {
+        $this->rowHeight = $rowHeight;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getWidths()
+    {
+        return $this->widths;
+    }
+
+    /**
+     * @param mixed $widths
+     */
+    public function setWidths($widths)
+    {
+        $this->widths = $widths;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDynamicFilling()
+    {
+        return $this->dynamicFilling;
+    }
+
+    /**
+     * @param mixed $dynamicFilling
+     */
+    public function setDynamicFilling($dynamicFilling)
+    {
+        $this->dynamicFilling = $dynamicFilling;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDefaultValue()
+    {
+        return $this->defaultValue;
+    }
+
+    /**
+     * @param mixed $defaultValue
+     */
+    public function setDefaultValue($defaultValue)
+    {
+        $this->defaultValue = $defaultValue;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHideHeader()
+    {
+        return $this->hideHeader;
+    }
+
+    /**
+     * @param mixed $hideHeader
+     */
+    public function setHideHeader($hideHeader)
+    {
+        $this->hideHeader = $hideHeader;
     }
 
 }

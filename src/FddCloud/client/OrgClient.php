@@ -12,6 +12,7 @@ use FddCloud\bean\req\org\department\DeptGetListReq;
 use FddCloud\bean\req\org\department\DeptModifyReq;
 use FddCloud\bean\req\org\GetCorpEntityListReq;
 use FddCloud\bean\req\org\GetCorpEntityManageUrlReq;
+use FddCloud\bean\req\org\member\GetCorpRoleUrlReq;
 use FddCloud\bean\req\org\member\MemberCreateReq;
 use FddCloud\bean\req\org\member\MemberDeleteReq;
 use FddCloud\bean\req\org\member\MemberGetActiveUrlReq;
@@ -132,6 +133,12 @@ class OrgClient
     function memberDelete($accessToken, MemberDeleteReq $req)
     {
         return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::CORP_MEMBER_DELETE);
+    }
+
+    # 获取角色管理链接
+    function getCorpRoleUrl($accessToken, GetCorpRoleUrlReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::CORP_ROLE_GET_URL);
     }
 
     # 查询相对方列表

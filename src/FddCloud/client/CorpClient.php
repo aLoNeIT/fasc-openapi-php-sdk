@@ -71,5 +71,11 @@ class CorpClient
         return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::CORP_GET_IDENTIFIED_STATUS);
     }
 
+    # 查询委托代开发应用列表
+    function getAppDevelopList($accessToken)
+    {
+        return $this->client->request($accessToken, "{}", OpenApiUrlConstants::APP_DEVELOP_GET_LIST);
+    }
+
 
 }

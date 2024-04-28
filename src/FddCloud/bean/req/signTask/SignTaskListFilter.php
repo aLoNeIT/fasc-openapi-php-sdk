@@ -12,6 +12,8 @@ class SignTaskListFilter
     public $finishTimeTo;
     public $expiresTimeFrom;
     public $expiresTimeTo;
+    public $businessTypeId;
+    public $businessCode;
 
     /**
      * @return mixed
@@ -139,6 +141,38 @@ class SignTaskListFilter
     public function setExpiresTimeTo($expiresTimeTo)
     {
         $this->expiresTimeTo = $expiresTimeTo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBusinessTypeId()
+    {
+        return $this->businessTypeId;
+    }
+
+    /**
+     * @param mixed $businessTypeId
+     */
+    public function setBusinessTypeId($businessTypeId)
+    {
+        $this->businessTypeId = $businessTypeId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBusinessCode()
+    {
+        return $this->businessCode;
+    }
+
+    /**
+     * @param mixed $businessCode
+     */
+    public function setBusinessCode($businessCode)
+    {
+        $this->businessCode = $businessCode;
     }
 
 
