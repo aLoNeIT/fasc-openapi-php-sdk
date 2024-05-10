@@ -2,7 +2,7 @@
 
 
 namespace FddCloud\bean\req\signTask;
-class GetSignTaskPicDocTicketReq
+class GetPicDownloadUrlReq
 {
     public $slicingTicketId;
 

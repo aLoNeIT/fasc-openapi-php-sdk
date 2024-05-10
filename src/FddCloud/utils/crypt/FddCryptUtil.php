@@ -10,7 +10,6 @@ class FddCryptUtil
         $keys = array_keys($values);
         array_multisort($keys, SORT_ASC, SORT_STRING);
         $sortParam = $this->arrayParamToStr($values, $keys);
-//        print_r($sortParam."\n");
         //计算签名
         $signText = strtolower(hash("sha256", $sortParam));
         $hash = hash_hmac("sha256", $timestamp, $appSecret, true);

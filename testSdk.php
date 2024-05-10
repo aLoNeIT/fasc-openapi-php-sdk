@@ -3,7 +3,7 @@
  * 测试文件
  */
 
-require_once __DIR__ . '/autoload.php';
+//require './vendor/autoload.php';
 
 use FddCloud\bean\req\corp\AppGetOpenIdListReq;
 use FddCloud\client\Client;
@@ -31,7 +31,7 @@ $response = $serviceClient->getAccessToken();
 print_r($response . "\n");
 $res = json_decode($response);
 
-/** 测试调用获取个人授权链接接口 */
+/** 查询授权用户列表 */
 $corpClient = new CorpClient($client);
 appGetOpenIdList($res->data->accessToken,$corpClient);
 

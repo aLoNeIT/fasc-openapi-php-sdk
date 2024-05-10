@@ -24,7 +24,7 @@ use FddCloud\bean\req\signTask\GetActorAudioVideoReq;
 use FddCloud\bean\req\signTask\GetActorCerInfoReq;
 use FddCloud\bean\req\signTask\GetBatchSignUrlReq;
 use FddCloud\bean\req\signTask\GetFacePictureReq;
-use FddCloud\bean\req\signTask\GetSignTaskPicDocTicketReq;
+use FddCloud\bean\req\signTask\GetPicDownloadUrlReq;
 use FddCloud\bean\req\signTask\GetSignTaskSlicingDocReq;
 use FddCloud\bean\req\signTask\GetV3ActorSignTaskUrlReq;
 use FddCloud\bean\req\signTask\ModifyActorReq;
@@ -240,7 +240,7 @@ class SignTaskClient
     }
 
     # 获取图片版签署文档下载地址
-    function getSignTaskOwnerPicDownloadUrl($accessToken, GetSignTaskPicDocTicketReq $req)
+    function getSignTaskOwnerPicDownloadUrl($accessToken, GetPicDownloadUrlReq $req)
     {
         return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::GET_SIGN_TASK_OWNER_PIC_DOWNLOAD_URL);
     }

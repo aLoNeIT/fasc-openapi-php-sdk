@@ -1,6 +1,6 @@
 {
     "name": "fadada/fasc-openapi-php-sdk",
-    "version": "5.4.4.0425",
+    "version": "5.4.4.0510",
     "description": "Fadada Agreement & Signature Cloud API PHP-SDK",
     "type": "library",
     "keywords": ["FASC","fadada","php","sdk","fdd"],
@@ -19,8 +19,7 @@
         "ext-iconv": "*"
     },
     "autoload": {
-        "psr-4": {"FddCloud\\": "src/FddCloud"},
-        "classmap": ["src/FddCloud/bean/req/FddApiReq.php"]
+        "psr-4": {"FddCloud\\": "src/FddCloud"}
     },
     "minimum-stability": "stable"
 }
