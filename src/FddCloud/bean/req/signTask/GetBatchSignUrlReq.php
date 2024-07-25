@@ -15,6 +15,7 @@ class GetBatchSignUrlReq
     public $clientUserId;
 
     public $signTaskIds;
+    public $signAllTasks;
 
     public $redirectUrl;
 
@@ -130,6 +131,22 @@ class GetBatchSignUrlReq
     public function setSignTaskIds($signTaskIds)
     {
         $this->signTaskIds = $signTaskIds;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSignAllTasks()
+    {
+        return $this->signAllTasks;
+    }
+
+    /**
+     * @param mixed $signAllTasks
+     */
+    public function setSignAllTasks($signAllTasks)
+    {
+        $this->signAllTasks = $signAllTasks;
     }
 
     /**

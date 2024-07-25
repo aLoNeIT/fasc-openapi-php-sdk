@@ -29,6 +29,8 @@ class Actor
 
     public $accountName;
 
+    public $accountEditable;
+
     public $clientUserId;
 
     public $authScopes;
@@ -331,6 +333,23 @@ class Actor
     {
         $this->notification = $notification;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getAccountEditable()
+    {
+        return $this->accountEditable;
+    }
+
+    /**
+     * @param mixed $accountEditable
+     */
+    public function setAccountEditable($accountEditable)
+    {
+        $this->accountEditable = $accountEditable;
+    }
+
 
 
 

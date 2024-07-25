@@ -4,6 +4,8 @@ class SealBaseReq
 {
     public $createSerialNo;
 
+    public $unauthSuper;
+
     /**
      * @return mixed
      */
@@ -18,6 +20,22 @@ class SealBaseReq
     public function setCreateSerialNo($createSerialNo) 
     {
         $this->createSerialNo = $createSerialNo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUnauthSuper()
+    {
+        return $this->unauthSuper;
+    }
+
+    /**
+     * @param mixed $unauthSuper
+     */
+    public function setUnauthSuper($unauthSuper)
+    {
+        $this->unauthSuper = $unauthSuper;
     }
 
 

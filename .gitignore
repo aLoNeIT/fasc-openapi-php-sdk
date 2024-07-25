@@ -4,6 +4,7 @@
 node_modules
 /vendor/
 /test
+autoload.php
 
 ##前端打包生成文件需要忽略##
 web/portal-h5/app

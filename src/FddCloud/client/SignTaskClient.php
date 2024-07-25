@@ -28,6 +28,11 @@ use FddCloud\bean\req\signTask\GetPicDownloadUrlReq;
 use FddCloud\bean\req\signTask\GetSignTaskSlicingDocReq;
 use FddCloud\bean\req\signTask\GetV3ActorSignTaskUrlReq;
 use FddCloud\bean\req\signTask\ModifyActorReq;
+use FddCloud\bean\req\signTask\ReceiveAllSignTaskReq;
+use FddCloud\bean\req\signTask\ScanCreateWithTemplateReq;
+use FddCloud\bean\req\signTask\ScanFieldFillValuesReq;
+use FddCloud\bean\req\signTask\ScanSignTaskDetailReq;
+use FddCloud\bean\req\signTask\ScanSignTaskStartReq;
 use FddCloud\bean\req\signTask\SignTaskActorRemoveReq;
 use FddCloud\bean\req\signTask\SignTaskApplyReportReq;
 use FddCloud\bean\req\signTask\SignTaskBaseReq;
@@ -64,6 +69,28 @@ class SignTaskClient
     function createWithTemplate($accessToken, CreateWithTemplateReq $req)
     {
         return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::SIGN_TASK_CREATE_WITH_TEMPLATE);
+    }
+
+    # 创建扫码签任务
+    function scanCreateWithTemplate($accessToken, ScanCreateWithTemplateReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::SIGN_TASK_SCAN_CREATE_WITH_TEMPLATE);
+    }
+
+    function scanFieldFillValues($accessToken, ScanFieldFillValuesReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::SIGN_TASK_SCAN_FIELD_FILL_VALUES);
+    }
+
+    function scanStart($accessToken, ScanSignTaskStartReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::SIGN_TASK_SCAN_START);
+    }
+
+    # 查询扫码签任务详情
+    function scanSignTaskDetail($accessToken, ScanSignTaskDetailReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::SIGN_TASK_SCAN_GET_DETAIL);
     }
 
     # 填写签署任务控件内容
@@ -335,6 +362,22 @@ class SignTaskClient
         return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::SIGN_TASK_EXTENSION);
     }
 
+    # 查询应用接收全网签署回调的企业列表
+    function getReceiveAllSignTaskList($accessToken)
+    {
+        return $this->client->request($accessToken, null, OpenApiUrlConstants::CALLBACK_RECEIVE_ALL_SIGN_TASK_GET_LIST);
+    }
+    # 接收企业全网签署回调
+    function receiveAllSignTask($accessToken,ReceiveAllSignTaskReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::CALLBACK_RECEIVE_ALL_SIGN_TASK);
+    }
+
+    # 取消接收企业全网签署回调
+    function cancelReceiveAllSignTask($accessToken,ReceiveAllSignTaskReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::CALLBACK_RECEIVE_ALL_SIGN_TASK_CANCEL);
+    }
 
 }
 

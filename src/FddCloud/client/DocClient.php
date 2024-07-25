@@ -7,7 +7,9 @@ use FddCloud\bean\req\doc\FileGetUploadUrlReq;
 use FddCloud\bean\req\doc\FileProcessReq;
 use FddCloud\bean\req\doc\FileUploadByUrlReq;
 use FddCloud\bean\req\doc\FileVerifySignReq;
+use FddCloud\bean\req\doc\GetPageInfoByFileReq;
 use FddCloud\bean\req\doc\OfdFileMergeReq;
+use FddCloud\bean\req\doc\PfdFileMergeReq;
 use FddCloud\constants\OpenApiUrlConstants;
 
 
@@ -51,6 +53,11 @@ class DocClient
         return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::FILE_OFD_FILE_MERGE);
     }
 
+    function pdfFileMerge($accessToken, PfdFileMergeReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::FILE_PDF_FILE_MERGE);
+    }
+
     # 查询文档关键字坐标
     function fileGetKeywordPositions($accessToken, FileGetKeywordPositionsReq $req)
     {
@@ -61,6 +68,11 @@ class DocClient
     function fileVerifySign($accessToken, FileVerifySignReq $req)
     {
         return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::FILE_VERIFY_SIGN);
+    }
+
+    function fileGetPageInfo($accessToken, GetPageInfoByFileReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::FILE_GET_PAGE_INFO);
     }
 
 }

@@ -3,10 +3,9 @@
 namespace FddCloud\bean\req\signTask;
 class SignConfigInfo
 {
+    public $multiFactor;
     public $orderNo;
-
     public $freeDragSealId;
-
     public $signAllDoc;
 
     public $blockHere;
@@ -36,6 +35,24 @@ class SignConfigInfo
     public $resizeSeal;
 
     public $actorAttachInfos;
+
+    public $scanSign;
+
+    /**
+     * @return mixed
+     */
+    public function getMultiFactor()
+    {
+        return $this->multiFactor;
+    }
+
+    /**
+     * @param mixed $multiFactor
+     */
+    public function setMultiFactor($multiFactor)
+    {
+        $this->multiFactor = $multiFactor;
+    }
 
     /**
      * @return mixed
@@ -307,6 +324,22 @@ class SignConfigInfo
     public function setActorAttachInfos($actorAttachInfos)
     {
         $this->actorAttachInfos = $actorAttachInfos;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getScanSign()
+    {
+        return $this->scanSign;
+    }
+
+    /**
+     * @param mixed $scanSign
+     */
+    public function setScanSign($scanSign)
+    {
+        $this->scanSign = $scanSign;
     }
 
 

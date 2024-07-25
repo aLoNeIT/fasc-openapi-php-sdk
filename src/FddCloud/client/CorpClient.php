@@ -6,6 +6,7 @@ use FddCloud\bean\req\corp\AppGetOpenIdListReq;
 use FddCloud\bean\req\corp\DisableCorpReq;
 use FddCloud\bean\req\corp\EnableCorpReq;
 use FddCloud\bean\req\corp\GetCorpAuthUrlReq;
+use FddCloud\bean\req\corp\GetCorpConsoleUrlReq;
 use FddCloud\bean\req\corp\GetCorpIdentifiedStatusReq;
 use FddCloud\bean\req\corp\GetCorpIdentityInfoReq;
 use FddCloud\bean\req\corp\GetCorpReq;
@@ -75,6 +76,11 @@ class CorpClient
     function getAppDevelopList($accessToken)
     {
         return $this->client->request($accessToken, "{}", OpenApiUrlConstants::APP_DEVELOP_GET_LIST);
+    }
+
+    function getCorpConsoleUrl( $accessToken, GetCorpConsoleUrlReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::CORP_GET_CONSOLE_URL);
     }
 
 

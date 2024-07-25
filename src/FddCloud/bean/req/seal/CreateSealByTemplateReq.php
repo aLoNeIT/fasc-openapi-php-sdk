@@ -1,6 +1,6 @@
 <?php
 namespace FddCloud\bean\req\seal;
-class CreateSealByTemplateReq
+class CreateSealByTemplateReq extends SealBaseReq
 {
     public $openCorpId;
     public $entityId;
@@ -21,7 +21,6 @@ class CreateSealByTemplateReq
 
     public $sealColor;
 
-    public $createSerialNo;
 
     /**
      * @return mixed
@@ -183,20 +182,5 @@ class CreateSealByTemplateReq
         $this->sealColor = $sealColor;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getCreateSerialNo()
-    {
-        return $this->createSerialNo;
-    }
-
-    /**
-     * @param mixed $createSerialNo
-     */
-    public function setCreateSerialNo($createSerialNo) 
-    {
-        $this->createSerialNo = $createSerialNo;
-    }
 
 }

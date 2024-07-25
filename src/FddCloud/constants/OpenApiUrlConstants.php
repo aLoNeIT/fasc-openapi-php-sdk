@@ -26,6 +26,7 @@ class OpenApiUrlConstants
     const USER_GET_DETAIL = '/user/get';
     const USER_GET_IDENTITY_INFO = '/user/get-identity-info';
     const USER_ACCOUNT_NAME_GET_CHANGE_URL = '/user/account-name/get-change-url';
+    const USER_ACCOUNT_RECOVERY = '/user/account-recovery';
 
     /**
      * ToolServiceClient
@@ -65,6 +66,7 @@ class OpenApiUrlConstants
     const CORP_GET_IDENTITY_INFO = '/corp/get-identity-info';
     const CORP_GET_IDENTIFIED_STATUS = '/corp/get-identified-status';
     const APP_DEVELOP_GET_LIST = '/app-develop/get-list';
+    const CORP_GET_CONSOLE_URL = '/corp/get-console-url';
 
     /**
      * OrgClient
@@ -125,6 +127,8 @@ class OpenApiUrlConstants
     const PERSONAL_SEAL_GET_CREATE_URL = '/personal-seal/create/get-url';
     const PERSONAL_SEAL_DELETE = '/personal-seal/delete';
 
+    const GET_CERT_INFO = '/seal/get-cert-info';
+
     /**
      * DocClient
      */
@@ -133,8 +137,10 @@ class OpenApiUrlConstants
     const FILE_GET_UPLOAD_URL = '/file/get-upload-url';
     const FILE_PROCESS = '/file/process';
     const FILE_OFD_FILE_MERGE = '/file/ofd-file-merge';
+    const FILE_PDF_FILE_MERGE = '/file/pdf-file-merge';
     const FILE_GET_KEYWORD_POSITIONS = '/file/get-keyword-positions';
     const FILE_VERIFY_SIGN = '/file/verify-sign';
+    const FILE_GET_PAGE_INFO = '/file/get-page-info';
 
     /**
      * ArchivesPerformanceClient
@@ -311,6 +317,17 @@ class OpenApiUrlConstants
     const SIGN_TASK_DELETE = '/sign-task/delete';
     const SIGN_TASK_EXTENSION = '/sign-task/extension';
 
+    # 5)跨应用发收签
+    const CALLBACK_RECEIVE_ALL_SIGN_TASK_GET_LIST = '/callback/receive-all-signtask/get-list';
+    const CALLBACK_RECEIVE_ALL_SIGN_TASK = '/callback/receive-all-signtask';
+    const CALLBACK_RECEIVE_ALL_SIGN_TASK_CANCEL = '/callback/receive-all-signtask/cancel';
+
+    # 6)扫码签
+    const SIGN_TASK_SCAN_CREATE_WITH_TEMPLATE = '/sign-task/scan/create-with-template';
+    const SIGN_TASK_SCAN_FIELD_FILL_VALUES= '/sign-task/scan/field/fill-values';
+    const SIGN_TASK_SCAN_START= '/sign-task/scan/start';
+    const SIGN_TASK_SCAN_GET_DETAIL = '/sign-task/scan/get-detail';
+
 
     /**
      * EUIClient
@@ -341,5 +358,25 @@ class OpenApiUrlConstants
     const BILL_ACCOUNT_GET_BILL_SUMMARY_LIST = '/bill-account/get-bill-summary-list';
     # 查询计费流水记录
     const BILL_ACCOUNT_GET_BILL_LIST = '/bill-account/get-bill-list';
+
+
+
+    /**
+     * CollectClient
+     */
+    # 查询收集表列表
+    const SMARTFORM_GET_LIST = '/smartform/get-list';
+    # 查询收集表详情
+    const SMARTFORM_GET_DETAIL = '/smartform/get-detail';
+    # 删除收集表
+    const SMARTFORM_DELETE = '/smartform/delete';
+    # 查询已收集的内容
+    const SMARTFORM_SERIAL_GET_INFO = '/smartform/serial/get-info';
+    # 删除已收集的内容
+    const SMARTFORM_SERIAL_DELETE = '/smartform/serial/delete';
+    # 获取收集表管理链接
+    const SMARTFORM_MANAGE_GET_URL = '/smartform/manage/get-url';
+    # 获取收集表邀请填写链接
+    const SMARTFORM_COLLECT_GET_URL='/smartform/collect/get-url';
 
 }

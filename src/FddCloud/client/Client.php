@@ -4,8 +4,7 @@
 namespace FddCloud\client;
 
 use Exception;
-use FddCloud\client\IClient;
-use FddCloud\constants\OpenApiConfig;
+use FddCloud\utils\log\SdkLog;
 
 
 date_default_timezone_set('PRC');//其中PRC为“中华人民共和国”
@@ -16,7 +15,7 @@ class Client implements IClient
     private $appId;
     private $appSecret;
     private $url;
-    private $timeout;
+    private $timeout = 60;
     private $debug = false;
 
     public function __construct($appId, $appSecret, $url, $timeout ,$debug)
@@ -118,12 +117,11 @@ class Client implements IClient
         $nonce = md5(time() . mt_rand(0, 1000));
         $headers = $this->getHeader($nonce, $bizContent, $accessToken);
         $headers['Content-type'] = "application/x-www-form-urlencoded";
+        //debug调试打印
+        SdkLog::debug("请求地址url: " . $path . "\n",$this->debug);
+        SdkLog::debug("请求头header: " . "\n",$this->debug);
+        SdkLog::debug($headers,$this->debug);
 
-        if ($this->debug) {
-            print_r("请求地址url: " . $path . "\n");
-            print_r("请求头header: " . "\n");
-            print_r($headers);
-        }
         $ch = curl_init();
 
         //判断是否是获取accessToken
@@ -145,7 +143,8 @@ class Client implements IClient
         curl_setopt($ch, CURLOPT_URL, $this->url . $path);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $this->timeout);
-        curl_setopt($ch, CURLOPT_POST, 1);
+//        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST,"POST");
         curl_setopt($ch, CURLOPT_HTTPHEADER, $this->toPost($headers));
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);

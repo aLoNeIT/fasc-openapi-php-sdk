@@ -12,6 +12,7 @@ use FddCloud\bean\req\seal\CreateSealByImageReq;
 use FddCloud\bean\req\seal\CreateSealByTemplateReq;
 use FddCloud\bean\req\seal\GetAppointedSealUrlReq;
 use FddCloud\bean\req\seal\GetAppointedUserSealListReq;
+use FddCloud\bean\req\seal\GetCertInfoReq;
 use FddCloud\bean\req\seal\GetPersonalSealCreateUrlReq;
 use FddCloud\bean\req\seal\GetPersonalSealFreeSignUrlReq;
 use FddCloud\bean\req\seal\GetPersonalSealListReq;
@@ -31,6 +32,7 @@ use FddCloud\bean\req\seal\SealGrantCancelReq;
 use FddCloud\bean\req\seal\SealModifyReq;
 use FddCloud\bean\req\seal\SealSetStatusReq;
 use FddCloud\constants\OpenApiUrlConstants;
+
 
 
 class SealClient
@@ -208,6 +210,11 @@ class SealClient
     function deletePersonalSeal($accessToken, PersonalSealDeleteReq $req)
     {
         return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::PERSONAL_SEAL_DELETE);
+    }
+
+    function getCertInfo($accessToken, GetCertInfoReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::GET_CERT_INFO);
     }
 
 }
