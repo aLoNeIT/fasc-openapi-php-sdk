@@ -372,7 +372,6 @@ class SignTaskClient
     {
         return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::CALLBACK_RECEIVE_ALL_SIGN_TASK);
     }
-
     # 取消接收企业全网签署回调
     function cancelReceiveAllSignTask($accessToken,ReceiveAllSignTaskReq $req)
     {
