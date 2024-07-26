@@ -25,6 +25,7 @@ use FddCloud\bean\req\signTask\GetActorCerInfoReq;
 use FddCloud\bean\req\signTask\GetBatchSignUrlReq;
 use FddCloud\bean\req\signTask\GetFacePictureReq;
 use FddCloud\bean\req\signTask\GetPicDownloadUrlReq;
+use FddCloud\bean\req\signTask\GetSignTaskEditUrlReq;
 use FddCloud\bean\req\signTask\GetSignTaskSlicingDocReq;
 use FddCloud\bean\req\signTask\GetV3ActorSignTaskUrlReq;
 use FddCloud\bean\req\signTask\ModifyActorReq;
@@ -165,7 +166,7 @@ class SignTaskClient
     }
 
     # 获取签署任务编辑链接
-    function getEditUrl($accessToken, SignTaskBaseReq $req)
+    function getEditUrl($accessToken, GetSignTaskEditUrlReq $req)
     {
         return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::SIGN_TASK_GET_EDIT_URL);
     }
