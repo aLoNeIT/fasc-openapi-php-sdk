@@ -7,6 +7,8 @@ class GetSignTaskEditUrlReq extends SignTaskBaseReq
 {
     public $nonEditableInfo;
 
+    public $editAfterStart;
+
     /**
      * @return mixed
      */
@@ -21,6 +23,22 @@ class GetSignTaskEditUrlReq extends SignTaskBaseReq
     public function setNonEditableInfo($nonEditableInfo)
     {
         $this->nonEditableInfo = $nonEditableInfo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEditAfterStart()
+    {
+        return $this->editAfterStart;
+    }
+
+    /**
+     * @param mixed $editAfterStart
+     */
+    public function setEditAfterStart($editAfterStart)
+    {
+        $this->editAfterStart = $editAfterStart;
     }
 
 

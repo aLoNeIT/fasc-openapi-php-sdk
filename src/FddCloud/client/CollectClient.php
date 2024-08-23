@@ -36,7 +36,7 @@ class CollectClient
 
     function getSmartformSerialInfo($accessToken, GetSmartformSerialInfoReq $req)
     {
-        return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::SMARTFORM_SERIAL_GET_INFO);
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::SMARTFORM_SERIAL_GET_INFO);
     }
 
     function deleteSmartformSerial($accessToken, DeleteSmartformSerialReq $req)

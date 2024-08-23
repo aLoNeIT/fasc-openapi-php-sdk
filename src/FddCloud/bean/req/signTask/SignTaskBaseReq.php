@@ -8,6 +8,8 @@ class SignTaskBaseReq
 
     public $redirectUrl;
 
+    public $redirectMiniAppUrl;
+
     /**
      * @return mixed
      */
@@ -38,6 +40,22 @@ class SignTaskBaseReq
     public function setRedirectUrl($redirectUrl)
     {
         $this->redirectUrl = $redirectUrl;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRedirectMiniAppUrl()
+    {
+        return $this->redirectMiniAppUrl;
+    }
+
+    /**
+     * @param mixed $redirectMiniAppUrl
+     */
+    public function setRedirectMiniAppUrl($redirectMiniAppUrl)
+    {
+        $this->redirectMiniAppUrl = $redirectMiniAppUrl;
     }
 
 
