@@ -13,6 +13,8 @@ use FddCloud\bean\req\seal\CreateSealByTemplateReq;
 use FddCloud\bean\req\seal\GetAppointedSealUrlReq;
 use FddCloud\bean\req\seal\GetAppointedUserSealListReq;
 use FddCloud\bean\req\seal\GetCertInfoReq;
+use FddCloud\bean\req\seal\GetFreeSignToTemplateListReq;
+use FddCloud\bean\req\seal\GetFreeSignToTemplateUrlReq;
 use FddCloud\bean\req\seal\GetPersonalSealCreateUrlReq;
 use FddCloud\bean\req\seal\GetPersonalSealFreeSignUrlReq;
 use FddCloud\bean\req\seal\GetPersonalSealListReq;
@@ -156,6 +158,16 @@ class SealClient
     function getSealTagList($accessToken, GetSealTagListReq $req)
     {
         return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::SEAL_TAG_GET_LIST);
+    }
+
+    function getFreeSignToTemplateUrl($accessToken, GetFreeSignToTemplateUrlReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::SEAL_FREE_SIGN_TO_TEMPLATE_GET_URL);
+    }
+
+    function getFreeSignToTemplateList($accessToken, GetFreeSignToTemplateListReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::SEAL_FREE_SIGN_TO_TEMPLATE_GET_LIST);
     }
 
     # 创建模板签名

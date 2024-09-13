@@ -1,14 +1,19 @@
 <?php
 
-namespace FddCloud\bean\req\corp;
-class GetCorpConsoleUrlReq
+namespace FddCloud\bean\req\seal;
+class GetFreeSignToTemplateUrlReq
 {
     public $openCorpId;
-    public $corpAuthInfo;
+
     public $clientUserId;
-    public $modules;
+
+    public $sealIds;
+
+    public $templateIds;
+
+    public $email;
+
     public $redirectUrl;
-    public $jumpMethod;
 
     /**
      * @return mixed
@@ -45,17 +50,49 @@ class GetCorpConsoleUrlReq
     /**
      * @return mixed
      */
-    public function getModules()
+    public function getSealIds()
     {
-        return $this->modules;
+        return $this->sealIds;
     }
 
     /**
-     * @param mixed $modules
+     * @param mixed $sealIds
      */
-    public function setModules($modules)
+    public function setSealIds($sealIds)
     {
-        $this->modules = $modules;
+        $this->sealIds = $sealIds;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTemplateIds()
+    {
+        return $this->templateIds;
+    }
+
+    /**
+     * @param mixed $templateIds
+     */
+    public function setTemplateIds($templateIds)
+    {
+        $this->templateIds = $templateIds;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
     }
 
     /**
@@ -74,36 +111,5 @@ class GetCorpConsoleUrlReq
         $this->redirectUrl = $redirectUrl;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getJumpMethod()
-    {
-        return $this->jumpMethod;
-    }
-
-    /**
-     * @param mixed $jumpMethod
-     */
-    public function setJumpMethod($jumpMethod)
-    {
-        $this->jumpMethod = $jumpMethod;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCorpAuthInfo()
-    {
-        return $this->corpAuthInfo;
-    }
-
-    /**
-     * @param mixed $corpAuthInfo
-     */
-    public function setCorpAuthInfo($corpAuthInfo)
-    {
-        $this->corpAuthInfo = $corpAuthInfo;
-    }
 
 }

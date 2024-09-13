@@ -39,6 +39,7 @@ class OpenApiUrlConstants
     const USER_TELECOM_THREE_ELEMENT_VERIFY = '/user/telecom/three-element-verify';
     const CORP_IDENTITY_BUSINESS_THREE_ELEMENT_VERIFY = '/corp/identity/business-three-element-verify';
     const CORP_IDENTITY_BUSINESS_INFO_QUERY = '/corp/identity/business-info-query';
+    const CORP_RISK_DETECTION = '/corp/risk-detection';
     const USER_FOUR_ELEMENT_VERIFY_GET_URL = '/user/four-element-verify/get-url';
     const USER_THREE_ELEMENT_VERIFY_GET_URL = '/user/three-element-verify/get-url';
     const USER_ELEMENT_VERIFY_GET_IDCARD_IMAGE_DOWNLOAD_URL = '/user/element-verify/get-idcard-image-download-url';
@@ -117,6 +118,8 @@ class OpenApiUrlConstants
     const SEAL_SET_STATUS = '/seal/set-status';
     const SEAL_DELETE = '/seal/delete';
     const SEAL_TAG_GET_LIST = '/seal/tag/get-list';
+    const SEAL_FREE_SIGN_TO_TEMPLATE_GET_URL = '/seal/free-sign-to-template/get-url';
+    const SEAL_FREE_SIGN_TO_TEMPLATE_GET_LIST = '/seal/free-sign-to-template/get-list';
     const PERSONAL_SEAL_CREATE_BY_TEMPLATE = '/personal-seal/create-by-template';
     const PERSONAL_SEAL_CREATE_BY_IMAGE = '/personal-seal/create-by-image';
     const PERSONAL_SEAL_GET_LIST = '/personal-seal/get-list';
@@ -302,6 +305,7 @@ class OpenApiUrlConstants
     const SIGN_TASK_ACTOR_GET_AUDIO_VIDEO_DOWNLOAD_URL = '/sign-task/actor/get-audio-video-download-url';
     const SIGN_TASK_APPLY_REPORT = '/sign-task/apply-report';
     const SIGN_TASK_DOWNLOAD_REPORT = '/sign-task/download-report';
+    const APP_GET_BUSINESS_ID_LIST = '/app/get-businessId-list';
     const SIGN_TASK_EVIDENCE_REPORT_GET_DOWNLOAD_URL = '/sign-task/evidence-report/get-download-url';
 
 

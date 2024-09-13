@@ -20,6 +20,7 @@ class CreateSignTaskBaseReq
     public $catalogId;
     public $autoFillFinalize;
     public $certCAOrg;
+    public $encryptionType;
     public $businessId;
     public $transReferenceId;
     public $actors;
@@ -347,5 +348,20 @@ class CreateSignTaskBaseReq
         $this->watermarks = $watermarks;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getEncryptionType()
+    {
+        return $this->encryptionType;
+    }
+
+    /**
+     * @param mixed $encryptionType
+     */
+    public function setEncryptionType($encryptionType)
+    {
+        $this->encryptionType = $encryptionType;
+    }
 
 }

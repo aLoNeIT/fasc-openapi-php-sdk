@@ -13,6 +13,8 @@ class AbolishSignTaskReq extends SignTaskBaseReq
 
     public $reason;
 
+    public $followOriginalConfig;
+
     public $signInOrder;
 
     public $docs;
@@ -103,6 +105,22 @@ class AbolishSignTaskReq extends SignTaskBaseReq
     public function setReason($reason)
     {
         $this->reason = $reason;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFollowOriginalConfig()
+    {
+        return $this->followOriginalConfig;
+    }
+
+    /**
+     * @param mixed $followOriginalConfig
+     */
+    public function setFollowOriginalConfig($followOriginalConfig)
+    {
+        $this->followOriginalConfig = $followOriginalConfig;
     }
 
     /**

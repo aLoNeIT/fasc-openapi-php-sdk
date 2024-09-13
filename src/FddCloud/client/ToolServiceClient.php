@@ -6,6 +6,7 @@ use FddCloud\bean\req\tool\identity\BankFourElementVerifyReq;
 use FddCloud\bean\req\tool\identity\BankThreeElementVerifyReq;
 use FddCloud\bean\req\tool\identity\BusinessInfoQueryReq;
 use FddCloud\bean\req\tool\identity\BusinessThreeElementVerifyReq;
+use FddCloud\bean\req\tool\identity\CorpRiskDetectionReq;
 use FddCloud\bean\req\tool\identity\GetIdCardImageDownloadUrlReq;
 use FddCloud\bean\req\tool\identity\GetUserFourElementVerifyUrlReq;
 use FddCloud\bean\req\tool\identity\GetUserThreeElementVerifyUrlReq;
@@ -75,6 +76,11 @@ class ToolServiceClient
     public function businessInfoQuery($accessToken, BusinessInfoQueryReq $req)
     {
         return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::CORP_IDENTITY_BUSINESS_INFO_QUERY);
+    }
+
+    public function corpRiskDetection($accessToken, CorpRiskDetectionReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::CORP_RISK_DETECTION);
     }
 
     # 获取个人银行卡四要素校验链接

@@ -2,6 +2,7 @@
 
 namespace FddCloud\client;
 
+use FddCloud\bean\req\BaseReq;
 use FddCloud\bean\req\signTask\AbolishSignTaskReq;
 use FddCloud\bean\req\signTask\ActorGetUrlReq;
 use FddCloud\bean\req\signTask\AddActorsReq;
@@ -295,6 +296,12 @@ class SignTaskClient
     function downloadReport($accessToken, SignTaskDownloadReportReq $req)
     {
         return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::SIGN_TASK_DOWNLOAD_REPORT);
+    }
+
+    function getBusinessIdList($accessToken)
+    {
+        $req=new SignTaskBaseReq();
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::APP_GET_BUSINESS_ID_LIST);
     }
 
     # 获取签署任务公证处保全报告（旧,已下架）
