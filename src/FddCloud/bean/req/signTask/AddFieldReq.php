@@ -7,7 +7,24 @@ require_once 'SignTaskBaseReq.php';
 
 class AddFieldReq extends SignTaskBaseReq
 {
+    public $actorId;
     public $fields;
+
+    /**
+     * @return mixed
+     */
+    public function getActorId()
+    {
+        return $this->actorId;
+    }
+
+    /**
+     * @param mixed $actorId
+     */
+    public function setActorId($actorId)
+    {
+        $this->actorId = $actorId;
+    }
 
     /**
      * @return mixed
