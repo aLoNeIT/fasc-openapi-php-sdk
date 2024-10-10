@@ -149,6 +149,9 @@ class Client implements IClient
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
 
+
+        curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
+
         $response = curl_exec($ch);
         // 检查是否有错误发生
         if(curl_errno($ch)){
