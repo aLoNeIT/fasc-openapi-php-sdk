@@ -65,7 +65,7 @@ class TemplateClient
     # 启用/停用文档模板
     function setDocTemplateStatus($accessToken, SetDocTemplateStatusReq $req)
     {
-        return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::SET_DOC_TEMPLATE_STATUS);
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::SET_DOC_TEMPLATE_STATUS);
     }
 
     # 删除文档模板
