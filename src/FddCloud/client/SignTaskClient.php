@@ -298,12 +298,6 @@ class SignTaskClient
         return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::SIGN_TASK_DOWNLOAD_REPORT);
     }
 
-    function getBusinessIdList($accessToken)
-    {
-        $req=new SignTaskBaseReq();
-        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::APP_GET_BUSINESS_ID_LIST);
-    }
-
     # 获取签署任务公证处保全报告（旧,已下架）
     function getEvidenceReportDownloadUrl($accessToken, EvidenceReportDownloadUrlReq $req)
     {

@@ -5,6 +5,7 @@ namespace FddCloud\client;
 use FddCloud\bean\req\org\CorpChangeIdentityInfoReq;
 use FddCloud\bean\req\org\CorpOrganizationManageReq;
 use FddCloud\bean\req\org\counterpart\CounterpartListReq;
+use FddCloud\bean\req\org\counterpart\GetCounterpartManageUrlReq;
 use FddCloud\bean\req\org\department\DeptCreateReq;
 use FddCloud\bean\req\org\department\DeptDeleteReq;
 use FddCloud\bean\req\org\department\DeptGetDetailReq;
@@ -145,5 +146,11 @@ class OrgClient
     function counterpartList($accessToken, CounterpartListReq $req)
     {
         return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::COUNTERPART_GET_LIST);
+    }
+
+    # 获取相对方管理链接
+    function getCounterpartManageUrl($accessToken, GetCounterpartManageUrlReq $req)
+    {
+        return $this->client->request($accessToken, $req->serialize(), OpenApiUrlConstants::COUNTERPART_GET_MANAGE_URL);
     }
 }

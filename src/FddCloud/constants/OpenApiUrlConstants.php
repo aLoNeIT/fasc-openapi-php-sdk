@@ -66,7 +66,6 @@ class OpenApiUrlConstants
     const CORP_GET_DETAIL = '/corp/get';
     const CORP_GET_IDENTITY_INFO = '/corp/get-identity-info';
     const CORP_GET_IDENTIFIED_STATUS = '/corp/get-identified-status';
-    const APP_DEVELOP_GET_LIST = '/app-develop/get-list';
     const CORP_GET_CONSOLE_URL = '/corp/get-console-url';
 
     /**
@@ -94,6 +93,7 @@ class OpenApiUrlConstants
     const CORP_ROLE_GET_URL = '/corp/role/get-url';
     # 组织管理-相对方
     const COUNTERPART_GET_LIST = '/counterpart/get-list';
+    const COUNTERPART_GET_MANAGE_URL = '/counterpart/get-manage-url';
 
     /**
      * SealClient
@@ -227,6 +227,16 @@ class OpenApiUrlConstants
     const CORP_FIELD_CREATE = '/corp-field/create';
     const CORP_FIELD_DELETE = '/corp-field/delete';
 
+
+    /**
+     * AppClient
+     */
+    const APP_GET_INFO = '/app/get-info';
+    const APP_MODIFY = '/app/modify';
+    const APP_GET_OPEN_ID_LIST = '/app/get-openId-list';
+    const APP_DEVELOP_GET_LIST = '/app-develop/get-list';
+    const APP_GET_BUSINESS_ID_LIST = '/app/get-businessId-list';
+
     /**
      * ApprovalClient
      */
@@ -305,7 +315,6 @@ class OpenApiUrlConstants
     const SIGN_TASK_ACTOR_GET_AUDIO_VIDEO_DOWNLOAD_URL = '/sign-task/actor/get-audio-video-download-url';
     const SIGN_TASK_APPLY_REPORT = '/sign-task/apply-report';
     const SIGN_TASK_DOWNLOAD_REPORT = '/sign-task/download-report';
-    const APP_GET_BUSINESS_ID_LIST = '/app/get-businessId-list';
     const SIGN_TASK_EVIDENCE_REPORT_GET_DOWNLOAD_URL = '/sign-task/evidence-report/get-download-url';
 
 

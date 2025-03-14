@@ -34,4 +34,21 @@ class FddCryptUtil
         $msectime = (float)sprintf('%.0f', (floatval($msec) + floatval($sec)) * 1000);
         return $msectime;
     }
+
+    public function imgToBase64($img_file) {
+        $img_base64 = '';
+        if (file_exists($img_file)) {
+            $app_img_file = $img_file; // 图片路径
+
+            $fp = fopen($app_img_file, "r"); // 图片是否可读权限
+            if ($fp) {
+                $filesize = filesize($app_img_file);
+                $content = fread($fp, $filesize);
+                $file_content = chunk_split(base64_encode($content)); // base64编码
+                $img_base64 = $file_content;//合成图片的base64编码
+            }
+            fclose($fp);
+        }
+        return $img_base64; //返回图片的base64
+    }
 }
