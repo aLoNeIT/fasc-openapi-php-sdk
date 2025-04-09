@@ -2,6 +2,7 @@
 
 namespace FddCloud\client;
 
+
 use FddCloud\bean\req\tool\identity\BankFourElementVerifyReq;
 use FddCloud\bean\req\tool\identity\BankThreeElementVerifyReq;
 use FddCloud\bean\req\tool\identity\BusinessInfoQueryReq;
@@ -19,9 +20,16 @@ use FddCloud\bean\req\tool\ocr\DrivingLicenseOcrReq;
 use FddCloud\bean\req\tool\ocr\IdCardOcrReq;
 use FddCloud\bean\req\tool\ocr\MainlandPermitOcrReq;
 use FddCloud\bean\req\tool\ocr\VehicleLicenseOcrReq;
+
+use FddCloud\bean\req\tool\verify\CheckAuthCodeReq;
+use FddCloud\bean\req\tool\verify\GetAuthCodeVerifyReq;
+use FddCloud\bean\req\tool\verify\GetDetailVerifyReq;
 use FddCloud\bean\req\tool\verify\GetFaceRecognitionStatusReq;
 use FddCloud\bean\req\tool\verify\GetFaceRecognitionUrlReq;
+use FddCloud\bean\req\tool\verify\UserBankcardFourElementVerifyReq;
+use FddCloud\bean\req\tool\verify\UserTelecomThreeElementVerifyReq;
 use FddCloud\constants\OpenApiUrlConstants;
+
 
 class ToolServiceClient
 {
@@ -155,6 +163,31 @@ class ToolServiceClient
     public function getFaceRecognitionStatus($accessToken, GetFaceRecognitionStatusReq $req)
     {
         return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::USER_VERIFY_FACE_STATUS_QUERY);
+    }
+
+    public function userTelecomThreeElementVerify($accessToken, UserTelecomThreeElementVerifyReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::USER_TELECOM_THREE_ELEMENT_VERIFY_CREATE);
+    }
+
+    public function userBankcardFourElementVerify($accessToken, UserBankcardFourElementVerifyReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::USER_BANKCARD_FOUR_ELEMENT_VERIFY_CREATE);
+    }
+
+    public function checkAuthCode($accessToken, CheckAuthCodeReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::USER_CHECK_AUTH_CODE);
+    }
+
+    public function getAuthCodeVerify($accessToken, GetAuthCodeVerifyReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req,JSON_FORCE_OBJECT), OpenApiUrlConstants::USER_VERIFY_AUTH_CODE_GET);
+    }
+
+    public function getDetailVerify($accessToken, GetDetailVerifyReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req,JSON_FORCE_OBJECT), OpenApiUrlConstants::USER_VERIFY_GET_DETAIL);
     }
 
 }

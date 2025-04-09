@@ -19,6 +19,8 @@ use FddCloud\bean\req\seal\GetPersonalSealCreateUrlReq;
 use FddCloud\bean\req\seal\GetPersonalSealFreeSignUrlReq;
 use FddCloud\bean\req\seal\GetPersonalSealListReq;
 use FddCloud\bean\req\seal\GetPersonalSealManageUrlReq;
+use FddCloud\bean\req\seal\GetSealCertFileReq;
+use FddCloud\bean\req\seal\GetSealCertUrlReq;
 use FddCloud\bean\req\seal\GetSealCreateUrlReq;
 use FddCloud\bean\req\seal\GetSealDetailReq;
 use FddCloud\bean\req\seal\GetSealFreeSignUrlReq;
@@ -227,6 +229,16 @@ class SealClient
     function getCertInfo($accessToken, GetCertInfoReq $req)
     {
         return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::GET_CERT_INFO);
+    }
+
+    function getSealCertFile($accessToken, GetSealCertFileReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::GET_SEAL_CERT_FILE);
+    }
+
+    function getSealCertUrl($accessToken, GetSealCertUrlReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::GET_SEAL_CERT_URL);
     }
 
 }

@@ -1,9 +1,10 @@
 <?php
 namespace FddCloud\bean\req\user;
-class GetUserChangeUrlReq
+use FddCloud\bean\req\BaseReq;
+
+class GetUserChangeUrlReq extends BaseReq
 {
     public $changeType;
-    public $redirectUrl;
 
     /**
      * @return mixed

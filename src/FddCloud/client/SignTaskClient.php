@@ -45,6 +45,7 @@ use FddCloud\bean\req\signTask\SignTaskGetFileReq;
 use FddCloud\bean\req\signTask\SignTaskIgnoreReq;
 use FddCloud\bean\req\signTask\SignTaskOwnerListReq;
 use FddCloud\bean\req\signTask\UnblockReq;
+use FddCloud\bean\req\signTask\VerifyMethodsManageUrlReq;
 use FddCloud\constants\OpenApiUrlConstants;
 
 
@@ -362,6 +363,11 @@ class SignTaskClient
     function extension($accessToken, ExtensionSignTaskReq $req)
     {
         return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::SIGN_TASK_EXTENSION);
+    }
+
+    function verifyMethodsManage($accessToken, VerifyMethodsManageUrlReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::VERIFY_METHODS_MANAGE_GET_URL);
     }
 
     # 查询应用接收全网签署回调的企业列表

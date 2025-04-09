@@ -55,6 +55,11 @@ class OpenApiUrlConstants
     # 个人身份核验
     const USER_VERIFY_FACE_RECOGNITION = '/user/verify/face-recognition';
     const USER_VERIFY_FACE_STATUS_QUERY = '/user/verify/face-status-query';
+    const USER_TELECOM_THREE_ELEMENT_VERIFY_CREATE = '/user/verify/telecom-three-element/create';
+    const USER_BANKCARD_FOUR_ELEMENT_VERIFY_CREATE = '/user/verify/bankcard-four-element/create';
+    const USER_CHECK_AUTH_CODE = '/user/verify/auth-code/check';
+    const USER_VERIFY_AUTH_CODE_GET = '/user/verify/auth-code/get';
+    const USER_VERIFY_GET_DETAIL = '/user/verify/get-detail';
 
     /**
      * CorpClient
@@ -91,6 +96,8 @@ class OpenApiUrlConstants
     const CORP_MEMBER_SET_STATUS = '/corp/member/set-status';
     const CORP_MEMBER_DELETE = '/corp/member/delete';
     const CORP_ROLE_GET_URL = '/corp/role/get-url';
+    const CORP_ADMIN_GET_URL = '/corp/admin/get-url';
+    const CORP_MEMBER_GET_ID_BY_OPENID = '/corp/member/get-by-openId';
     # 组织管理-相对方
     const COUNTERPART_GET_LIST = '/counterpart/get-list';
     const COUNTERPART_GET_MANAGE_URL = '/counterpart/get-manage-url';
@@ -129,8 +136,9 @@ class OpenApiUrlConstants
     const PERSONAL_SEAL_GET_MANAGE_URL = '/personal-seal/manage/get-url';
     const PERSONAL_SEAL_GET_CREATE_URL = '/personal-seal/create/get-url';
     const PERSONAL_SEAL_DELETE = '/personal-seal/delete';
-
     const GET_CERT_INFO = '/seal/get-cert-info';
+    const GET_SEAL_CERT_FILE = '/seal/get-cert-file';
+    const GET_SEAL_CERT_URL = '/seal/get-cert-url';
 
     /**
      * DocClient
@@ -329,6 +337,7 @@ class OpenApiUrlConstants
     const SIGN_TASK_ABOLISH = '/sign-task/abolish';
     const SIGN_TASK_DELETE = '/sign-task/delete';
     const SIGN_TASK_EXTENSION = '/sign-task/extension';
+    const VERIFY_METHODS_MANAGE_GET_URL ="/verify-methods/manage/get-url";
 
     # 5)跨应用发收签
     const CALLBACK_RECEIVE_ALL_SIGN_TASK_GET_LIST = '/callback/receive-all-signtask/get-list';

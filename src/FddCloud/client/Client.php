@@ -118,7 +118,7 @@ class Client implements IClient
         $headers = $this->getHeader($nonce, $bizContent, $accessToken);
         $headers['Content-type'] = "application/x-www-form-urlencoded";
         //debug调试打印
-        SdkLog::debug("请求地址url: " . $path . "\n",$this->debug);
+        SdkLog::debug("开始请求:" . $path . "\n",$this->debug);
         SdkLog::debug("请求头header: " . "\n",$this->debug);
         SdkLog::debug($headers,$this->debug);
 
@@ -128,10 +128,8 @@ class Client implements IClient
         if (!is_null($bizContent)) {
             $body = array();
             $body['bizContent'] = $bizContent;
-            if ($this->debug) {
-                print_r("请求体body: ");
-                print_r($body);
-            }
+            SdkLog::debug("请求体body: ",$this->debug);
+            SdkLog::debug($body,$this->debug);
             $content = http_build_query($body);
             //是否自动计算Content-Length
             $isContentLength ? $headers['Content-Length'] = strlen($content) : print_r("");
@@ -148,6 +146,7 @@ class Client implements IClient
         curl_setopt($ch, CURLOPT_HTTPHEADER, $this->toPost($headers));
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+        curl_setopt($ch, CURLOPT_HEADER, true);      // 需要响应头
 
 
         curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
@@ -157,8 +156,14 @@ class Client implements IClient
         if(curl_errno($ch)){
             echo 'cURL error: ' . curl_error($ch);
         }
+        $header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
+        $header = substr($response, 0, $header_size); // 获取响应头部分
+        SdkLog::debug("响应头header: " . "\n",$this->debug);
+        SdkLog::debug($header,$this->debug);
+        SdkLog::debug("###########请求结束#########". "\n",$this->debug);
+        $body = substr($response, $header_size);       // 获取响应体部分
         curl_close($ch);
-        return $response;
+        return $body;
     }
 
     public function toPost(array $params = array(), $pre = '')

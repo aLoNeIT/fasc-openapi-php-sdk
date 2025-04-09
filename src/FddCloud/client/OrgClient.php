@@ -13,6 +13,8 @@ use FddCloud\bean\req\org\department\DeptGetListReq;
 use FddCloud\bean\req\org\department\DeptModifyReq;
 use FddCloud\bean\req\org\GetCorpEntityListReq;
 use FddCloud\bean\req\org\GetCorpEntityManageUrlReq;
+use FddCloud\bean\req\org\member\GetCorpAdminUrlReq;
+use FddCloud\bean\req\org\member\GetCorpMemberIdByOpenIdReq;
 use FddCloud\bean\req\org\member\GetCorpRoleUrlReq;
 use FddCloud\bean\req\org\member\MemberCreateReq;
 use FddCloud\bean\req\org\member\MemberDeleteReq;
@@ -141,7 +143,16 @@ class OrgClient
     {
         return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::CORP_ROLE_GET_URL);
     }
-
+    # 获取超管变更链接
+    function getCorpAdminUrl($accessToken, GetCorpAdminUrlReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::CORP_ADMIN_GET_URL);
+    }
+    # 根据openId查询memberId
+    function getCorpMemberIdByOpenId($accessToken, GetCorpMemberIdByOpenIdReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::CORP_MEMBER_GET_ID_BY_OPENID);
+    }
     # 查询相对方列表
     function counterpartList($accessToken, CounterpartListReq $req)
     {
