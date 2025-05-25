@@ -23,6 +23,7 @@ use FddCloud\bean\req\signTask\ExtensionSignTaskReq;
 use FddCloud\bean\req\signTask\FillFieldValuesReq;
 use FddCloud\bean\req\signTask\GetActorAudioVideoReq;
 use FddCloud\bean\req\signTask\GetActorCerInfoReq;
+use FddCloud\bean\req\signTask\GetBatchCreateDownloadUrlReq;
 use FddCloud\bean\req\signTask\GetBatchSignUrlReq;
 use FddCloud\bean\req\signTask\GetFacePictureReq;
 use FddCloud\bean\req\signTask\GetPicDownloadUrlReq;
@@ -384,6 +385,11 @@ class SignTaskClient
     function cancelReceiveAllSignTask($accessToken,ReceiveAllSignTaskReq $req)
     {
         return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::CALLBACK_RECEIVE_ALL_SIGN_TASK_CANCEL);
+    }
+
+    function getBatchCreateDownloadUrl($accessToken, GetBatchCreateDownloadUrlReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::SIGN_TASK_OWNER_GET_BATCH_CREATE_DOWNLOAD_URL);
     }
 
 }

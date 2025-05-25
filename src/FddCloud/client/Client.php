@@ -114,7 +114,7 @@ class Client implements IClient
         //判断curl版本是否大于7.40.0
         $isContentLength =$this->checkCurlVersion();
         //随机数
-        $nonce = md5(time() . mt_rand(0, 1000));
+        $nonce = md5(uniqid());
         $headers = $this->getHeader($nonce, $bizContent, $accessToken);
         $headers['Content-type'] = "application/x-www-form-urlencoded";
         //debug调试打印

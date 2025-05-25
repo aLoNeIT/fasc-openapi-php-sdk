@@ -350,6 +350,9 @@ class OpenApiUrlConstants
     const SIGN_TASK_SCAN_START= '/sign-task/scan/start';
     const SIGN_TASK_SCAN_GET_DETAIL = '/sign-task/scan/get-detail';
 
+    # 7)批量发
+    const SIGN_TASK_OWNER_GET_BATCH_CREATE_DOWNLOAD_URL = '/sign-template/batch-create/get-download-url';
+
 
     /**
      * EUIClient
