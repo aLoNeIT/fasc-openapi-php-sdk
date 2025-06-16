@@ -15,6 +15,7 @@ class GetUserAuthUrlReq
     public $redirectUrl;
     public $redirectMiniAppUrl;
 
+
     /**
      * @return mixed
      */

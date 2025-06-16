@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\authorize;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 个人用户授权事件
  * 用户授权操作的反馈事件，用户授权允许、不允许或身份信息匹配失败后，通过该事件回调给应用系统，事件ID user-authorize

@@ -1,6 +1,4 @@
 <?php
-
-
 namespace FddCloud\bean\req\seal;
 class GetPersonalSealFreeSignUrlReq
 {
@@ -11,8 +9,6 @@ class GetPersonalSealFreeSignUrlReq
     public $businessId;
 
     public $email;
-
-    public $expiresTime;
 
     public $redirectUrl;
 
@@ -78,22 +74,6 @@ class GetPersonalSealFreeSignUrlReq
     public function setEmail($email)
     {
         $this->email = $email;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getExpiresTime()
-    {
-        return $this->expiresTime;
-    }
-
-    /**
-     * @param mixed $expiresTime
-     */
-    public function setExpiresTime($expiresTime)
-    {
-        $this->expiresTime = $expiresTime;
     }
 
     /**

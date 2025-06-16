@@ -7,12 +7,10 @@ class DownloadFilesReq extends SignTaskBaseReq
 {
 
     public $ownerId;
-
-    public $id;
-
-    public $fileType;
-
     public $customName;
+    public $compression;
+    public $folderBySigntask;
+    public $batchDownloadInfo = array();
 
     /**
      * @return mixed
@@ -33,38 +31,6 @@ class DownloadFilesReq extends SignTaskBaseReq
     /**
      * @return mixed
      */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getFileType()
-    {
-        return $this->fileType;
-    }
-
-    /**
-     * @param mixed $fileType
-     */
-    public function setFileType($fileType)
-    {
-        $this->fileType = $fileType;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getCustomName()
     {
         return $this->customName;
@@ -76,6 +42,48 @@ class DownloadFilesReq extends SignTaskBaseReq
     public function setCustomName($customName)
     {
         $this->customName = $customName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCompression()
+    {
+        return $this->compression;
+    }
+
+    /**
+     * @param mixed $compression
+     */
+    public function setCompression($compression)
+    {
+        $this->compression = $compression;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFolderBySigntask()
+    {
+        return $this->folderBySigntask;
+    }
+
+    /**
+     * @param mixed $folderBySigntask
+     */
+    public function setFolderBySigntask($folderBySigntask)
+    {
+        $this->folderBySigntask = $folderBySigntask;
+    }
+
+    public function getBatchDownloadInfo(): array
+    {
+        return $this->batchDownloadInfo;
+    }
+
+    public function setBatchDownloadInfo(array $batchDownloadInfo)
+    {
+        $this->batchDownloadInfo = $batchDownloadInfo;
     }
 
 

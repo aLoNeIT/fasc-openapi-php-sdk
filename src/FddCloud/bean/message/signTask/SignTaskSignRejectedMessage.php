@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\signTask;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 签署任务参与方拒签事件
  * 签署任务签署参与方拒签之后，通过该事件回调给应用，事件ID: sign-task-sign-rejected

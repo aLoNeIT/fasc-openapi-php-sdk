@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\seal;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 印章授权成员事件
  * 企业将印章授权至成员，通过该事件回调给应用，事件ID：seal-authorize-member

@@ -1,6 +1,4 @@
 <?php
-
-
 namespace FddCloud\bean\req\seal;
 class PersonalSealDeleteReq
 {
@@ -19,7 +17,7 @@ class PersonalSealDeleteReq
     /**
      * @param mixed $openUserId
      */
-    public function setOpenUserId($openUserId)
+    public function setOpenUserId($openUserId) 
     {
         $this->openUserId = $openUserId;
     }
@@ -35,7 +33,7 @@ class PersonalSealDeleteReq
     /**
      * @param mixed $sealId
      */
-    public function setSealId($sealId)
+    public function setSealId($sealId) 
     {
         $this->sealId = $sealId;
     }

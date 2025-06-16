@@ -59,13 +59,13 @@ class TemplateClient
     # 填写文档模板生成文件
     function fillValueDocTemplate($accessToken, FillValueDocTemplateReq $req)
     {
-        return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::DOC_TEMPLATE_FILL_VALUES);
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::DOC_TEMPLATE_FILL_VALUES);
     }
 
     # 启用/停用文档模板
     function setDocTemplateStatus($accessToken, SetDocTemplateStatusReq $req)
     {
-        return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::SET_DOC_TEMPLATE_STATUS);
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::SET_DOC_TEMPLATE_STATUS);
     }
 
     # 删除文档模板

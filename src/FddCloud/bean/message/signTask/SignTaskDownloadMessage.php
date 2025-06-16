@@ -1,6 +1,8 @@
 <?php
 namespace FddCloud\bean\message\signTask;
 
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 签署文档批量下载事件
  * 集成方批量下载签署文档，当系统生成文档压缩包后，通过该事件回调给应用，事件ID: sign-task-download

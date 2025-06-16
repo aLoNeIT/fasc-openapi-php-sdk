@@ -6,6 +6,7 @@ class GetApprovalInfoListReq
 {
     public $openCorpId;
     public $approvalType;
+    public $approvalStatus;
     public $listPageNo;
     public $listPageSize;
 
@@ -39,6 +40,22 @@ class GetApprovalInfoListReq
     public function setApprovalType($approvalType)
     {
         $this->approvalType = $approvalType;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getApprovalStatus()
+    {
+        return $this->approvalStatus;
+    }
+
+    /**
+     * @param mixed $approvalStatus
+     */
+    public function setApprovalStatus($approvalStatus)
+    {
+        $this->approvalStatus = $approvalStatus;
     }
 
     /**

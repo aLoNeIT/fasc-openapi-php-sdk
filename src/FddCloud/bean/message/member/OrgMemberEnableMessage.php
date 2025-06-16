@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\member;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 成员启用事件
  * 企业用户在组织管理启用成员，通过该事件回调给应用，事件ID: organization-member-enable

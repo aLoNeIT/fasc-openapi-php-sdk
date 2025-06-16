@@ -3,9 +3,9 @@
 
 namespace FddCloud\client;
 
-use FddCloud\FddCloud\bean\req\appTemplate\appField\AppFieldCreateReq;
-use FddCloud\FddCloud\bean\req\appTemplate\appField\AppFieldGetListReq;
-use FddCloud\FddCloud\bean\req\appTemplate\appField\AppFieldModifyReq;
+use FddCloud\bean\req\appTemplate\appField\AppFieldCreateReq;
+use FddCloud\bean\req\appTemplate\appField\AppFieldGetListReq;
+use FddCloud\bean\req\appTemplate\appField\AppFieldModifyReq;
 use FddCloud\bean\req\appTemplate\appField\AppFieldSetStatusReq;
 use FddCloud\bean\req\appTemplate\AppTemplateCreateGetUrlReq;
 use FddCloud\bean\req\appTemplate\AppTemplateEditGetUrlReq;

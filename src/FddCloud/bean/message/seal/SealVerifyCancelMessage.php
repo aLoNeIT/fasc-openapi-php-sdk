@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\seal;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 印章审核撤销事件
  * 企业撤销了审核中的印章，通过该事件回调给应用，事件ID：seal-verify-cancel

@@ -4,22 +4,24 @@
 namespace FddCloud\bean\req\signTask;
 class CreateSignTaskBaseReq
 {
-    public $signTaskSubject;
-    public $initiatorMemberId;
     public $initiator;
+    public $initiatorEntityId;
+    public $initiatorMemberId;
+    public $signTaskSubject;
     public $signDocType;
     public $expiresTime;
     public $dueDate;
     public $autoStart;
     public $autoFinish;
     public $businessTypeId;
-    public $catalogId;
-    public $autoFillFinalize;
-    public $certCAOrg;
-    public $businessId;
     public $businessCode;
     public $startApprovalFlowId;
     public $finalizeApprovalFlowId;
+    public $catalogId;
+    public $autoFillFinalize;
+    public $certCAOrg;
+    public $encryptionType;
+    public $businessId;
     public $transReferenceId;
     public $actors;
     public $watermarks;
@@ -38,6 +40,22 @@ class CreateSignTaskBaseReq
     public function setSignTaskSubject($signTaskSubject)
     {
         $this->signTaskSubject = $signTaskSubject;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getInitiatorEntityId()
+    {
+        return $this->initiatorEntityId;
+    }
+
+    /**
+     * @param mixed $initiatorEntityId
+     */
+    public function setInitiatorEntityId($initiatorEntityId)
+    {
+        $this->initiatorEntityId = $initiatorEntityId;
     }
 
     /**
@@ -330,5 +348,20 @@ class CreateSignTaskBaseReq
         $this->watermarks = $watermarks;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getEncryptionType()
+    {
+        return $this->encryptionType;
+    }
+
+    /**
+     * @param mixed $encryptionType
+     */
+    public function setEncryptionType($encryptionType)
+    {
+        $this->encryptionType = $encryptionType;
+    }
 
 }

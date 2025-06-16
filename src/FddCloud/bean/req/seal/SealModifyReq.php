@@ -1,6 +1,4 @@
 <?php
-
-
 namespace FddCloud\bean\req\seal;
 class SealModifyReq
 {
@@ -9,8 +7,6 @@ class SealModifyReq
     public $sealId;
 
     public $sealName;
-
-    public $categoryType;
 
     public $sealTag;
 
@@ -60,22 +56,6 @@ class SealModifyReq
     public function setSealName($sealName)
     {
         $this->sealName = $sealName;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCategoryType()
-    {
-        return $this->categoryType;
-    }
-
-    /**
-     * @param mixed $categoryType
-     */
-    public function setCategoryType($categoryType)
-    {
-        $this->categoryType = $categoryType;
     }
 
     /**

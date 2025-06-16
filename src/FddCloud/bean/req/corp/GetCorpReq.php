@@ -4,10 +4,27 @@
 namespace FddCloud\bean\req\corp;
 class GetCorpReq
 {
+    public $corpIdentNo;
 
     public $clientCorpId;
 
     public $openCorpId;
+
+    /**
+     * @return mixed
+     */
+    public function getCorpIdentNo()
+    {
+        return $this->corpIdentNo;
+    }
+
+    /**
+     * @param mixed $corpIdentNo
+     */
+    public function setCorpIdentNo($corpIdentNo)
+    {
+        $this->corpIdentNo = $corpIdentNo;
+    }
 
     /**
      * @return mixed

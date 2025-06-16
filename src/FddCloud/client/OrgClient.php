@@ -2,13 +2,20 @@
 
 namespace FddCloud\client;
 
+use FddCloud\bean\req\org\CorpChangeIdentityInfoReq;
 use FddCloud\bean\req\org\CorpOrganizationManageReq;
 use FddCloud\bean\req\org\counterpart\CounterpartListReq;
+use FddCloud\bean\req\org\counterpart\GetCounterpartManageUrlReq;
 use FddCloud\bean\req\org\department\DeptCreateReq;
 use FddCloud\bean\req\org\department\DeptDeleteReq;
 use FddCloud\bean\req\org\department\DeptGetDetailReq;
 use FddCloud\bean\req\org\department\DeptGetListReq;
 use FddCloud\bean\req\org\department\DeptModifyReq;
+use FddCloud\bean\req\org\GetCorpEntityListReq;
+use FddCloud\bean\req\org\GetCorpEntityManageUrlReq;
+use FddCloud\bean\req\org\member\GetCorpAdminUrlReq;
+use FddCloud\bean\req\org\member\GetCorpMemberIdByOpenIdReq;
+use FddCloud\bean\req\org\member\GetCorpRoleUrlReq;
 use FddCloud\bean\req\org\member\MemberCreateReq;
 use FddCloud\bean\req\org\member\MemberDeleteReq;
 use FddCloud\bean\req\org\member\MemberGetActiveUrlReq;
@@ -33,6 +40,24 @@ class OrgClient
     function getCorpOrganizationManageUrl($accessToken, CorpOrganizationManageReq $req)
     {
         return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::CORP_ORGANIZATION_MANAGE_GET_URL);
+    }
+
+    # 获取成员企业管理链接
+    function getCorpEntityManageUrl($accessToken, GetCorpEntityManageUrlReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::CORP_ENTITY_GET_MANAGE_URL);
+    }
+
+    # 查询企业主体列表
+    function getCorpEntityList($accessToken, GetCorpEntityListReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::CORP_ENTITY_GET_LIST);
+    }
+
+    # 获取企业工商信息变更链接
+    function corpChangeIdentityInfo($accessToken, CorpChangeIdentityInfoReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req, JSON_FORCE_OBJECT), OpenApiUrlConstants::CORP_CHANGE_IDENTITY_INFO);
     }
 
     # 创建部门
@@ -113,9 +138,30 @@ class OrgClient
         return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::CORP_MEMBER_DELETE);
     }
 
+    # 获取角色管理链接
+    function getCorpRoleUrl($accessToken, GetCorpRoleUrlReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::CORP_ROLE_GET_URL);
+    }
+    # 获取超管变更链接
+    function getCorpAdminUrl($accessToken, GetCorpAdminUrlReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::CORP_ADMIN_GET_URL);
+    }
+    # 根据openId查询memberId
+    function getCorpMemberIdByOpenId($accessToken, GetCorpMemberIdByOpenIdReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::CORP_MEMBER_GET_ID_BY_OPENID);
+    }
     # 查询相对方列表
     function counterpartList($accessToken, CounterpartListReq $req)
     {
         return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::COUNTERPART_GET_LIST);
+    }
+
+    # 获取相对方管理链接
+    function getCounterpartManageUrl($accessToken, GetCounterpartManageUrlReq $req)
+    {
+        return $this->client->request($accessToken, $req->serialize(), OpenApiUrlConstants::COUNTERPART_GET_MANAGE_URL);
     }
 }

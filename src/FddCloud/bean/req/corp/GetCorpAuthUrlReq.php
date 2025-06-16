@@ -6,6 +6,8 @@ class GetCorpAuthUrlReq
 {
     public $clientCorpId;
 
+    public $clientUserId;
+
     public $accountName;
 
     public $corpIdentInfo;
@@ -14,9 +16,14 @@ class GetCorpAuthUrlReq
 
     public $oprIdentInfo;
 
+    public $oprNonEditableInfo;
+
     public $authScopes;
 
     public $redirectUrl;
+
+    public $redirectMiniAppUrl;
+    public $appDevelopInfo;
 
     /**
      * @return mixed
@@ -32,6 +39,22 @@ class GetCorpAuthUrlReq
     public function setClientCorpId($clientCorpId)
     {
         $this->clientCorpId = $clientCorpId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getClientUserId()
+    {
+        return $this->clientUserId;
+    }
+
+    /**
+     * @param mixed $clientUserId
+     */
+    public function setClientUserId($clientUserId)
+    {
+        $this->clientUserId = $clientUserId;
     }
 
     /**
@@ -101,6 +124,22 @@ class GetCorpAuthUrlReq
     /**
      * @return mixed
      */
+    public function getOprNonEditableInfo()
+    {
+        return $this->oprNonEditableInfo;
+    }
+
+    /**
+     * @param mixed $oprNonEditableInfo
+     */
+    public function setOprNonEditableInfo($oprNonEditableInfo)
+    {
+        $this->oprNonEditableInfo = $oprNonEditableInfo;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getAuthScopes()
     {
         return $this->authScopes;
@@ -128,6 +167,38 @@ class GetCorpAuthUrlReq
     public function setRedirectUrl($redirectUrl)
     {
         $this->redirectUrl = $redirectUrl;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRedirectMiniAppUrl()
+    {
+        return $this->redirectMiniAppUrl;
+    }
+
+    /**
+     * @param mixed $redirectMiniAppUrl
+     */
+    public function setRedirectMiniAppUrl($redirectMiniAppUrl)
+    {
+        $this->redirectMiniAppUrl = $redirectMiniAppUrl;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAppDevelopInfo()
+    {
+        return $this->appDevelopInfo;
+    }
+
+    /**
+     * @param mixed $appDevelopInfo
+     */
+    public function setAppDevelopInfo($appDevelopInfo)
+    {
+        $this->appDevelopInfo = $appDevelopInfo;
     }
 
 

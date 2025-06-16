@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\seal;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 印章删除事件
  * 企业删除印章，通过该事件回调给应用，事件ID：seal-delete

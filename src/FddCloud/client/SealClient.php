@@ -4,18 +4,30 @@ namespace FddCloud\client;
 
 use FddCloud\bean\req\seal\CancelPersonalSealFreeSignReq;
 use FddCloud\bean\req\seal\CancelSealFreeSignReq;
+use FddCloud\bean\req\seal\CreateLegalRepresentativeSealByImageReq;
+use FddCloud\bean\req\seal\CreateLegalRepresentativeSealByTemplateReq;
+use FddCloud\bean\req\seal\CreatePersonalSealByImageReq;
+use FddCloud\bean\req\seal\CreatePersonalSealByTemplateReq;
+use FddCloud\bean\req\seal\CreateSealByImageReq;
+use FddCloud\bean\req\seal\CreateSealByTemplateReq;
 use FddCloud\bean\req\seal\GetAppointedSealUrlReq;
 use FddCloud\bean\req\seal\GetAppointedUserSealListReq;
+use FddCloud\bean\req\seal\GetCertInfoReq;
+use FddCloud\bean\req\seal\GetFreeSignToTemplateListReq;
+use FddCloud\bean\req\seal\GetFreeSignToTemplateUrlReq;
 use FddCloud\bean\req\seal\GetPersonalSealCreateUrlReq;
 use FddCloud\bean\req\seal\GetPersonalSealFreeSignUrlReq;
 use FddCloud\bean\req\seal\GetPersonalSealListReq;
 use FddCloud\bean\req\seal\GetPersonalSealManageUrlReq;
+use FddCloud\bean\req\seal\GetSealCertFileReq;
+use FddCloud\bean\req\seal\GetSealCertUrlReq;
 use FddCloud\bean\req\seal\GetSealCreateUrlReq;
 use FddCloud\bean\req\seal\GetSealDetailReq;
 use FddCloud\bean\req\seal\GetSealFreeSignUrlReq;
 use FddCloud\bean\req\seal\GetSealGrantUrlReq;
 use FddCloud\bean\req\seal\GetSealListReq;
 use FddCloud\bean\req\seal\GetSealManageUrlReq;
+use FddCloud\bean\req\seal\GetSealTagListReq;
 use FddCloud\bean\req\seal\GetSealUserListReq;
 use FddCloud\bean\req\seal\GetVerifySealListReq;
 use FddCloud\bean\req\seal\PersonalSealDeleteReq;
@@ -24,13 +36,7 @@ use FddCloud\bean\req\seal\SealGrantCancelReq;
 use FddCloud\bean\req\seal\SealModifyReq;
 use FddCloud\bean\req\seal\SealSetStatusReq;
 use FddCloud\constants\OpenApiUrlConstants;
-use CreateLegalRepresentativeSealByImageReq;
-use CreateLegalRepresentativeSealByTemplateReq;
-use CreatePersonalSealByImageReq;
-use CreatePersonalSealByTemplateReq;
-use CreateSealByImageReq;
-use CreateSealByTemplateReq;
-use GetSealTagListReq;
+
 
 
 class SealClient
@@ -156,6 +162,16 @@ class SealClient
         return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::SEAL_TAG_GET_LIST);
     }
 
+    function getFreeSignToTemplateUrl($accessToken, GetFreeSignToTemplateUrlReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::SEAL_FREE_SIGN_TO_TEMPLATE_GET_URL);
+    }
+
+    function getFreeSignToTemplateList($accessToken, GetFreeSignToTemplateListReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::SEAL_FREE_SIGN_TO_TEMPLATE_GET_LIST);
+    }
+
     # 创建模板签名
     function createPersonalSealByTemplate($accessToken, CreatePersonalSealByTemplateReq $req)
     {
@@ -208,6 +224,21 @@ class SealClient
     function deletePersonalSeal($accessToken, PersonalSealDeleteReq $req)
     {
         return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::PERSONAL_SEAL_DELETE);
+    }
+
+    function getCertInfo($accessToken, GetCertInfoReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::GET_CERT_INFO);
+    }
+
+    function getSealCertFile($accessToken, GetSealCertFileReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::GET_SEAL_CERT_FILE);
+    }
+
+    function getSealCertUrl($accessToken, GetSealCertUrlReq $req)
+    {
+        return $this->client->request($accessToken, json_encode($req), OpenApiUrlConstants::GET_SEAL_CERT_URL);
     }
 
 }

@@ -8,6 +8,7 @@ class FileUploadByUrlReq
 
     public $fileUrl;
 
+    public $storageType;
     /**
      * @return mixed
      */
@@ -39,6 +40,24 @@ class FileUploadByUrlReq
     {
         $this->fileUrl = $fileUrl;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getStorageType()
+    {
+        return $this->storageType;
+    }
+
+    /**
+     * @param mixed $storageType
+     */
+    public function setStorageType($storageType)
+    {
+        $this->storageType = $storageType;
+    }
+
+
 
 
 }

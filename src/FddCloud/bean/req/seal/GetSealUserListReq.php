@@ -1,27 +1,25 @@
 <?php
-
-
 namespace FddCloud\bean\req\seal;
 class GetSealUserListReq
 {
-    public $ownerId;
+    public $openCorpId;
 
     public $listFilter;
 
     /**
      * @return mixed
      */
-    public function getOwnerId()
+    public function getOpenCorpId()
     {
-        return $this->ownerId;
+        return $this->openCorpId;
     }
 
     /**
-     * @param mixed $ownerId
+     * @param mixed $openCorpId
      */
-    public function setOwnerId($ownerId)
+    public function setOpenCorpId($openCorpId)
     {
-        $this->ownerId = $ownerId;
+        $this->openCorpId = $openCorpId;
     }
 
     /**

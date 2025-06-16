@@ -13,6 +13,10 @@ class AbolishSignTaskReq extends SignTaskBaseReq
 
     public $reason;
 
+    public $followOriginalConfig;
+
+    public $signInOrder;
+
     public $docs;
 
     public $actors;
@@ -36,6 +40,8 @@ class AbolishSignTaskReq extends SignTaskBaseReq
     public $transReferenceId;
 
     public $certCAOrg;
+
+    public $fileFormat;
 
     /**
      * @return mixed
@@ -99,6 +105,22 @@ class AbolishSignTaskReq extends SignTaskBaseReq
     public function setReason($reason)
     {
         $this->reason = $reason;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFollowOriginalConfig()
+    {
+        return $this->followOriginalConfig;
+    }
+
+    /**
+     * @param mixed $followOriginalConfig
+     */
+    public function setFollowOriginalConfig($followOriginalConfig)
+    {
+        $this->followOriginalConfig = $followOriginalConfig;
     }
 
     /**
@@ -292,5 +314,38 @@ class AbolishSignTaskReq extends SignTaskBaseReq
     {
         $this->certCAOrg = $certCAOrg;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getSignInOrder()
+    {
+        return $this->signInOrder;
+    }
+
+    /**
+     * @param mixed $signInOrder
+     */
+    public function setSignInOrder($signInOrder)
+    {
+        $this->signInOrder = $signInOrder;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFileFormat()
+    {
+        return $this->fileFormat;
+    }
+
+    /**
+     * @param mixed $fileFormat
+     */
+    public function setFileFormat($fileFormat)
+    {
+        $this->fileFormat = $fileFormat;
+    }
+
 
 }

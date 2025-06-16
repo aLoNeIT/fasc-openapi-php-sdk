@@ -1,6 +1,5 @@
 <?php
 
-
 namespace FddCloud\bean\req\seal;
 class CancelSealFreeSignReq
 {
@@ -21,7 +20,7 @@ class CancelSealFreeSignReq
     /**
      * @param mixed $openCorpId
      */
-    public function setOpenCorpId($openCorpId)
+    public function setOpenCorpId($openCorpId) 
     {
         $this->openCorpId = $openCorpId;
     }
@@ -37,7 +36,7 @@ class CancelSealFreeSignReq
     /**
      * @param mixed $sealId
      */
-    public function setSealId($sealId)
+    public function setSealId($sealId) 
     {
         $this->sealId = $sealId;
     }
@@ -53,7 +52,7 @@ class CancelSealFreeSignReq
     /**
      * @param mixed $businessId
      */
-    public function setBusinessId($businessId)
+    public function setBusinessId($businessId) 
     {
         $this->businessId = $businessId;
     }

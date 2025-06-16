@@ -5,6 +5,7 @@ namespace FddCloud\bean\req\org\member;
 class MemberBaseReq
 {
     public $openCorpId;
+    public $redirectUrl;
 
 
     /**
@@ -21,6 +22,22 @@ class MemberBaseReq
     public function setOpenCorpId($openCorpId)
     {
         $this->openCorpId = $openCorpId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRedirectUrl()
+    {
+        return $this->redirectUrl;
+    }
+
+    /**
+     * @param mixed $redirectUrl
+     */
+    public function setRedirectUrl($redirectUrl)
+    {
+        $this->redirectUrl = $redirectUrl;
     }
 
 }

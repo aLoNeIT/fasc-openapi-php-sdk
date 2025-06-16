@@ -8,6 +8,7 @@ require_once "MemberBaseReq.php";
 class MemberGetDetailReq extends MemberBaseReq
 {
     public $memberId;
+    public $internalIdentifier;
 
     /**
      * @return mixed
@@ -25,5 +26,20 @@ class MemberGetDetailReq extends MemberBaseReq
         $this->memberId = $memberId;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getInternalIdentifier()
+    {
+        return $this->internalIdentifier;
+    }
+
+    /**
+     * @param mixed $internalIdentifier
+     */
+    public function setInternalIdentifier($internalIdentifier)
+    {
+        $this->internalIdentifier = $internalIdentifier;
+    }
 
 }

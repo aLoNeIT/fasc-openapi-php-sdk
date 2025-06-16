@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\signTask;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 签署任务参与方签署成功事件
  * 签署任务中每个签署参与方进行签署，签署成功后通过该事件回调给应用，事件ID: sign-task-signed

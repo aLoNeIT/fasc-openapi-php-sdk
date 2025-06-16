@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\seal;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 印章审核不通过事件
  * 企业创建的印章审核不通过后，通过该事件回调给应用，事件ID：seal-verify-failed

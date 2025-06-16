@@ -1,6 +1,5 @@
 <?php
 
-
 namespace FddCloud\bean\req\signTask;
 
 class ModifyActorReq extends SignTaskBaseReq

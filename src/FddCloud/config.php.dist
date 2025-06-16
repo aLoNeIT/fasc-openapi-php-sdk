@@ -1,0 +1,9 @@
+<?php
+
+return [
+    'service_url' => 'https://api.fadada.com/api/v5/',
+    'app_id' => 'your_app_id',
+    'app_secret' => 'your_app_secret',
+    'debug' => true,
+    'time_out' => 60
+];

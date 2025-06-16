@@ -3,8 +3,8 @@
 
 namespace FddCloud\client;
 
-use FddCloud\client\IClient;
-use FddCloud\constants\OpenApiConfigConstants;
+use Exception;
+use FddCloud\utils\log\SdkLog;
 
 
 date_default_timezone_set('PRC');//其中PRC为“中华人民共和国”
@@ -15,16 +15,21 @@ class Client implements IClient
     private $appId;
     private $appSecret;
     private $url;
-    private $timeout;
+    private $timeout = 60;
+    private $debug = false;
 
-    public function __construct($appId, $appSecret, $url, $timeout = 60)
+    public function __construct($appId, $appSecret, $url, $timeout ,$debug)
     {
         $this->appId = $appId;
         $this->appSecret = $appSecret;
         $this->url = $url;
         $this->timeout = $timeout;
+        $this->debug = $debug;
     }
 
+    /**
+     * @throws Exception
+     */
     public function request_file($url, $filePath)
     {
         $filePath = iconv('utf-8', 'gbk', $filePath);
@@ -106,36 +111,59 @@ class Client implements IClient
 
     public function request($accessToken, $bizContent, $path)
     {
+        //判断curl版本是否大于7.40.0
+        $isContentLength =$this->checkCurlVersion();
         //随机数
-        $nonce = md5(time() . mt_rand(0, 1000));
-        print_r("url: " . $path . "\n");
+        $nonce = md5(uniqid());
         $headers = $this->getHeader($nonce, $bizContent, $accessToken);
         $headers['Content-type'] = "application/x-www-form-urlencoded";
-        $postHeader = $this->toPost($headers);
-        //	var_dump($postHeader);
-        print_r("header: ");
-        print_r($headers);
+        //debug调试打印
+        SdkLog::debug("开始请求:" . $path . "\n",$this->debug);
+        SdkLog::debug("请求头header: " . "\n",$this->debug);
+        SdkLog::debug($headers,$this->debug);
+
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $this->url . $path);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $this->timeout);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $postHeader);
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+
+        //判断是否是获取accessToken
         if (!is_null($bizContent)) {
             $body = array();
             $body['bizContent'] = $bizContent;
-            if (OpenApiConfigConstants::DEBUG) {
-                print_r("body: ");
-                print_r($body);
-            }
-            curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($body));
+            SdkLog::debug("请求体body: ",$this->debug);
+            SdkLog::debug($body,$this->debug);
+            $content = http_build_query($body);
+            //是否自动计算Content-Length
+            $isContentLength ? $headers['Content-Length'] = strlen($content) : print_r("");
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $content);
+        }else{
+            //是否自动计算Content-Length
+            $isContentLength ? $headers['Content-Length'] = 0 : print_r("");
         }
+        curl_setopt($ch, CURLOPT_URL, $this->url . $path);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $this->timeout);
+//        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST,"POST");
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $this->toPost($headers));
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+        curl_setopt($ch, CURLOPT_HEADER, true);      // 需要响应头
+
+
+        curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_1);
+
         $response = curl_exec($ch);
+        // 检查是否有错误发生
+        if(curl_errno($ch)){
+            echo 'cURL error: ' . curl_error($ch);
+        }
+        $header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
+        $header = substr($response, 0, $header_size); // 获取响应头部分
+        SdkLog::debug("响应头header: " . "\n",$this->debug);
+        SdkLog::debug($header,$this->debug);
+        SdkLog::debug("###########请求结束#########". "\n",$this->debug);
+        $body = substr($response, $header_size);       // 获取响应体部分
         curl_close($ch);
-        return $response;
+        return $body;
     }
 
     public function toPost(array $params = array(), $pre = '')
@@ -207,7 +235,18 @@ class Client implements IClient
     private function msectime()
     {
         list($msec, $sec) = explode(' ', microtime());
-        $msectime = (float)sprintf('%.0f', (floatval($msec) + floatval($sec)) * 1000);
-        return $msectime;
+        return (float)sprintf('%.0f', (floatval($msec) + floatval($sec)) * 1000);
+    }
+
+    private function checkCurlVersion()
+    {
+        $curlVersion = curl_version();
+        // 判断版本信息
+        if(version_compare($curlVersion['version'],'7.40','>')){
+            return false;
+        }else{
+            echo "当前CURL版本号是".$curlVersion['version']."小于 7.40,建议尽快进行升级\n";
+            return true;
+        }
     }
 }

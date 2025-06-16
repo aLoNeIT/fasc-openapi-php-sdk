@@ -12,6 +12,8 @@ class DeptCreateReq
 
     public $deptOrderNum;
 
+    public $identifier;
+
     /**
      * @return mixed
      */
@@ -74,6 +76,22 @@ class DeptCreateReq
     public function setDeptOrderNum($deptOrderNum)
     {
         $this->deptOrderNum = $deptOrderNum;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdentifier()
+    {
+        return $this->identifier;
+    }
+
+    /**
+     * @param mixed $identifier
+     */
+    public function setIdentifier($identifier)
+    {
+        $this->identifier = $identifier;
     }
 
 

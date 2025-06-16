@@ -10,6 +10,8 @@ class FddFileUrl
 
     public $fileName;
 
+    public $fileFormat;
+
     /**
      * @return mixed
      */
@@ -56,6 +58,22 @@ class FddFileUrl
     public function setFileName($fileName)
     {
         $this->fileName = $fileName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFileFormat()
+    {
+        return $this->fileFormat;
+    }
+
+    /**
+     * @param mixed $fileFormat
+     */
+    public function setFileFormat($fileFormat)
+    {
+        $this->fileFormat = $fileFormat;
     }
 
 

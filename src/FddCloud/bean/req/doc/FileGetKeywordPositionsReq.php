@@ -5,6 +5,8 @@ namespace FddCloud\bean\req\doc;
 class FileGetKeywordPositionsReq
 {
     public $fileId;
+
+    public $docTemplateId;
     public $keywords;
 
     /**
@@ -21,6 +23,22 @@ class FileGetKeywordPositionsReq
     public function setFileId($fileId)
     {
         $this->fileId = $fileId;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDocTemplateId()
+    {
+        return $this->docTemplateId;
+    }
+
+    /**
+     * @param mixed $docTemplateId
+     */
+    public function setDocTemplateId($docTemplateId)
+    {
+        $this->docTemplateId = $docTemplateId;
     }
 
     /**

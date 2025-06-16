@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\seal;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 印章停用事件
  * 企业将印章停用，通过该事件回调给应用，事件ID：seal-disable

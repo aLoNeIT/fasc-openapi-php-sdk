@@ -11,7 +11,6 @@ class SignField
     public $fieldName;
 
     public $sealId;
-
     public $moveable;
 
     /**

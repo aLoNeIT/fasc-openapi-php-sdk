@@ -14,6 +14,8 @@ class OprIdentInfo
 
     public $bankAccountNo;
 
+    public $oprIdentMethod;
+
     /**
      * @return mixed
      */
@@ -92,6 +94,22 @@ class OprIdentInfo
     public function setBankAccountNo($bankAccountNo)
     {
         $this->bankAccountNo = $bankAccountNo;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOprIdentMethod()
+    {
+        return $this->oprIdentMethod;
+    }
+
+    /**
+     * @param mixed $oprIdentMethod
+     */
+    public function setOprIdentMethod($oprIdentMethod)
+    {
+        $this->oprIdentMethod = $oprIdentMethod;
     }
 
 

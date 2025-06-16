@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\signTask;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 签署任务参与方填写事件
  * 签署任务中需要填写的参与方进行填写后，通过该事件回调给应用，事件ID: sign-task-filled

@@ -2,6 +2,8 @@
 
 namespace FddCloud\bean\message\signTask;
 
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 签署任务撤销事件
  * 签署任务撤销之后，通过该事件回调给应用，事件ID: sign-task-canceled

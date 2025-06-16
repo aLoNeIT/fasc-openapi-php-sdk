@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\signTask;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 签署任务签署失败事件
  * 目前只有参与方免验证签署失败，通过该事件回调给应用，事件ID: sign-task-sign-failed

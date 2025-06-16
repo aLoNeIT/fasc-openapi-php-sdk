@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\personalSeal;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 签名删除事件
  * 个人删除签名，通过该事件回调给应用，事件ID：personal-seal-delete

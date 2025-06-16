@@ -1,6 +1,8 @@
 <?php
 
 namespace FddCloud\bean\message\personalSeal;
+use FddCloud\bean\message\MessageBase;
+
 /**
  * 个人签名授权免验证签事件
  * 个人用户将签名授权免验证签，通过该事件回调给应用，事件ID：personal-seal-authorize-free-sign

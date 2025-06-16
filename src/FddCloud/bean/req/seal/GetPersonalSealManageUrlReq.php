@@ -1,6 +1,5 @@
 <?php
 
-
 namespace FddCloud\bean\req\seal;
 class GetPersonalSealManageUrlReq
 {
@@ -19,7 +18,7 @@ class GetPersonalSealManageUrlReq
     /**
      * @param mixed $clientUserId
      */
-    public function setClientUserId($clientUserId)
+    public function setClientUserId($clientUserId) 
     {
         $this->clientUserId = $clientUserId;
     }
@@ -35,7 +34,7 @@ class GetPersonalSealManageUrlReq
     /**
      * @param mixed $redirectUrl
      */
-    public function setRedirectUrl($redirectUrl)
+    public function setRedirectUrl($redirectUrl) 
     {
         $this->redirectUrl = $redirectUrl;
     }
