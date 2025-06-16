@@ -7,7 +7,7 @@ use Exception;
 use FddCloud\utils\log\SdkLog;
 
 
-date_default_timezone_set('PRC');//其中PRC为“中华人民共和国”
+date_default_timezone_set('PRC'); //其中PRC为“中华人民共和国”
 
 class Client implements IClient
 {
@@ -18,7 +18,7 @@ class Client implements IClient
     private $timeout = 60;
     private $debug = false;
 
-    public function __construct($appId, $appSecret, $url, $timeout ,$debug)
+    public function __construct($appId, $appSecret, $url, $timeout, $debug)
     {
         $this->appId = $appId;
         $this->appSecret = $appSecret;
@@ -67,7 +67,7 @@ class Client implements IClient
     public function downLoad_request($accessToken, $bizContent, $path)
     {
         //随机数
-        $nonce = md5(time() . mt_rand(0, 1000));
+        $nonce = md5(uniqid() . \str_pad(\random_int(0, 1000000), 8, '0', STR_PAD_LEFT));
         $headers = $this->getHeader($nonce, $bizContent, $accessToken);
         $headers['Content-type'] = "application/x-www-form-urlencoded;charset=UTF-8";
         $postHeader = $this->toPost($headers);
@@ -81,7 +81,7 @@ class Client implements IClient
         // 返回 response_header, 该选项非常重要,如果不为 true, 只会获得响应的正文
         curl_setopt($ch, CURLOPT_HEADER, true);
         // 是否不需要响应的正文,为了节省带宽及时间,在只需要响应头的情况下可以不要正文
-//        curl_setopt($ch, CURLOPT_NOBODY, true);
+        //        curl_setopt($ch, CURLOPT_NOBODY, true);
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
@@ -112,15 +112,15 @@ class Client implements IClient
     public function request($accessToken, $bizContent, $path)
     {
         //判断curl版本是否大于7.40.0
-        $isContentLength =$this->checkCurlVersion();
+        $isContentLength = $this->checkCurlVersion();
         //随机数
-        $nonce = md5(uniqid());
+        $nonce = md5(uniqid() . \str_pad(\random_int(0, 1000000), 8, '0', STR_PAD_LEFT));
         $headers = $this->getHeader($nonce, $bizContent, $accessToken);
         $headers['Content-type'] = "application/x-www-form-urlencoded";
         //debug调试打印
-        SdkLog::debug("开始请求:" . $path . "\n",$this->debug);
-        SdkLog::debug("请求头header: " . "\n",$this->debug);
-        SdkLog::debug($headers,$this->debug);
+        SdkLog::debug("开始请求:" . $path . "\n", $this->debug);
+        SdkLog::debug("请求头header: " . "\n", $this->debug);
+        SdkLog::debug($headers, $this->debug);
 
         $ch = curl_init();
 
@@ -128,21 +128,21 @@ class Client implements IClient
         if (!is_null($bizContent)) {
             $body = array();
             $body['bizContent'] = $bizContent;
-            SdkLog::debug("请求体body: ",$this->debug);
-            SdkLog::debug($body,$this->debug);
+            SdkLog::debug("请求体body: ", $this->debug);
+            SdkLog::debug($body, $this->debug);
             $content = http_build_query($body);
             //是否自动计算Content-Length
             $isContentLength ? $headers['Content-Length'] = strlen($content) : print_r("");
             curl_setopt($ch, CURLOPT_POSTFIELDS, $content);
-        }else{
+        } else {
             //是否自动计算Content-Length
             $isContentLength ? $headers['Content-Length'] = 0 : print_r("");
         }
         curl_setopt($ch, CURLOPT_URL, $this->url . $path);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $this->timeout);
-//        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST,"POST");
+        //        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
         curl_setopt($ch, CURLOPT_HTTPHEADER, $this->toPost($headers));
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
@@ -153,14 +153,14 @@ class Client implements IClient
 
         $response = curl_exec($ch);
         // 检查是否有错误发生
-        if(curl_errno($ch)){
+        if (curl_errno($ch)) {
             echo 'cURL error: ' . curl_error($ch);
         }
         $header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
         $header = substr($response, 0, $header_size); // 获取响应头部分
-        SdkLog::debug("响应头header: " . "\n",$this->debug);
-        SdkLog::debug($header,$this->debug);
-        SdkLog::debug("###########请求结束#########". "\n",$this->debug);
+        SdkLog::debug("响应头header: " . "\n", $this->debug);
+        SdkLog::debug($header, $this->debug);
+        SdkLog::debug("###########请求结束#########" . "\n", $this->debug);
         $body = substr($response, $header_size);       // 获取响应体部分
         curl_close($ch);
         return $body;
@@ -178,7 +178,7 @@ class Client implements IClient
     private function getHeader($nonce, $bizContent, $accessToken)
     {
         //组装需要去计算签名的参数
-//		$date = date("Y-m-d H:i:s").".000";
+        //		$date = date("Y-m-d H:i:s").".000";
         $date = $this->msectime();
         $values = array();
         $values['X-FASC-App-Id'] = $this->appId;
@@ -242,10 +242,10 @@ class Client implements IClient
     {
         $curlVersion = curl_version();
         // 判断版本信息
-        if(version_compare($curlVersion['version'],'7.40','>')){
+        if (version_compare($curlVersion['version'], '7.40', '>')) {
             return false;
-        }else{
-            echo "当前CURL版本号是".$curlVersion['version']."小于 7.40,建议尽快进行升级\n";
+        } else {
+            echo "当前CURL版本号是" . $curlVersion['version'] . "小于 7.40,建议尽快进行升级\n";
             return true;
         }
     }
