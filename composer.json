@@ -1,6 +1,5 @@
 {
     "name": "hongshanhealth/fasc-openapi-php-sdk",
-    "version": "1.0",
     "description": "Fadada Agreement & Signature Cloud API PHP-SDK",
     "type": "library",
     "keywords": [
