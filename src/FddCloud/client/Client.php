@@ -67,7 +67,7 @@ class Client implements IClient
     public function downLoad_request($accessToken, $bizContent, $path)
     {
         //随机数
-        $nonce = md5(uniqid() . \str_pad(\random_int(0, 1000000), 8, '0', STR_PAD_LEFT));
+        $nonce = md5(uniqid(\str_pad(\random_int(0, 10000000), 8, '0', STR_PAD_LEFT), true));
         $headers = $this->getHeader($nonce, $bizContent, $accessToken);
         $headers['Content-type'] = "application/x-www-form-urlencoded;charset=UTF-8";
         $postHeader = $this->toPost($headers);
@@ -114,13 +114,14 @@ class Client implements IClient
         //判断curl版本是否大于7.40.0
         $isContentLength = $this->checkCurlVersion();
         //随机数
-        $nonce = md5(uniqid() . \str_pad(\random_int(0, 1000000), 8, '0', STR_PAD_LEFT));
+        $nonce = md5(uniqid(\str_pad(\random_int(0, 10000000), 8, '0', STR_PAD_LEFT), true));
         $headers = $this->getHeader($nonce, $bizContent, $accessToken);
         $headers['Content-type'] = "application/x-www-form-urlencoded";
         //debug调试打印
-        SdkLog::debug("开始请求:" . $path . "\n", $this->debug);
-        SdkLog::debug("请求头header: " . "\n", $this->debug);
-        SdkLog::debug($headers, $this->debug);
+        SdkLog::debug(__FUNCTION__ . ':request', [
+            'header' => $headers,
+            'body' => $bizContent
+        ], $this->debug);
 
         $ch = curl_init();
 
@@ -128,8 +129,6 @@ class Client implements IClient
         if (!is_null($bizContent)) {
             $body = array();
             $body['bizContent'] = $bizContent;
-            SdkLog::debug("请求体body: ", $this->debug);
-            SdkLog::debug($body, $this->debug);
             $content = http_build_query($body);
             //是否自动计算Content-Length
             $isContentLength ? $headers['Content-Length'] = strlen($content) : print_r("");
@@ -158,10 +157,11 @@ class Client implements IClient
         }
         $header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
         $header = substr($response, 0, $header_size); // 获取响应头部分
-        SdkLog::debug("响应头header: " . "\n", $this->debug);
-        SdkLog::debug($header, $this->debug);
-        SdkLog::debug("###########请求结束#########" . "\n", $this->debug);
         $body = substr($response, $header_size);       // 获取响应体部分
+        SdkLog::debug(__FUNCTION__ . ':response', [
+            'header' => $headers,
+            'body' => $body
+        ], $this->debug);
         curl_close($ch);
         return $body;
     }
