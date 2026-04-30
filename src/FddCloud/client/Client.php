@@ -67,7 +67,7 @@ class Client implements IClient
     public function downLoad_request($accessToken, $bizContent, $path)
     {
         //随机数
-        $nonce = md5(uniqid(\str_pad(\random_int(0, 10000000), 8, '0', STR_PAD_LEFT), true));
+        $nonce = $this->generateNonce();
         $headers = $this->getHeader($nonce, $bizContent, $accessToken);
         $headers['Content-type'] = "application/x-www-form-urlencoded;charset=UTF-8";
         $postHeader = $this->toPost($headers);
@@ -114,7 +114,7 @@ class Client implements IClient
         //判断curl版本是否大于7.40.0
         $isContentLength = $this->checkCurlVersion();
         //随机数
-        $nonce = md5(uniqid(\str_pad(\random_int(0, 10000000), 8, '0', STR_PAD_LEFT), true));
+        $nonce = $this->generateNonce();
         $headers = $this->getHeader($nonce, $bizContent, $accessToken);
         $headers['Content-type'] = "application/x-www-form-urlencoded";
         //debug调试打印
@@ -207,6 +207,11 @@ class Client implements IClient
         }
         $values['X-FASC-Sign'] = $sign;
         return $values;
+    }
+
+    private function generateNonce()
+    {
+        return bin2hex(random_bytes(16));
     }
 
     private function arrayParamToStr($array, $keys)
